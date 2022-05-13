@@ -1,18 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="SpeakableTextPresentCheck">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/mainFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btmCard"
+        android:layout_alignParentTop="true" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btmCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="5dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btmNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="3dp"
+            android:paddingBottom="4dp"
+            android:paddingHorizontal="7dp"
+            app:itemRippleColor="@color/onb_header_clr"
+            app:labelVisibilityMode="labeled"
+            app:itemTextAppearanceActive="@style/Widget.Material3.BottomNavigationView"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconSize="20dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/onb_header_clr"
+        android:src="@drawable/geleven_icon"
+        app:borderWidth="0dp"
+        app:tint="@color/white"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="40dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

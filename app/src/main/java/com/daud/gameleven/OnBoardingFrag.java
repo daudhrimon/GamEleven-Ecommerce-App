@@ -2,14 +2,17 @@ package com.daud.gameleven;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.WindowManager;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-public class OnBoardActivity extends AppCompatActivity {
+public class OnBoardingFrag extends Fragment {
     private ViewPager onbViewPager;
     private ImageView dot1,dot2,dot3;
     private Button skipBtn;
@@ -17,15 +20,13 @@ public class OnBoardActivity extends AppCompatActivity {
     int Position;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_onboard);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frag_onboarding, container, false);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        initial(view);
 
-        initial();
-
-        onbViewPager.setAdapter(new OnBoardAdapter(OnBoardActivity.this));
+        onbViewPager.setAdapter(new OnBoardAdapter(getContext()));
 
         addDots(0);
 
@@ -34,15 +35,17 @@ public class OnBoardActivity extends AppCompatActivity {
         skipBtn.setOnClickListener(view1 -> {
             skipBtnOnClick();
         });
+
+        return view;
     }
 
     private void skipBtnOnClick() {
         if (Position < 2){
             onbViewPager.setCurrentItem(Position+1);
         }else{
-            startActivity(new Intent(OnBoardActivity.this,MainActivity.class));
-            SplashActivity.editor.putBoolean("SKIP",true).commit();
-            finish();
+            startActivity(new Intent(getContext(),MainActivity.class));
+            SplashActivity.editor.putInt("SKIP",1).commit();
+            getActivity().finish();
         }
     }
 
@@ -80,11 +83,11 @@ public class OnBoardActivity extends AppCompatActivity {
         }
     }
 
-    private void initial() {
-        onbViewPager = findViewById(R.id.onbViewPager);
-        skipBtn = findViewById(R.id.skipBtn);
-        dot1 = findViewById(R.id.dot1);
-        dot2 = findViewById(R.id.dot2);
-        dot3 = findViewById(R.id.dot3);
+    private void initial(View view) {
+        onbViewPager = view.findViewById(R.id.onbViewPager);
+        skipBtn = view.findViewById(R.id.skipBtn);
+        dot1 = view.findViewById(R.id.dot1);
+        dot2 = view.findViewById(R.id.dot2);
+        dot3 = view.findViewById(R.id.dot3);
     }
 }

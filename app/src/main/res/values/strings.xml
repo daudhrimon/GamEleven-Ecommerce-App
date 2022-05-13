@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">GAMELEVEN</string>
+    <string name="app_name">GamEleven</string>
 
     <string name="onb_header1">Gaming Collection</string>
     <string name="onb_header2">Home Decerotation</string>
     <string name="onb_header3">G11 Gaming zone</string>
     <string name="onb_text">Zak can be customized and used for any niche.
         The vast possibilities of this template makes it multi purpose.</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

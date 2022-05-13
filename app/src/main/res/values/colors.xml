@@ -11,12 +11,15 @@
 
     <color name="spbg_clr_night">#72142C</color>
     <color name="dot_unselected_clr">#707070</color>
-    <color name="dot_selected_clr">#D81D4C</color>
     <color name="dot_selected_border">#021E65</color>
 
     <color name="onb_header_clr">#D81D4C</color>
     <color name="onb_txt_clr">#646464</color>
     <color name="onb_btn_txt_clr">#2F2F2F</color>
     <color name="onb_btmview_clr">#72142C</color>
+
+    <color name="main_bg_clr_day">#F3F3F3</color>
+    <color name="main_bg_clr_night">#151515</color>
+    <color name="search_bg_clr">#E8E8E8</color>
 
 </resources>

@@ -15,7 +15,7 @@
         android:height="6dp"
         android:gravity="center">
         <shape android:shape="oval">
-            <solid android:color="@color/dot_selected_clr" />
+            <solid android:color="@color/onb_header_clr" />
         </shape>
     </item>
 </layer-list>

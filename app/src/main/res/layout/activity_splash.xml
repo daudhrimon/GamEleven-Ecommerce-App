@@ -13,4 +13,10 @@
         android:src="@drawable/sp_img"
         android:layout_centerInParent="true" />
 
+    <FrameLayout
+        android:id="@+id/spFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
 </RelativeLayout>
