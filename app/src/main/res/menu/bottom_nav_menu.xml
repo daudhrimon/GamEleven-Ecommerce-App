@@ -14,8 +14,8 @@
         android:icon="@drawable/wishlist_icon"/>
 
     <item
-        android:title=""
-        android:checkable="false" />
+        android:id="@+id/home"
+        android:title="" />
 
     <item
         android:id="@+id/cart"

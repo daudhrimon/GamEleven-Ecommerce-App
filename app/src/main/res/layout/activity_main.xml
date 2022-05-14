@@ -14,6 +14,22 @@
         android:layout_above="@id/btmCard"
         android:layout_alignParentTop="true" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@color/onb_header_clr"
+        android:src="@drawable/geleven_icon"
+        app:borderWidth="0dp"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="40dp"
+        app:tint="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/btmCard"
         android:layout_width="match_parent"
@@ -26,31 +42,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:paddingHorizontal="7dp"
             android:paddingTop="3dp"
             android:paddingBottom="4dp"
-            android:paddingHorizontal="7dp"
+            app:itemIconSize="20dp"
             app:itemRippleColor="@color/onb_header_clr"
-            app:labelVisibilityMode="labeled"
             app:itemTextAppearanceActive="@style/Widget.Material3.BottomNavigationView"
-            app:menu="@menu/bottom_nav_menu"
-            app:itemIconSize="20dp" />
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/onb_header_clr"
-        android:src="@drawable/geleven_icon"
-        app:borderWidth="0dp"
-        app:tint="@color/white"
-        app:fabCustomSize="64dp"
-        app:maxImageSize="40dp"
-        tools:ignore="SpeakableTextPresentCheck" />
 
 </RelativeLayout>
