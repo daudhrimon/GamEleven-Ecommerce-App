@@ -11,7 +11,7 @@
         android:text="Hot"
         android:textAllCaps="false"
         android:fontFamily="@font/roboto_med"
-        android:textColor="@color/onb_btn_txt_clr"
+        android:textColor="@color/textVH_txt_clr"
         android:layout_marginHorizontal="5dp" />
 
 </LinearLayout>

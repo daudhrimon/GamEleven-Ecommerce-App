@@ -37,9 +37,9 @@ public class HomeFrag extends Fragment {
 
     private void imageSliderHandler() {
         List<SlideModel> imageList = new ArrayList<>();
-        imageList.add(new SlideModel(R.drawable.slider_one,ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.slider_two,ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.slider_three,ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.slider_one, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.slider_two, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.slider_three, ScaleTypes.FIT));
         imageSlider.setImageList(imageList);
     }
 
@@ -47,7 +47,7 @@ public class HomeFrag extends Fragment {
         textRecycler = view.findViewById(R.id.textRecycler);
         imageSlider = view.findViewById(R.id.imageSlider);
         textRecycler.setHasFixedSize(false);
-        layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+        layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         textRecycler.setLayoutManager(layoutManager);
         textRecycler.setAdapter(new TextBtnAdapter(getContext()));
     }

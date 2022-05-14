@@ -57,7 +57,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="135dp"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="6dp"
@@ -93,6 +93,7 @@
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
                         android:text="Coupons"
+                        android:textColor="@color/home_txt_clr"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -123,6 +124,7 @@
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
                         android:text="Gift Card"
+                        android:textColor="@color/home_txt_clr"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -153,6 +155,7 @@
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
                         android:text="Slash"
+                        android:textColor="@color/home_txt_clr"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -183,6 +186,7 @@
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
                         android:text="PC Assemble"
+                        android:textColor="@color/home_txt_clr"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -193,21 +197,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="157dp"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/shape_home_deals"
                 android:backgroundTint="@color/white"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_med"
                     android:text="Flash Deals"
-                    android:textSize="13dp" />
+                    android:textColor="@color/home_txt_clr"
+                    android:textSize="15dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -221,21 +226,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="157dp"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/shape_home_deals"
                 android:backgroundTint="@color/daily_features_bg"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_med"
                     android:text="Daily Features"
-                    android:textSize="13dp" />
+                    android:textColor="@color/home_txt_clr"
+                    android:textSize="15dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -249,21 +255,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="157dp"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/shape_home_deals"
                 android:backgroundTint="@color/hot_categories_bg"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_med"
                     android:text="Hot Categories"
-                    android:textSize="13dp" />
+                    android:textColor="@color/home_txt_clr"
+                    android:textSize="15dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -277,21 +284,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="157dp"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/shape_home_deals"
                 android:backgroundTint="@color/brands_bg"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_med"
                     android:text="Brands"
-                    android:textSize="13dp" />
+                    android:textColor="@color/home_txt_clr"
+                    android:textSize="15dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"

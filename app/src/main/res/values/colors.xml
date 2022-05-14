@@ -24,5 +24,8 @@
     <color name="daily_features_bg">#CDE4E4FC</color>
     <color name="hot_categories_bg">#4DFED3B9</color>
     <color name="brands_bg">#1924CAAA</color>
+    <color name="home_txt_clr">#434343</color>
+
+    <color name="textVH_txt_clr">#262626</color>
 
 </resources>
