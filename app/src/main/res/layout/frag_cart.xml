@@ -12,6 +12,6 @@
         android:text="Cart"
         android:layout_gravity="center"
         android:textSize="30dp"
-        android:textColor="@color/onb_header_clr"/>
+        android:textColor="@color/selector_clr"/>
 
 </FrameLayout>

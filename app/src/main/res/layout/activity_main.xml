@@ -22,7 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/onb_header_clr"
+        android:backgroundTint="@color/selector_clr"
         android:src="@drawable/geleven_icon"
         app:borderWidth="0dp"
         app:fabCustomSize="64dp"
@@ -46,7 +46,7 @@
             android:paddingTop="3dp"
             android:paddingBottom="4dp"
             app:itemIconSize="20dp"
-            app:itemRippleColor="@color/onb_header_clr"
+            app:itemRippleColor="@color/selector_clr"
             app:itemTextAppearanceActive="@style/Widget.Material3.BottomNavigationView"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />

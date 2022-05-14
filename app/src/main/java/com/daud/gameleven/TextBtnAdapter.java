@@ -13,8 +13,7 @@ import java.util.ArrayList;
 
 public class TextBtnAdapter extends RecyclerView.Adapter<TextBtnAdapter.TextBtnVH> {
     private Context context;
-    private String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys","Hot",
-            "Computer & Office","Phone Accessories","Gaming PC","Toys"};
+    private String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
 
     public TextBtnAdapter(Context context) {
         this.context = context;

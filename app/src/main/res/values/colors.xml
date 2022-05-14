@@ -5,7 +5,7 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#101010</color>
     <color name="white">#FFFFFFFF</color>
     <color name="trans">#00000000</color>
 
@@ -13,7 +13,7 @@
     <color name="dot_unselected_clr">#707070</color>
     <color name="dot_selected_border">#021E65</color>
 
-    <color name="onb_header_clr">#D81D4C</color>
+    <color name="selector_clr">#D81D4C</color>
     <color name="onb_txt_clr">#646464</color>
     <color name="onb_btn_txt_clr">#2F2F2F</color>
     <color name="onb_btmview_clr">#72142C</color>

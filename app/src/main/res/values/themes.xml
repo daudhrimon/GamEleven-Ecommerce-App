@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.GamEleven" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/onb_header_clr</item>
-        <item name="colorPrimaryVariant">@color/onb_header_clr</item>
+        <item name="colorPrimary">@color/selector_clr</item>
+        <item name="colorPrimaryVariant">@color/selector_clr</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
