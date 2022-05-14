@@ -1,55 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeFrag"
-    android:background="@color/main_bg_clr_day">
+    android:background="@color/main_bg_clr">
 
-    <LinearLayout
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        android:paddingTop="12dp"
-        android:paddingBottom="5dp">
-
-        <ImageButton
-            android:id="@+id/menuBtn"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:src="@drawable/menu_icon"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="8"
-            app:cardBackgroundColor="@color/search_bg_clr"
-            android:layout_marginStart="3dp"
-            app:cardCornerRadius="35dp"
-            android:layout_marginEnd="16dp">
-
-            <androidx.appcompat.widget.SearchView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:theme="@style/AppSearchView"
-                android:focusable="false"
-                android:focusableInTouchMode="true"
-                android:focusedByDefault="false"
-                app:iconifiedByDefault="false"
-                app:queryHint="What would you like to buy?"
-                app:queryBackground="@null" />
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <!-- Start Design From Here -->
+    <include layout="@layout/top_toolbar"/>
 
 </RelativeLayout>

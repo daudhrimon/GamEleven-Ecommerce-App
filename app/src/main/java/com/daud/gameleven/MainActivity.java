@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
     private void btmNavItemSelectHandler(MenuItem item) {
         switch (item.getItemId()){
             case R.id.category:
-                Toast.makeText(this,"Category Selected",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new CategoryFrag()).commit();
                 break;
             case R.id.wishlist:
-                Toast.makeText(this,"WishList Selected",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new WishlistFrag()).commit();
                 break;
             case R.id.cart:
-                Toast.makeText(this,"Cart Selected",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new CartFrag()).commit();
                 break;
             case R.id.account:
-                Toast.makeText(this,"Account Selected",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new AccountFrag()).commit();
                 break;
             default:break;
         }

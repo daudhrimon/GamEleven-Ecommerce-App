@@ -18,7 +18,7 @@
     <color name="onb_btn_txt_clr">#2F2F2F</color>
     <color name="onb_btmview_clr">#72142C</color>
 
-    <color name="main_bg_clr_day">#F3F3F3</color>
+    <color name="main_bg_clr">#F3F3F3</color>
     <color name="main_bg_clr_night">#151515</color>
     <color name="search_bg_clr">#E8E8E8</color>
 
