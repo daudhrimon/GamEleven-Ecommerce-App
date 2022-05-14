@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         initial();
 
         fab.setOnClickListener(view -> {
-            btmNav.setSelectedItemId(R.id.home);
-            Toast.makeText(this,"Home Selected",Toast.LENGTH_SHORT).show();
+            fabOnClickHandler();
         });
 
         btmNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -34,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void fabOnClickHandler() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+        btmNav.setSelectedItemId(R.id.home);
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
@@ -59,5 +63,6 @@ public class MainActivity extends AppCompatActivity {
         btmNav = findViewById(R.id.btmNav);
         btmNav.getMenu().getItem(2).setEnabled(false);
         btmNav.setSelectedItemId(R.id.home);
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
     }
 }

@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             app:cardBackgroundColor="@color/search_bg_clr"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="3dp"
             app:cardCornerRadius="35dp"
             android:layout_marginEnd="16dp">
 
@@ -49,5 +49,7 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <!-- Start Design From Here -->
 
 </RelativeLayout>
