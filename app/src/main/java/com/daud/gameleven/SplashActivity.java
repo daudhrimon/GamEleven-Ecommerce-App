@@ -45,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                     spImg.setVisibility(View.GONE);
                 }
             }
-        }, 2000);
+        }, 1000);
     }
 
     private void initial() {
