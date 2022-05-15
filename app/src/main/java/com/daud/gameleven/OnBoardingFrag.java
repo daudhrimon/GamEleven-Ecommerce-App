@@ -44,7 +44,7 @@ public class OnBoardingFrag extends Fragment {
             onbViewPager.setCurrentItem(Position+1);
         }else{
             startActivity(new Intent(getContext(),MainActivity.class));
-            SplashActivity.editor.putInt("SKIP",1).commit();
+            SplashActivity.editor.putInt("RUN",1).commit();
             getActivity().finish();
         }
     }

@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (getPreferences.getInt("SKIP",0)==1){
+                if (getPreferences.getInt("RUN",0)==1){
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
                     finish();
                 }else {
