@@ -48,10 +48,9 @@ public class DealsAdapter extends RecyclerView.Adapter {
                 View view3 = LayoutInflater.from(context).inflate(R.layout.hot_categories_vh,parent,false);
                 return new HotCategoriesVh(view3);
 
-            default:
-                View view = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
-                return new BrandsVh(view);
-
+                default:
+                    View view = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
+                    return new BrandsVh(view);
         }
     }
 
