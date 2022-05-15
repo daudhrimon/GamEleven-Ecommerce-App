@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -36,33 +35,47 @@ public class DealsAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-     if (viewType==1){
-         View view = LayoutInflater.from(context).inflate(R.layout.deals_carded_vh,parent,false);
-         return new DealsCardedVh(view);
-     }else if (viewType==2){
-         View view = LayoutInflater.from(context).inflate(R.layout.deals_brands_vh,parent,false);
-         return new DealsBrandVh(view);
-     } else {
-         View view = LayoutInflater.from(context).inflate(R.layout.deals_simple_vh,parent,false);
-         return new DealsSimpleVh(view);
-     }
+        switch (viewType){
+            case 1:
+                View view1 = LayoutInflater.from(context).inflate(R.layout.flash_deals_vh,parent,false);
+                return new FlashDealsVh(view1);
+
+            case 2:
+                View view2 = LayoutInflater.from(context).inflate(R.layout.daily_features_vh,parent,false);
+                return new DailyFeaturesVh(view2);
+
+            case 3:
+                View view3 = LayoutInflater.from(context).inflate(R.layout.hot_categories_vh,parent,false);
+                return new HotCategoriesVh(view3);
+
+            default:
+                View view = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
+                return new BrandsVh(view);
+
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (SATE==1){
-            holder=((DealsCardedVh)holder);
-            ((DealsCardedVh) holder).cIv.setImageResource(dList.get(position).getImage());
-            ((DealsCardedVh) holder).cTv.setText(dList.get(position).getNprice());
-            ((DealsCardedVh) holder).tvCard.setBackgroundColor(getRandomColor());
-        }else if (SATE==2){
-            holder=((DealsBrandVh)holder);
-            ((DealsBrandVh) holder).bIv.setImageResource(dList.get(position).getImage());
-            ((DealsBrandVh) holder).brand.setImageResource(dList.get(position).getBrandimage());
-        }else {
-            holder = ((DealsSimpleVh)holder);
-            ((DealsSimpleVh) holder).sIv.setImageResource(dList.get(position).getImage());
-            ((DealsSimpleVh) holder).sTv.setText(dList.get(position).getNprice());
+        switch (SATE){
+            case 1:
+                ((FlashDealsVh) holder).fdIv.setImageResource(dList.get(position).getImage());
+                ((FlashDealsVh) holder).fdTv.setText(dList.get(position).getNprice());
+                ((FlashDealsVh) holder).fdCard.setBackgroundColor(getRandomColor());
+                break;
+            case 2:
+                ((DailyFeaturesVh) holder).dfIv.setImageResource(dList.get(position).getImage());
+                ((DailyFeaturesVh) holder).dfTv.setText(dList.get(position).getNprice());
+                break;
+            case 3:
+                ((HotCategoriesVh) holder).hcIv.setImageResource(dList.get(position).getImage());
+                ((HotCategoriesVh) holder).hcTv.setText(dList.get(position).getModel());
+                ((HotCategoriesVh) holder).hcCard.setBackgroundColor(getRandomColor());
+                break;
+            default:
+                ((BrandsVh) holder).bIv.setImageResource(dList.get(position).getImage());
+                ((BrandsVh) holder).brand.setImageResource(dList.get(position).getBrandimage());
+                break;
         }
     }
 
@@ -71,33 +84,46 @@ public class DealsAdapter extends RecyclerView.Adapter {
         return dList.size();
     }
 
-    public class DealsSimpleVh extends RecyclerView.ViewHolder{
-        private ImageView sIv;
-        private TextView sTv;
+    public class FlashDealsVh extends RecyclerView.ViewHolder{
+        private ImageView fdIv;
+        private TextView fdTv;
+        private LinearLayout fdCard;
 
-        public DealsSimpleVh(@NonNull View itemView) {
+        public FlashDealsVh(@NonNull View itemView) {
             super(itemView);
-            sIv = itemView.findViewById(R.id.sIv);
-            sTv = itemView.findViewById(R.id.sTv);
+            fdIv = itemView.findViewById(R.id.fdIv);
+            fdTv = itemView.findViewById(R.id.fdTv);
+            fdCard =itemView.findViewById(R.id.fdCard);
         }
     }
 
-    public class DealsCardedVh extends RecyclerView.ViewHolder{
-        private ImageView cIv;
-        private TextView cTv;
-        private LinearLayout tvCard;
+    public class DailyFeaturesVh extends RecyclerView.ViewHolder{
+        private ImageView dfIv;
+        private TextView dfTv;
 
-        public DealsCardedVh(@NonNull View itemView) {
+        public DailyFeaturesVh(@NonNull View itemView) {
             super(itemView);
-            cIv = itemView.findViewById(R.id.cIv);
-            cTv = itemView.findViewById(R.id.cTv);
-            tvCard =itemView.findViewById(R.id.tvCard);
+            dfIv = itemView.findViewById(R.id.dfIv);
+            dfTv = itemView.findViewById(R.id.dfTv);
         }
     }
 
-    public class DealsBrandVh extends RecyclerView.ViewHolder{
+    public class HotCategoriesVh extends RecyclerView.ViewHolder{
+        private ImageView hcIv;
+        private TextView hcTv;
+        private LinearLayout hcCard;
+
+        public HotCategoriesVh(@NonNull View itemView) {
+            super(itemView);
+            hcIv = itemView.findViewById(R.id.hcIv);
+            hcTv = itemView.findViewById(R.id.hcTv);
+            hcCard =itemView.findViewById(R.id.hcCard);
+        }
+    }
+
+    public class BrandsVh extends RecyclerView.ViewHolder{
         private ImageView bIv,brand;
-        public DealsBrandVh(@NonNull View itemView) {
+        public BrandsVh(@NonNull View itemView) {
             super(itemView);
             bIv = itemView.findViewById(R.id.bIv);
             brand = itemView.findViewById(R.id.brand);

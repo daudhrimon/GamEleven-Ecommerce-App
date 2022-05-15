@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ProductsModel {
     private String name;
+    private String model;
     private String productid;
     private String category;
     private String oprice;
@@ -18,9 +19,10 @@ public class ProductsModel {
     public ProductsModel() {
     }
 
-    public ProductsModel(String name, String productid, String category, String oprice, String nprice,
+    public ProductsModel(String name, String model, String productid, String category, String oprice, String nprice,
                          int image, String description, String discount, int quantity, int brandimage) {
         this.name = name;
+        this.model = model;
         this.productid = productid;
         this.category = category;
         this.oprice = oprice;
@@ -30,6 +32,14 @@ public class ProductsModel {
         this.discount = discount;
         this.quantity = quantity;
         this.brandimage = brandimage;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public int getBrandimage() {

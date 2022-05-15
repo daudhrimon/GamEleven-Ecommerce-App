@@ -1,69 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="100dp"
+    android:layout_height="130dp"
     android:orientation="vertical"
     android:weightSum="12">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"
         android:layout_marginHorizontal="5dp"
         android:layout_marginTop="5dp"
+        android:layout_weight="8"
         app:cardCornerRadius="5dp">
 
         <ImageView
-            android:id="@+id/cIv"
+            android:id="@+id/hcIv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/one"
-            android:scaleType="center"
             android:background="@drawable/selector_deals_item"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:scaleType="center"
+            android:src="@drawable/one" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        app:cardCornerRadius="5dp"
-        android:layout_marginVertical="1dp"
-        android:layout_marginHorizontal="5dp">
+        android:layout_marginHorizontal="4dp"
+        android:layout_weight="4"
+        android:background="@color/dot_selected_border"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
-            android:id="@+id/tvCard"
+            android:id="@+id/hcCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="5">
+            android:background="@color/selector_clr"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/cTv"
-                android:layout_width="0dp"
+                android:id="@+id/hcTv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingEnd="3dp"
                 android:fontFamily="@font/roboto_med"
-                android:textColor="@color/white"
                 android:maxLines="1"
                 android:text="550.00"
-                android:textAlignment="textEnd"
-                android:textSize="11dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingStart="2dp"
-                android:fontFamily="@font/roboto_med"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:maxLines="1"
-                android:text="SAR"
-                android:textSize="11dp" />
+                android:textSize="12dp" />
 
         </LinearLayout>
 

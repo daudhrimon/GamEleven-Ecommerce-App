@@ -8,10 +8,10 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:fontFamily="@font/roboto_med"
         android:text="Hot"
         android:textAllCaps="false"
-        android:fontFamily="@font/roboto_med"
-        android:textColor="@color/textVH_txt_clr"
-        android:layout_marginHorizontal="5dp" />
+        android:textColor="@color/textVH_txt_clr" />
 
 </LinearLayout>

@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WishlistFrag"
-    android:background="@color/main_bg_clr">
+    android:background="@color/main_bg_clr"
+    tools:context=".WishlistFrag">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wishlist"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:textColor="@color/selector_clr"/>
+        android:text="Wishlist"
+        android:textColor="@color/selector_clr"
+        android:textSize="30dp" />
 
 </FrameLayout>

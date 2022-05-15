@@ -39,22 +39,26 @@ public class HomeFrag extends Fragment {
 
     private void setRecyclersDemo() {
         pList.clear();
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        pList.add(new ProductsModel("Power Bank Water Gold","1","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Chair","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Mouse","2","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
+        pList.add(new ProductsModel("Power Bank Water Gold","Gaming Pc","3","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","4","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Chair","5","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Mouse","6","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
+        pList.add(new ProductsModel("Power Bank Water Gold","Gaming Pc","7","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
+        pList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
+        flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         flashDeals.setAdapter(new DealsAdapter(getContext(),pList,1));
 
-        dailyFeatures.setAdapter(new DealsAdapter(getContext(),pList,0));
+        dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        dailyFeatures.setAdapter(new DealsAdapter(getContext(),pList,2));
 
-        hotCategories.setAdapter(new DealsAdapter(getContext(),pList,1));
+        hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        hotCategories.setAdapter(new DealsAdapter(getContext(),pList,3));
 
-        brands.setAdapter(new DealsAdapter(getContext(),pList,2));
+        brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        brands.setAdapter(new DealsAdapter(getContext(),pList,0));
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70,24 +74,14 @@ public class HomeFrag extends Fragment {
 
     private void initial(View view) {
         imageSlider = view.findViewById(R.id.imageSlider);
-
         textRecycler = view.findViewById(R.id.textRecycler);
         textRecycler.setHasFixedSize(false);
         textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
-        flashDeals = view.findViewById(R.id.flashDeals);
-        flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
-        dailyFeatures = view.findViewById(R.id.dailyFeatures);
-        dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
-        hotCategories = view.findViewById(R.id.hotCategories);
-        hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
-        brands = view.findViewById(R.id.brands);
-        brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
         textRecycler.setAdapter(new TextBtnAdapter(getContext()));
+        flashDeals = view.findViewById(R.id.flashDeals);
+        dailyFeatures = view.findViewById(R.id.dailyFeatures);
+        hotCategories = view.findViewById(R.id.hotCategories);
+        brands = view.findViewById(R.id.brands);
         pList = new ArrayList<>();
     }
 }
