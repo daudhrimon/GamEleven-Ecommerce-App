@@ -9,8 +9,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="4dp"
         android:layout_weight="8"
         app:cardCornerRadius="5dp">
 
@@ -28,7 +28,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="4dp"
+        android:layout_marginHorizontal="3dp"
         android:layout_weight="4"
         app:cardCornerRadius="8dp">
 
@@ -37,31 +37,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/selector_clr"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="5">
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/fdTv"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
                 android:fontFamily="@font/roboto_med"
                 android:maxLines="1"
-                android:paddingEnd="3dp"
                 android:text="550.00"
-                android:textAlignment="textEnd"
-                android:textColor="@color/white"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/roboto_med"
-                android:maxLines="1"
-                android:paddingStart="1dp"
-                android:text="SAR"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 

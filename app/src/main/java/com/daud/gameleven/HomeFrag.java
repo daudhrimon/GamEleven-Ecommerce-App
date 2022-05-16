@@ -3,6 +3,7 @@ package com.daud.gameleven;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFrag extends Fragment {
-    private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands;
+    private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
     private ImageSlider imageSlider;
     private List<ProductsModel> pList;
 
@@ -58,9 +59,11 @@ public class HomeFrag extends Fragment {
         hotCategories.setAdapter(new DealsAdapter(getContext(),pList,3));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new DealsAdapter(getContext(),pList,0));
+        brands.setAdapter(new DealsAdapter(getContext(),pList,4));
 
-        ////////////////////////////////////////////////////////////////////////////////////////////
+        bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
+        bestSale.setAdapter(new DealsAdapter(getContext(),pList,0));
+
 
     }
 
@@ -82,6 +85,7 @@ public class HomeFrag extends Fragment {
         dailyFeatures = view.findViewById(R.id.dailyFeatures);
         hotCategories = view.findViewById(R.id.hotCategories);
         brands = view.findViewById(R.id.brands);
+        bestSale = view.findViewById(R.id.bestSale);
         pList = new ArrayList<>();
     }
 }

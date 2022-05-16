@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -48,9 +50,12 @@ public class DealsAdapter extends RecyclerView.Adapter {
                 View view3 = LayoutInflater.from(context).inflate(R.layout.hot_categories_vh,parent,false);
                 return new HotCategoriesVh(view3);
 
-                default:
-                    View view = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
-                    return new BrandsVh(view);
+            case 4:
+                    View view4 = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
+                    return new BrandsVh(view4);
+            default:
+                View view = LayoutInflater.from(context).inflate(R.layout.best_sale_vh,parent,false);
+                return new BestSaleProVH(view);
         }
     }
 
@@ -59,21 +64,27 @@ public class DealsAdapter extends RecyclerView.Adapter {
         switch (SATE){
             case 1:
                 ((FlashDealsVh) holder).fdIv.setImageResource(dList.get(position).getImage());
-                ((FlashDealsVh) holder).fdTv.setText(dList.get(position).getNprice());
+                ((FlashDealsVh) holder).fdTv.setText(dList.get(position).getNprice()+" SAR");
                 ((FlashDealsVh) holder).fdCard.setBackgroundColor(getRandomColor());
                 break;
             case 2:
                 ((DailyFeaturesVh) holder).dfIv.setImageResource(dList.get(position).getImage());
-                ((DailyFeaturesVh) holder).dfTv.setText(dList.get(position).getNprice());
+                ((DailyFeaturesVh) holder).dfTv.setText(dList.get(position).getNprice()+" SAR");
                 break;
             case 3:
                 ((HotCategoriesVh) holder).hcIv.setImageResource(dList.get(position).getImage());
                 ((HotCategoriesVh) holder).hcTv.setText(dList.get(position).getModel());
                 ((HotCategoriesVh) holder).hcCard.setBackgroundColor(getRandomColor());
                 break;
-            default:
+            case 4:
                 ((BrandsVh) holder).bIv.setImageResource(dList.get(position).getImage());
                 ((BrandsVh) holder).brand.setImageResource(dList.get(position).getBrandimage());
+                break;
+            default:
+                ((BestSaleProVH) holder).bspIv.setImageResource(dList.get(position).getImage());
+                ((BestSaleProVH) holder).bspName.setText(dList.get(position).getName());
+                ((BestSaleProVH) holder).bspCate.setText(dList.get(position).getCategory());
+                ((BestSaleProVH) holder).bspPrice.setText(dList.get(position).getNprice()+" SAR");
                 break;
         }
     }
@@ -122,10 +133,26 @@ public class DealsAdapter extends RecyclerView.Adapter {
 
     public class BrandsVh extends RecyclerView.ViewHolder{
         private ImageView bIv,brand;
+
         public BrandsVh(@NonNull View itemView) {
             super(itemView);
             bIv = itemView.findViewById(R.id.bIv);
             brand = itemView.findViewById(R.id.brand);
+        }
+    }
+
+    public class BestSaleProVH extends RecyclerView.ViewHolder{
+        private ImageView bspIv;
+        private TextView bspName,bspCate,bspPrice;
+        private FloatingActionButton bspFab;
+
+        public BestSaleProVH(@NonNull View itemView) {
+            super(itemView);
+            bspIv = itemView.findViewById(R.id.bspIv);
+            bspName = itemView.findViewById(R.id.bspName);
+            bspCate = itemView.findViewById(R.id.bspCate);
+            bspPrice = itemView.findViewById(R.id.bspPrice);
+            bspFab = itemView.findViewById(R.id.bspFab);
         }
     }
 

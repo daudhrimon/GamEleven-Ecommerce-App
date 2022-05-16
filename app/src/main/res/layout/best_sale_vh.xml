@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="234dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3.5"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/bspIv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:paddingHorizontal="25dp"
+            android:src="@drawable/three"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+            <TextView
+                android:id="@+id/bspName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/bspFab"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Power Bank Water Gold"
+                android:textColor="#021E65"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/bspCate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_below="@id/bspName"
+                android:layout_toStartOf="@+id/bspFab"
+                android:text="Sound Box"
+                android:maxLines="1"
+                android:textSize="12dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#021E65"/>
+
+            <TextView
+                android:id="@+id/bspPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:layout_toStartOf="@+id/bspFab"
+                android:fontFamily="@font/roboto_med"
+                android:maxLines="1"
+                android:text="550.00"
+                android:textColor="@color/selector_clr"
+                android:textSize="13dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bspFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="#F4F4F4"
+                android:outlineSpotShadowColor="@color/trans"
+                android:src="@drawable/cart_icon"
+                app:borderWidth="0dp"
+                app:fabCustomSize="30dp"
+                app:maxImageSize="22dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
