@@ -20,7 +20,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFrag extends Fragment {
+public class FragHome extends Fragment {
     private ImageButton menuBtn;
     private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
     private ImageSlider imageSlider;
@@ -45,7 +45,7 @@ public class HomeFrag extends Fragment {
     }
 
     private void menuBtnOnClick() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new CategoryFrag()).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).commit();
     }
 
     private void setRecyclersDemo() {
@@ -60,19 +60,19 @@ public class HomeFrag extends Fragment {
         pList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        flashDeals.setAdapter(new AdapterOne(getContext(),pList,1));
+        flashDeals.setAdapter(new AdapterHome(getContext(),pList,1));
 
         dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        dailyFeatures.setAdapter(new AdapterOne(getContext(),pList,2));
+        dailyFeatures.setAdapter(new AdapterHome(getContext(),pList,2));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new AdapterOne(getContext(),pList,3));
+        hotCategories.setAdapter(new AdapterHome(getContext(),pList,3));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new AdapterOne(getContext(),pList,4));
+        brands.setAdapter(new AdapterHome(getContext(),pList,4));
 
         bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new AdapterTwo(getContext(),pList,1));
+        bestSale.setAdapter(new AdapterHome(getContext(),pList,5));
 
 
     }
@@ -91,7 +91,7 @@ public class HomeFrag extends Fragment {
         textRecycler = view.findViewById(R.id.textRecycler);
         textRecycler.setHasFixedSize(false);
         textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        textRecycler.setAdapter(new TextBtnAdapter(getContext()));
+        textRecycler.setAdapter(new AdapterTextBtn(getContext()));
         flashDeals = view.findViewById(R.id.flashDeals);
         dailyFeatures = view.findViewById(R.id.dailyFeatures);
         hotCategories = view.findViewById(R.id.hotCategories);

@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WishlistFrag extends Fragment {
+public class FragWishlist extends Fragment {
     private ImageButton wishBack;
     private RecyclerView wishRecycler;
     private List<ProductsModel> wList;
@@ -27,8 +27,8 @@ public class WishlistFrag extends Fragment {
         initial(view);
 
         wishBack.setOnClickListener(view1 -> {
-            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
-            MainActivity.btmNav.setSelectedItemId(R.id.home);
+            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+            ActivityMain.btmNav.setSelectedItemId(R.id.home);
 
         });
 
@@ -49,7 +49,7 @@ public class WishlistFrag extends Fragment {
         wList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         wishRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        wishRecycler.setAdapter(new AdapterTwo(getContext(),wList,2));
+        wishRecycler.setAdapter(new AdapterOthers(getContext(),wList,1));
     }
 
     private void initial(View view) {

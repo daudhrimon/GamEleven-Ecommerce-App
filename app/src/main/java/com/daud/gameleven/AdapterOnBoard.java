@@ -11,11 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-public class OnBoardAdapter extends PagerAdapter {
+public class AdapterOnBoard extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public OnBoardAdapter(Context context) {
+    public AdapterOnBoard(Context context) {
         this.context = context;
     }
 

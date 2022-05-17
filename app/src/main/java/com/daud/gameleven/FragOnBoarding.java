@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class OnBoardingFrag extends Fragment {
+public class FragOnBoarding extends Fragment {
     private ViewPager onbViewPager;
     private ImageView dot1,dot2,dot3;
     private Button skipBtn;
@@ -26,7 +26,7 @@ public class OnBoardingFrag extends Fragment {
 
         initial(view);
 
-        onbViewPager.setAdapter(new OnBoardAdapter(getContext()));
+        onbViewPager.setAdapter(new AdapterOnBoard(getContext()));
 
         addDots(0);
 
@@ -43,8 +43,8 @@ public class OnBoardingFrag extends Fragment {
         if (Position < 2){
             onbViewPager.setCurrentItem(Position+1);
         }else{
-            startActivity(new Intent(getContext(),MainActivity.class));
-            SplashActivity.editor.putInt("RUN",1).commit();
+            startActivity(new Intent(getContext(), ActivityMain.class));
+            ActivitySplash.editor.putInt("RUN",1).commit();
             getActivity().finish();
         }
     }

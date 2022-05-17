@@ -9,11 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class TextBtnAdapter extends RecyclerView.Adapter<TextBtnAdapter.TextBtnVH> {
+public class AdapterTextBtn extends RecyclerView.Adapter<AdapterTextBtn.TextBtnVH> {
     private Context context;
     private String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
 
-    public TextBtnAdapter(Context context) {
+    public AdapterTextBtn(Context context) {
         this.context = context;
     }
 

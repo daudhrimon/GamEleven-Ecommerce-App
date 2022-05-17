@@ -12,16 +12,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class AdapterOne extends RecyclerView.Adapter {
+public class AdapterHome extends RecyclerView.Adapter {
     private Context context;
     private List<ProductsModel> oList;
     private int SATE;
 
-    public AdapterOne(Context context, List<ProductsModel> oList, int SATE) {
+    public AdapterHome(Context context, List<ProductsModel> oList, int SATE) {
         this.context = context;
         this.oList = oList;
         this.SATE = SATE;
@@ -52,8 +54,11 @@ public class AdapterOne extends RecyclerView.Adapter {
                     View view4 = LayoutInflater.from(context).inflate(R.layout.vh_brands,parent,false);
                     return new BrandsVh(view4);
 
-                    default:
-                        return null;
+            case 5:
+                View view5 = LayoutInflater.from(context).inflate(R.layout.vh_best_sale,parent,false);
+                return new BestSaleProVH(view5);
+
+            default: return null;
         }
     }
 
@@ -77,6 +82,13 @@ public class AdapterOne extends RecyclerView.Adapter {
             case 4:
                 ((BrandsVh) holder).bIv.setImageResource(oList.get(position).getImage());
                 ((BrandsVh) holder).brand.setImageResource(oList.get(position).getBrandimage());
+                break;
+            case 5:
+                holder = ((BestSaleProVH)holder);
+                ((BestSaleProVH) holder).bspIv.setImageResource(oList.get(position).getImage());
+                ((BestSaleProVH) holder).bspName.setText(oList.get(position).getName());
+                ((BestSaleProVH) holder).bspCat.setText(oList.get(position).getCategory());
+                ((BestSaleProVH) holder).bspPrice.setText(oList.get(position).getNprice() + " SAR");
                 break;
         }
     }
@@ -130,6 +142,21 @@ public class AdapterOne extends RecyclerView.Adapter {
             super(itemView);
             bIv = itemView.findViewById(R.id.bIv);
             brand = itemView.findViewById(R.id.brand);
+        }
+    }
+
+    public class BestSaleProVH extends RecyclerView.ViewHolder{
+        private ImageView bspIv;
+        private TextView bspName,bspCat,bspPrice;
+        private FloatingActionButton bspFab;
+
+        public BestSaleProVH(@NonNull View itemView) {
+            super(itemView);
+            bspIv = itemView.findViewById(R.id.bspIv);
+            bspName = itemView.findViewById(R.id.bspName);
+            bspCat = itemView.findViewById(R.id.bspCat);
+            bspPrice = itemView.findViewById(R.id.bspPrice);
+            bspFab = itemView.findViewById(R.id.bspFab);
         }
     }
 

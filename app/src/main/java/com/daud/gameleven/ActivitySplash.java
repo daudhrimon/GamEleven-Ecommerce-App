@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class ActivitySplash extends AppCompatActivity {
     private ImageView spImg;
     private FrameLayout spFrame;
     public static SharedPreferences getPreferences;
@@ -33,15 +33,15 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (getPreferences.getInt("RUN",0)==1){
-                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    startActivity(new Intent(ActivitySplash.this, ActivityMain.class));
                     finish();
                 }else {
-                    Animation fadeoutAnim = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.fade_out);
+                    Animation fadeoutAnim = AnimationUtils.loadAnimation(ActivitySplash.this, R.anim.fade_out);
                     spImg.startAnimation(fadeoutAnim);
                     spFrame.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction()
                             .setCustomAnimations(R.anim.fade_in,R.anim.fade_out)
-                            .replace(R.id.spFrame,new OnBoardingFrag()).commit();
+                            .replace(R.id.spFrame,new FragOnBoarding()).commit();
                     spImg.setVisibility(View.GONE);
                 }
             }

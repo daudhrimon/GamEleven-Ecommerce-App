@@ -4,14 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityMain extends AppCompatActivity {
     private FloatingActionButton fab;
     public static BottomNavigationView btmNav;
 
@@ -36,23 +34,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fabOnClickHandler() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         btmNav.setSelectedItemId(R.id.home);
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
         switch (item.getItemId()){
             case R.id.category:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new CategoryFrag()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).commit();
                 break;
             case R.id.wishlist:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new WishlistFrag()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragWishlist()).commit();
                 break;
             case R.id.cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new CartFrag()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCart()).commit();
                 break;
             case R.id.account:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new AccountFrag()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
                 break;
             default:break;
         }
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
     }
 
     private void initial() {
@@ -68,6 +66,6 @@ public class MainActivity extends AppCompatActivity {
         btmNav = findViewById(R.id.btmNav);
         btmNav.getMenu().getItem(2).setEnabled(false);
         btmNav.setSelectedItemId(R.id.home);
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
     }
 }
