@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
     }
 
