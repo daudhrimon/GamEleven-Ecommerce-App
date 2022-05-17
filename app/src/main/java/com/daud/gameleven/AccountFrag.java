@@ -17,9 +17,4 @@ public class AccountFrag extends Fragment {
         return inflater.inflate(R.layout.frag_account, container, false);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
-    }
 }

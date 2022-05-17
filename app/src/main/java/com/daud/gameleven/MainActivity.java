@@ -58,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+    }
+
     private void initial() {
         fab = findViewById(R.id.fab);
         btmNav = findViewById(R.id.btmNav);
