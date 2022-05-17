@@ -13,7 +13,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
-    private BottomNavigationView btmNav;
+    public static BottomNavigationView btmNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
