@@ -39,22 +39,22 @@ public class DealsAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         switch (viewType){
             case 1:
-                View view1 = LayoutInflater.from(context).inflate(R.layout.flash_deals_vh,parent,false);
+                View view1 = LayoutInflater.from(context).inflate(R.layout.vh_flash_deals,parent,false);
                 return new FlashDealsVh(view1);
 
             case 2:
-                View view2 = LayoutInflater.from(context).inflate(R.layout.daily_features_vh,parent,false);
+                View view2 = LayoutInflater.from(context).inflate(R.layout.vh_daily_features,parent,false);
                 return new DailyFeaturesVh(view2);
 
             case 3:
-                View view3 = LayoutInflater.from(context).inflate(R.layout.hot_categories_vh,parent,false);
+                View view3 = LayoutInflater.from(context).inflate(R.layout.vh_hot_categories,parent,false);
                 return new HotCategoriesVh(view3);
 
             case 4:
-                    View view4 = LayoutInflater.from(context).inflate(R.layout.brands_vh,parent,false);
+                    View view4 = LayoutInflater.from(context).inflate(R.layout.vh_brands,parent,false);
                     return new BrandsVh(view4);
             default:
-                View view = LayoutInflater.from(context).inflate(R.layout.best_sale_vh,parent,false);
+                View view = LayoutInflater.from(context).inflate(R.layout.vh_best_sale,parent,false);
                 return new BestSaleProVH(view);
         }
     }

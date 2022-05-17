@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-
 public class TextBtnAdapter extends RecyclerView.Adapter<TextBtnAdapter.TextBtnVH> {
     private Context context;
     private String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
@@ -22,7 +20,7 @@ public class TextBtnAdapter extends RecyclerView.Adapter<TextBtnAdapter.TextBtnV
     @NonNull
     @Override
     public TextBtnVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.text_btn_vh,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_text_btn,parent,false);
         return new TextBtnVH(view);
     }
 
