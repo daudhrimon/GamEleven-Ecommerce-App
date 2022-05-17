@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="137dp"
+    android:layout_marginVertical="3.5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/cartIv"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="6dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/one" />
+
+    <ImageView
+        android:id="@+id/selectBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/selector_wish_dlt"
+        android:clickable="true"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/cartName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cartCat"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="2"
+        android:text="Power Bank Water Gold"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/cartCat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cartId"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="Sound Box"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/cartId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="12345"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/cartPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartId"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_med"
+        android:maxLines="1"
+        android:text="550.00"
+        android:textColor="@color/selector_clr"
+        android:textSize="15dp" />
+
+</RelativeLayout>

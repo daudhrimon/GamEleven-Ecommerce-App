@@ -39,7 +39,7 @@ public class AdapterTwo extends RecyclerView.Adapter {
                 return new BestSaleProVH(view1);
 
             case 2:
-                View view2 = LayoutInflater.from(context).inflate(R.layout.lay_wishlist_item,parent,false);
+                View view2 = LayoutInflater.from(context).inflate(R.layout.vh_wishlist_item,parent,false);
                 return new WishlistVh(view2);
 
             default:
