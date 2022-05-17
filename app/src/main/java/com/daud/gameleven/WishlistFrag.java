@@ -16,4 +16,10 @@ public class WishlistFrag extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.frag_wishlist, container, false);
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new HomeFrag()).commit();
+    }
 }
