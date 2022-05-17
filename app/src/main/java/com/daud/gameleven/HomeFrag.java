@@ -60,19 +60,19 @@ public class HomeFrag extends Fragment {
         pList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        flashDeals.setAdapter(new DealsAdapter(getContext(),pList,1));
+        flashDeals.setAdapter(new AdapterOne(getContext(),pList,1));
 
         dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        dailyFeatures.setAdapter(new DealsAdapter(getContext(),pList,2));
+        dailyFeatures.setAdapter(new AdapterOne(getContext(),pList,2));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new DealsAdapter(getContext(),pList,3));
+        hotCategories.setAdapter(new AdapterOne(getContext(),pList,3));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new DealsAdapter(getContext(),pList,4));
+        brands.setAdapter(new AdapterOne(getContext(),pList,4));
 
         bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new DealsAdapter(getContext(),pList,0));
+        bestSale.setAdapter(new AdapterTwo(getContext(),pList,1));
 
 
     }

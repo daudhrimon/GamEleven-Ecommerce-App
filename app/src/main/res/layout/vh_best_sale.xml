@@ -39,17 +39,17 @@
                 android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/bspCate"
+                android:id="@+id/bspCat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
                 android:layout_below="@id/bspName"
+                android:layout_marginTop="1dp"
                 android:layout_toStartOf="@+id/bspFab"
-                android:text="Sound Box"
-                android:maxLines="1"
-                android:textSize="12dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="#021E65"/>
+                android:maxLines="1"
+                android:text="Sound Box"
+                android:textColor="#021E65"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/bspPrice"
