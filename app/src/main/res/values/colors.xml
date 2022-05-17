@@ -27,5 +27,6 @@
     <color name="home_txt_clr">#434343</color>
 
     <color name="textVH_txt_clr">#262626</color>
+    <color name="frag_name_clr">#404040</color>
 
 </resources>

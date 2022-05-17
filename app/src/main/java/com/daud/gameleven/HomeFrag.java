@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFrag extends Fragment {
+    private ImageButton menuBtn;
     private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
     private ImageSlider imageSlider;
     private List<ProductsModel> pList;
@@ -35,7 +37,15 @@ public class HomeFrag extends Fragment {
 
         setRecyclersDemo();
 
+        menuBtn.setOnClickListener(view1 -> {
+            menuBtnOnClick();
+        });
+
         return view;
+    }
+
+    private void menuBtnOnClick() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new CategoryFrag()).commit();
     }
 
     private void setRecyclersDemo() {
@@ -76,6 +86,7 @@ public class HomeFrag extends Fragment {
     }
 
     private void initial(View view) {
+        menuBtn = view.findViewById(R.id.menuBtn);
         imageSlider = view.findViewById(R.id.imageSlider);
         textRecycler = view.findViewById(R.id.textRecycler);
         textRecycler.setHasFixedSize(false);

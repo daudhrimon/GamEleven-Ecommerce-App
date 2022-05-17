@@ -26,7 +26,7 @@
         android:src="@drawable/geleven_icon"
         app:borderWidth="0dp"
         app:fabCustomSize="64dp"
-        app:maxImageSize="40dp"
+        app:maxImageSize="45dp"
         app:tint="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -42,9 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:paddingHorizontal="7dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="4dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
             app:itemIconSize="20dp"
             app:itemRippleColor="@color/selector_clr"
             app:itemTextAppearanceActive="@style/Widget.Material3.BottomNavigationView"
