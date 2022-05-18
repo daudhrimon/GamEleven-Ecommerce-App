@@ -21,7 +21,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/cartBack"
+                android:id="@+id/sInBack"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="58dp"
                 android:layout_height="wrap_content"
@@ -42,80 +42,98 @@
 
     <!-- DESIGN FROM HERE -->
 
-    <ImageView
-        android:layout_width="187dp"
+    <LinearLayout
+        android:id="@+id/centerLay"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/signInPhn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/sp_img" />
-
-    <EditText
-        android:id="@+id/signInPhn"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_above="@id/signInPass"
-        android:drawableStart="@drawable/telephone"
-        android:drawablePadding="10dp"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginVertical="8dp"
-        android:background="#F0F0F0"
-        android:fontFamily="@font/roboto_regular"
-        android:hint="Phone Number"
-        android:paddingHorizontal="20dp"
-        android:textColor="#9A9A9A"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/signInPass"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
         android:layout_centerInParent="true"
-        android:drawableStart="@drawable/lock"
-        android:drawablePadding="10dp"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginVertical="8dp"
-        android:background="#F0F0F0"
-        android:fontFamily="@font/roboto_regular"
-        android:hint="Password"
-        android:paddingHorizontal="20dp"
-        android:textColor="#9A9A9A"
-        android:textSize="15sp" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/forgotPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signInPass"
-        android:layout_alignParentEnd="true"
-        android:layout_marginHorizontal="36dp"
-        android:layout_marginVertical="5dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="Forgot your password?"
-        android:textColor="#9A9A9A"
-        android:textSize="15sp" />
+        <ImageView
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sp_img" />
 
-    <Button
-        android:id="@+id/signInBtn"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/forgotPass"
-        android:layout_marginHorizontal="34dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="@color/selector_clr"
-        android:fontFamily="@font/roboto_med"
-        android:text="Sign In"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <EditText
+            android:id="@+id/sInPhnEt"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
+            android:background="#F0F0F0"
+            android:drawableStart="@drawable/telephone"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingHorizontal="20dp"
+            android:textColor="#9A9A9A"
+            android:textSize="15sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passLay"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
+            android:background="#F0F0F0"
+            android:gravity="center_vertical"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#9A9A9A">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sInPassEt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="6dp"
+                android:background="@color/trans"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="13dp"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="Password"
+                android:paddingVertical="0dp"
+                android:textColor="#9A9A9A"
+                android:textSize="15sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgotPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="31dp"
+            android:layout_marginVertical="6dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Forgot your password?"
+            android:textAlignment="textEnd"
+            android:textColor="#9A9A9A"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/signInBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/selector_clr"
+            android:fontFamily="@font/roboto_med"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signInBtn"
+        android:layout_below="@+id/centerLay"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="10dp"
@@ -128,16 +146,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto_regular"
-            android:text="Already Have An Account ?"
+            android:text="Don't Have An Account ?"
             android:textColor="#6E6E6E"
             android:textSize="14dp" />
 
         <Button
+            android:id="@+id/signUpBtn"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Sign In"
+            android:text="Sign Up"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/selector_clr"

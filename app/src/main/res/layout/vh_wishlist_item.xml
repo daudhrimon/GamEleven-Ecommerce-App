@@ -52,7 +52,7 @@
             android:maxLines="2"
             android:text="Power Bank Water Gold"
             android:textColor="@color/cart_txt_clr"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/wishCat"
@@ -65,7 +65,7 @@
             android:maxLines="1"
             android:text="Sound Box"
             android:textColor="@color/cart_txt_clr"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/wishPrice"
@@ -78,7 +78,7 @@
             android:maxLines="1"
             android:text="550.00"
             android:textColor="@color/selector_clr"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
     </RelativeLayout>
 

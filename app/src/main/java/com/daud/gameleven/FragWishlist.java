@@ -28,7 +28,7 @@ public class FragWishlist extends Fragment {
 
         wishBack.setOnClickListener(view1 -> {
             getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-            ActivityMain.btmNav.setSelectedItemId(R.id.home);
+            MainActivity.btmNav.setSelectedItemId(R.id.home);
 
         });
 

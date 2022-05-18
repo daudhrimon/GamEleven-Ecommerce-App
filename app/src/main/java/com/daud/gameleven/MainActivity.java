@@ -2,16 +2,23 @@ package com.daud.gameleven;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class ActivityMain extends AppCompatActivity {
-    private FloatingActionButton fab;
+public class MainActivity extends AppCompatActivity {
+    public static CardView btmCard;
     public static BottomNavigationView btmNav;
+    public static FloatingActionButton fab;
+    public static SharedPreferences getPreferences;
+    public static SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +57,16 @@ public class ActivityMain extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCart()).commit();
                 break;
             case R.id.account:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
-                break;
+                if (getPreferences.getInt("SIGNIN",0)==1){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
+                    break;
+                } else {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn()).commit();
+                    fab.setVisibility(View.GONE);
+                    btmCard.setVisibility(View.GONE);
+                    break;
+                }
+
             default:break;
         }
     }
@@ -59,13 +74,23 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        btmNav.setSelectedItemId(R.id.home);
+        if (btmCard.getVisibility()==View.GONE){
+            btmCard.setVisibility(View.VISIBLE);
+        }
+        if (fab.getVisibility()==View.GONE){
+            fab.setVisibility(View.VISIBLE);
+        }
     }
 
     private void initial() {
-        fab = findViewById(R.id.fab);
+        btmCard = findViewById(R.id.btmCard);
         btmNav = findViewById(R.id.btmNav);
+        fab = findViewById(R.id.fab);
         btmNav.getMenu().getItem(2).setEnabled(false);
         btmNav.setSelectedItemId(R.id.home);
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        getPreferences = getSharedPreferences("MySp",MODE_PRIVATE);
+        editor = getPreferences.edit();
     }
 }

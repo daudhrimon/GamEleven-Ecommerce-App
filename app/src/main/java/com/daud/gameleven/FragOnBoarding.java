@@ -43,8 +43,8 @@ public class FragOnBoarding extends Fragment {
         if (Position < 2){
             onbViewPager.setCurrentItem(Position+1);
         }else{
-            startActivity(new Intent(getContext(), ActivityMain.class));
-            ActivitySplash.editor.putInt("RUN",1).commit();
+            SplashActivity.editor.putInt("RUN",1).commit();
+            startActivity(new Intent(getContext(), MainActivity.class));
             getActivity().finish();
         }
     }

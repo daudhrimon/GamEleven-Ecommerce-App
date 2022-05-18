@@ -37,7 +37,7 @@ public class FragCart extends Fragment {
 
     private void cartBackOnClick() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        ActivityMain.btmNav.setSelectedItemId(R.id.home);
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
     private void cartRecyclerHandler() {
