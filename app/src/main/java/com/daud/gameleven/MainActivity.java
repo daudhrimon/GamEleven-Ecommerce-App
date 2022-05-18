@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void fabOnClickHandler() {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         btmNav.setSelectedItemId(R.id.home);
+
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
@@ -73,14 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        btmCard.setVisibility(View.VISIBLE);
+        fab.setVisibility(View.VISIBLE);
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         btmNav.setSelectedItemId(R.id.home);
-        if (btmCard.getVisibility()==View.GONE){
-            btmCard.setVisibility(View.VISIBLE);
-        }
-        if (fab.getVisibility()==View.GONE){
-            fab.setVisibility(View.VISIBLE);
-        }
     }
 
     private void initial() {

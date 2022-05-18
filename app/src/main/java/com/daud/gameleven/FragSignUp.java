@@ -33,9 +33,9 @@ public class FragSignUp extends Fragment {
     }
 
     private void sUpBackClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
