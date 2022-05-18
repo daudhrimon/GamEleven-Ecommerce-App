@@ -148,7 +148,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Don't Have An Account ?"
             android:textColor="#6E6E6E"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/signUpBtn"
@@ -160,7 +160,7 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/selector_clr"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

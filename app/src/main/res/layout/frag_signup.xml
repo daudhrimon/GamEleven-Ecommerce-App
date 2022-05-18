@@ -35,7 +35,7 @@
                 android:fontFamily="@font/roboto_med"
                 android:text="Sign Up"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -130,7 +130,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="I agree to the "
                 android:textColor="#6E6E6E"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/privacyPolicy"
@@ -140,7 +140,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="Privacy Policy"
                 android:textColor="#D81D4C"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/and"
@@ -150,7 +150,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text=" and "
                 android:textColor="#6E6E6E"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -159,7 +159,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/terms_and"
                 android:textColor="#6E6E6E"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/condition"
@@ -170,7 +170,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/conditions"
                 android:textColor="#6E6E6E"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -180,7 +180,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text=" of Limarket"
                 android:textColor="#6E6E6E"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
         </RelativeLayout>
 
@@ -199,7 +199,7 @@
         android:text="Create Account"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="17dp"
+        android:textSize="17sp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
@@ -220,7 +220,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Already Have An Account ?"
             android:textColor="#6E6E6E"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/upSignInBtn"
@@ -232,7 +232,7 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/selector_clr"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

@@ -94,7 +94,7 @@
                         android:gravity="center"
                         android:text="Coupons"
                         android:textColor="@color/home_txt_clr"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -125,7 +125,7 @@
                         android:gravity="center"
                         android:text="Gift Card"
                         android:textColor="@color/home_txt_clr"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -156,7 +156,7 @@
                         android:gravity="center"
                         android:text="Slash"
                         android:textColor="@color/home_txt_clr"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -187,7 +187,7 @@
                         android:gravity="center"
                         android:text="PC Assemble"
                         android:textColor="@color/home_txt_clr"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -214,7 +214,7 @@
                     android:fontFamily="@font/roboto_med"
                     android:text="Flash Deals"
                     android:textColor="@color/home_txt_clr"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/flashDeals"
@@ -246,7 +246,7 @@
                     android:fontFamily="@font/roboto_med"
                     android:text="Daily Features"
                     android:textColor="@color/home_txt_clr"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/dailyFeatures"
@@ -278,7 +278,7 @@
                     android:fontFamily="@font/roboto_med"
                     android:text="Hot Categories"
                     android:textColor="@color/home_txt_clr"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/hotCategories"
@@ -310,7 +310,7 @@
                     android:fontFamily="@font/roboto_med"
                     android:text="Brands"
                     android:textColor="@color/home_txt_clr"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/brands"
@@ -336,7 +336,7 @@
                     android:fontFamily="@font/roboto_med"
                     android:text="Best Sale Products"
                     android:textColor="@color/home_txt_clr"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/bestSale"

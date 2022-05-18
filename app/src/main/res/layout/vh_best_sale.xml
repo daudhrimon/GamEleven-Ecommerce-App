@@ -36,7 +36,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="Power Bank Water Gold"
                 android:textColor="#021E65"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/bspCat"
@@ -49,7 +49,7 @@
                 android:maxLines="1"
                 android:text="Sound Box"
                 android:textColor="#021E65"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/bspPrice"
@@ -62,7 +62,7 @@
                 android:maxLines="1"
                 android:text="550.00"
                 android:textColor="@color/selector_clr"
-                android:textSize="13dp" />
+                android:textSize="13sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/bspFab"

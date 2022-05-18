@@ -54,7 +54,7 @@
         android:fontFamily="@font/roboto_med"
         android:text="SKIP"
         android:textColor="@color/onb_btn_txt_clr"
-        android:textSize="17dp" />
+        android:textSize="17sp" />
 
     <View
         android:id="@+id/spView"
