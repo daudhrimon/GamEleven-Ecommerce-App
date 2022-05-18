@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragSignIn">
+
+    <!--ToolBar-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:cardBackgroundColor="@color/sign_bg_clr">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/cartBack"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_med"
+                android:text="Sign In"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- DESIGN FROM HERE -->
+
+    <ImageView
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/signInPhn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sp_img" />
+
+    <EditText
+        android:id="@+id/signInPhn"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_above="@id/signInPass"
+        android:drawableStart="@drawable/telephone"
+        android:drawablePadding="10dp"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginVertical="8dp"
+        android:background="#F0F0F0"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Phone Number"
+        android:paddingHorizontal="20dp"
+        android:textColor="#9A9A9A"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/signInPass"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_centerInParent="true"
+        android:drawableStart="@drawable/lock"
+        android:drawablePadding="10dp"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginVertical="8dp"
+        android:background="#F0F0F0"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Password"
+        android:paddingHorizontal="20dp"
+        android:textColor="#9A9A9A"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signInPass"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginVertical="5dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Forgot your password?"
+        android:textColor="#9A9A9A"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/signInBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/forgotPass"
+        android:layout_marginHorizontal="34dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/selector_clr"
+        android:fontFamily="@font/roboto_med"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signInBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="10dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Already Have An Account ?"
+            android:textColor="#6E6E6E"
+            android:textSize="14dp" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Sign In"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/selector_clr"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

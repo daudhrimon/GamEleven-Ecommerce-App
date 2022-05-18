@@ -28,6 +28,7 @@
             android:layout_above="@id/cartCat"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
+            android:padding="5dp"
             android:background="@drawable/cart_unselected"
             android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
