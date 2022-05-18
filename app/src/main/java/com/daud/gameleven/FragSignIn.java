@@ -46,10 +46,10 @@ public class FragSignIn extends Fragment {
     }
 
     private void sInBackClickHandler() {
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void signUpBtnClickHandler() {

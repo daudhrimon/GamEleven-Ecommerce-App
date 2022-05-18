@@ -1,136 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="137dp"
-    android:layout_marginVertical="3.5dp"
+    android:layout_marginVertical="3dp"
     android:background="@color/white">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/cartIv"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="20dp"
+        android:paddingHorizontal="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/one" />
 
-        <ImageView
-            android:id="@+id/cartIv"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="20dp"
-            android:paddingHorizontal="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/one" />
+    <ImageView
+        android:id="@+id/selectBtn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_above="@id/cartCat"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/cart_unselected"
+        android:clickable="true"
+        android:padding="5dp"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageView
-            android:id="@+id/selectBtn"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_above="@id/cartCat"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:padding="5dp"
-            android:background="@drawable/cart_unselected"
-            android:clickable="true"
+
+    <TextView
+        android:id="@+id/cartName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cartCat"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="2"
+        android:text="Power Bank Water Gold"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartCat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cartId"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="Sound Box"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/selectBtn"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="12345"
+        android:textColor="@color/cart_txt_clr"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartId"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@id/cartCounter"
+        android:layout_toEndOf="@id/cartIv"
+        android:fontFamily="@font/roboto_med"
+        android:maxLines="1"
+        android:text="550.00"
+        android:textColor="@color/selector_clr"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/cartCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@+id/cartId"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+        <ImageButton
+            android:id="@+id/cartPlus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#F0F0F0"
+            android:src="@drawable/plus"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-
         <TextView
-            android:id="@+id/cartName"
+            android:id="@+id/cartCount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/cartCat"
-            android:layout_toStartOf="@id/selectBtn"
-            android:layout_toEndOf="@id/cartIv"
-            android:fontFamily="@font/roboto_regular"
-            android:maxLines="2"
-            android:text="Power Bank Water Gold"
-            android:textColor="@color/cart_txt_clr"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/cartCat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/cartId"
-            android:layout_toStartOf="@id/selectBtn"
-            android:layout_toEndOf="@id/cartIv"
-            android:fontFamily="@font/roboto_regular"
-            android:maxLines="1"
-            android:text="Sound Box"
-            android:textColor="@color/cart_txt_clr"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/cartId"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/selectBtn"
-            android:layout_toEndOf="@id/cartIv"
-            android:fontFamily="@font/roboto_regular"
-            android:maxLines="1"
-            android:text="12345"
-            android:textColor="@color/cart_txt_clr"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/cartPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/cartId"
-            android:layout_marginTop="10dp"
-            android:layout_toStartOf="@id/cartCounter"
-            android:layout_toEndOf="@id/cartIv"
+            android:layout_weight="1"
             android:fontFamily="@font/roboto_med"
-            android:maxLines="1"
-            android:text="550.00"
-            android:textColor="@color/selector_clr"
-            android:textSize="15sp" />
-
-        <LinearLayout
-            android:id="@+id/cartCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_below="@+id/cartId"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="#837A7A"
+            android:textSize="18sp" />
 
 
-            <ImageButton
-                android:id="@+id/cartPlus"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#F0F0F0"
-                android:src="@drawable/plus"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        <ImageButton
+            android:id="@+id/cartMinus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#F0F0F0"
+            android:src="@drawable/minus"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-            <TextView
-                android:id="@+id/cartCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/roboto_med"
-                android:text="00"
-                android:textAlignment="center"
-                android:textColor="#837A7A"
-                android:textSize="18sp" />
+    </LinearLayout>
 
-
-            <ImageButton
-                android:id="@+id/cartMinus"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#F0F0F0"
-                android:src="@drawable/minus"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

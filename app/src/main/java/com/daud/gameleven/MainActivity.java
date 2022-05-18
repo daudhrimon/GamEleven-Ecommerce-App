@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        btmCard.setVisibility(View.VISIBLE);
-        fab.setVisibility(View.VISIBLE);
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         btmNav.setSelectedItemId(R.id.home);
+        btmCard.setVisibility(View.VISIBLE);
+        fab.setVisibility(View.VISIBLE);
     }
 
     private void initial() {
