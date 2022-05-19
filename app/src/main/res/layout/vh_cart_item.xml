@@ -63,7 +63,7 @@
         android:fontFamily="@font/roboto_regular"
         android:maxLines="2"
         android:text="Power Bank Water Gold"
-        android:textColor="@color/cart_txt_clr"
+        android:textColor="@color/frag_name_clr"
         android:textSize="16sp" />
 
     <TextView
@@ -76,7 +76,7 @@
         android:fontFamily="@font/roboto_regular"
         android:maxLines="1"
         android:text="Sound Box"
-        android:textColor="@color/cart_txt_clr"
+        android:textColor="@color/frag_name_clr"
         android:textSize="16sp" />
 
     <TextView
@@ -89,7 +89,7 @@
         android:fontFamily="@font/roboto_regular"
         android:maxLines="1"
         android:text="12345"
-        android:textColor="@color/cart_txt_clr"
+        android:textColor="@color/frag_name_clr"
         android:textSize="16sp" />
 
     <TextView
@@ -110,8 +110,8 @@
     <LinearLayout
         android:id="@+id/cartCounter"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_below="@id/cartId"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="18dp"

@@ -47,7 +47,7 @@
         android:fontFamily="@font/roboto_regular"
         android:maxLines="2"
         android:text="Power Bank Water Gold"
-        android:textColor="@color/cart_txt_clr"
+        android:textColor="@color/frag_name_clr"
         android:textSize="16sp" />
 
     <TextView
@@ -60,7 +60,7 @@
         android:fontFamily="@font/roboto_regular"
         android:maxLines="1"
         android:text="Sound Box"
-        android:textColor="@color/cart_txt_clr"
+        android:textColor="@color/frag_name_clr"
         android:textSize="16sp" />
 
     <TextView
