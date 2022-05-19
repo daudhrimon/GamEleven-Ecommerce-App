@@ -21,12 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="17dp"
         android:backgroundTint="@color/selector_clr"
         android:src="@drawable/geleven_icon"
         app:borderWidth="0dp"
         app:fabCustomSize="64dp"
-        app:maxImageSize="45dp"
+        app:maxImageSize="46dp"
         app:tint="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 

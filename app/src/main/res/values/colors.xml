@@ -29,5 +29,6 @@
     <color name="textVH_txt_clr">#262626</color>
     <color name="frag_name_clr">#404040</color>
     <color name="sign_bg_clr">#72142C</color>
+    <color name="cart_wish_tc">#7E7E7E</color>
 
 </resources>
