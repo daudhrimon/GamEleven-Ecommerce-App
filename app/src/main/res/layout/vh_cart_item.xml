@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="124dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginVertical="3dp"
     android:background="@color/white">
 
@@ -17,18 +18,40 @@
         android:scaleType="fitXY"
         android:src="@drawable/one" />
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/selectBtn"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@id/cartCat"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/cart_unselected"
-        android:clickable="true"
-        android:padding="5dp"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        android:layout_marginEnd="15dp">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/selector_clr"
+            android:outlineSpotShadowColor="@color/trans"
+            android:src="@drawable/tick"
+            app:borderWidth="0dp"
+            app:fabCustomSize="22dp"
+            app:maxImageSize="12dp"
+            app:tint="@color/white"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabUnselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart_unselected"
+            app:tint="@color/trans"
+            android:backgroundTint="#EAEAEA"
+            app:fabCustomSize="22dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="22dp"
+            android:outlineSpotShadowColor="@color/trans"
+            android:visibility="gone"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/cartName"

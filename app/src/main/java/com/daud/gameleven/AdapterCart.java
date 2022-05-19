@@ -45,14 +45,13 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.CartVH> {
     }
 
     public class CartVH extends RecyclerView.ViewHolder {
-        private ImageView cartIv,selectBtn;
+        private ImageView cartIv;
         private TextView cartName,cartCat,cartId,cartPrice,cartCount;
         private ImageButton cartPlus,cartMinus;
 
         public CartVH(@NonNull View itemView) {
             super(itemView);
             cartIv = itemView.findViewById(R.id.cartIv);
-            selectBtn = itemView.findViewById(R.id.selectBtn);
             cartName = itemView.findViewById(R.id.cartName);
             cartCat = itemView.findViewById(R.id.cartCat);
             cartId = itemView.findViewById(R.id.cartId);
