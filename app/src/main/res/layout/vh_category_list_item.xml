@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/itemTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Gaming Device"
+        android:textColor="#797979"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/expandLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/search_bg_clr" />
+
+        <ImageButton
+            android:id="@+id/expandBtn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:tint="#939393"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/expandLay"
+        android:layout_marginVertical="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/search_bg_clr" />
+
+</RelativeLayout>

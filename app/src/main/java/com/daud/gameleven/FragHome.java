@@ -91,7 +91,7 @@ public class FragHome extends Fragment {
         textRecycler = view.findViewById(R.id.textRecycler);
         textRecycler.setHasFixedSize(false);
         textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        textRecycler.setAdapter(new AdapterTextBtn(getContext()));
+        textRecycler.setAdapter(new AdapterList(getContext()));
         flashDeals = view.findViewById(R.id.flashDeals);
         dailyFeatures = view.findViewById(R.id.dailyFeatures);
         hotCategories = view.findViewById(R.id.hotCategories);
