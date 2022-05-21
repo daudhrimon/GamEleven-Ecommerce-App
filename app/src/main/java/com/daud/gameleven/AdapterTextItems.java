@@ -57,7 +57,7 @@ public class AdapterTextItems extends RecyclerView.Adapter<RecyclerView.ViewHold
                 });
 
                 holder.itemView.setOnClickListener(view -> {
-                    catItemsExpandBtnClick(finalHolder);
+                    //catItemsExpandBtnClick(finalHolder);
                 });
                 break;
         }
