@@ -3,18 +3,22 @@ package com.daud.gameleven;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class FragCategory extends Fragment {
     private ImageButton catBack;
     private LinearLayout oneBtn,twoBtn,threeBtn,fourBtn,fiveBtn,sixBtn;
-
-
+    private RecyclerView itemsSuperRecycler;
+    private TextView catName;
+    private LinearLayout catNameLay;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,22 +57,53 @@ public class FragCategory extends Fragment {
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        oneBtnClickHandler();
+    }
+
     private void oneBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Electronic Device");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void twoBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Furniture Device");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void threeBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Casual Bag");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void fourBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Electronic Device");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void fiveBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Electronic Device");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void sixBtnClickHandler() {
+        catNameLay.setVisibility(View.VISIBLE);
+        catName.setText("Electronic Device");
+        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
     private void catBackClickHandler() {
@@ -84,5 +119,9 @@ public class FragCategory extends Fragment {
         fourBtn = view.findViewById(R.id.fourBtn);
         fiveBtn = view.findViewById(R.id.fiveBtn);
         sixBtn = view.findViewById(R.id.sixBtn);
+        itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
+        itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        catName = view.findViewById(R.id.catName);
+        catNameLay = view.findViewById(R.id.catNameLay);
     }
 }

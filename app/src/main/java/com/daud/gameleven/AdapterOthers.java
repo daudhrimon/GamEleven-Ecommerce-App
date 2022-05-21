@@ -26,15 +26,10 @@ public class AdapterOthers extends RecyclerView.Adapter {
         this.STATE = STATE;
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return STATE;
-    }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        switch (viewType){
+        switch (STATE){
 
             case 1: // Wishlist //
                 View view1 = LayoutInflater.from(context).inflate(R.layout.vh_wishlist_item,parent,false);

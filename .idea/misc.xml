@@ -14,6 +14,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/dot_selected.xml" value="0.121" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/gift_shape.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.1065" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.1065" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/image_selector.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_cat_items.xml" value="0.1065" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_deals_item.xml" value="0.1155" />
@@ -58,6 +59,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_daily_features.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_flash_deals.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_hot_categories.xml" value="0.25" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_super_items.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_text_btn.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/vh_wishlist_item.xml" value="0.136" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />

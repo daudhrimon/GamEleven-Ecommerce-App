@@ -295,25 +295,35 @@
             android:orientation="vertical"
             android:background="#F8F8F8">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Category Name Here"
-                android:textSize="14sp"
-                android:textColor="#797979"
-                android:fontFamily="@font/roboto_regular"
-                android:layout_margin="10dp"/>
-
-            <View
+            <LinearLayout
+                android:id="@+id/catNameLay"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/search_bg_clr"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="15dp"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/catName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#797979"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_marginVertical="10dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/search_bg_clr" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemsSuperRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="12dp"/>
 
 
         </LinearLayout>

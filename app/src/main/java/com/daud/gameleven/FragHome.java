@@ -33,15 +33,28 @@ public class FragHome extends Fragment {
 
         initial(view);
 
-        imageSliderHandler();
-
-        setRecyclersDemo();
-
         menuBtn.setOnClickListener(view1 -> {
             menuBtnOnClick();
         });
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        topTextSliderHandler();
+
+        imageSliderHandler();
+
+        setRecyclersDemo();
+    }
+
+    private void topTextSliderHandler() {
+        String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
+        textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        textRecycler.setAdapter(new AdapterTextItems(getContext(),textList,1));
     }
 
     private void menuBtnOnClick() {
@@ -90,8 +103,6 @@ public class FragHome extends Fragment {
         imageSlider = view.findViewById(R.id.imageSlider);
         textRecycler = view.findViewById(R.id.textRecycler);
         textRecycler.setHasFixedSize(false);
-        textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        textRecycler.setAdapter(new AdapterList(getContext()));
         flashDeals = view.findViewById(R.id.flashDeals);
         dailyFeatures = view.findViewById(R.id.dailyFeatures);
         hotCategories = view.findViewById(R.id.hotCategories);

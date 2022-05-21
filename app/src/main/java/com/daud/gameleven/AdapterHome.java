@@ -29,15 +29,10 @@ public class AdapterHome extends RecyclerView.Adapter {
         this.SATE = SATE;
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return SATE;
-    }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        switch (viewType){
+        switch (SATE){
             case 1:
                 View view1 = LayoutInflater.from(context).inflate(R.layout.vh_flash_deals,parent,false);
                 return new FlashDealsVh(view1);
