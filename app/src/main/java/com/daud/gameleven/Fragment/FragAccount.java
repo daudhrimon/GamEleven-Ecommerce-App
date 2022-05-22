@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.os.Bundle;
 
@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.R;
 
 public class FragAccount extends Fragment {
     private ImageButton accountBack;

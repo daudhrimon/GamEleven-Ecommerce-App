@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.os.Bundle;
 
@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.daud.gameleven.Adapter.AdapterHome;
+import com.daud.gameleven.Adapter.AdapterTextItems;
+import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.R;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;

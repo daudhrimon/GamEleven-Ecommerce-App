@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.os.Bundle;
 
@@ -10,6 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.Adapter.AdapterCart;
+import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.R;
 
 import java.util.ArrayList;
 import java.util.List;

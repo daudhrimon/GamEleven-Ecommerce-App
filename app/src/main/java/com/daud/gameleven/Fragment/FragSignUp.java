@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.os.Bundle;
 
@@ -9,6 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.Fragment.FragHome;
+import com.daud.gameleven.Fragment.FragSignIn;
+import com.daud.gameleven.R;
 
 public class FragSignUp extends Fragment {
     private Button signInBtn;

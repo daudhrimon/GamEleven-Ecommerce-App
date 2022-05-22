@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.R;
 
 import java.util.List;
 

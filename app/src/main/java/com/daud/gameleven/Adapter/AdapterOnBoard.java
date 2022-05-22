@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.daud.gameleven.R;
 
 public class AdapterOnBoard extends PagerAdapter {
     private Context context;

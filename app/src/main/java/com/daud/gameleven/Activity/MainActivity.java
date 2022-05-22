@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.daud.gameleven.Fragment.FragAccount;
+import com.daud.gameleven.Fragment.FragCart;
+import com.daud.gameleven.Fragment.FragCategory;
+import com.daud.gameleven.Fragment.FragHome;
+import com.daud.gameleven.Fragment.FragSignIn;
+import com.daud.gameleven.Fragment.FragWishlist;
+import com.daud.gameleven.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;

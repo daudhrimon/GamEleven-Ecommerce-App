@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.Adapter.AdapterTextItems;
+import com.daud.gameleven.R;
 
 public class FragCategory extends Fragment {
     private ImageButton catBack;
@@ -70,7 +74,7 @@ public class FragCategory extends Fragment {
         setButtonsColor(oneBtn);
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
@@ -86,7 +90,7 @@ public class FragCategory extends Fragment {
         setButtonsColor(threeBtn);
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Casual Bag");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 
@@ -102,7 +106,7 @@ public class FragCategory extends Fragment {
         setButtonsColor(fiveBtn);
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
+        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
     }
 

@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

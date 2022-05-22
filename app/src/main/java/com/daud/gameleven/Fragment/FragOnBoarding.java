@@ -1,4 +1,4 @@
-package com.daud.gameleven;
+package com.daud.gameleven.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.Activity.SplashActivity;
+import com.daud.gameleven.Adapter.AdapterOnBoard;
+import com.daud.gameleven.R;
 
 public class FragOnBoarding extends Fragment {
     private ViewPager onbViewPager;
