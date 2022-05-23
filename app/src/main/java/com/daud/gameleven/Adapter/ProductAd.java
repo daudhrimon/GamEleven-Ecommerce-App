@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,28 +20,28 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class BestSaleProAd extends RecyclerView.Adapter<BestSaleProAd.BestSaleProVH> {
+public class ProductAd extends RecyclerView.Adapter<ProductAd.BestSaleProVH> {
     private Context context;
-    private List<ProductsModel> bspList;
+    private List<ProductsModel> pList;
 
-    public BestSaleProAd(Context context, List<ProductsModel> bspList) {
+    public ProductAd(Context context, List<ProductsModel> pList) {
         this.context = context;
-        this.bspList = bspList;
+        this.pList = pList;
     }
 
     @NonNull
     @Override
     public BestSaleProVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_best_sale,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_products,parent,false);
         return new BestSaleProVH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BestSaleProVH holder, int position) {
-        holder.bspIv.setImageResource(bspList.get(position).getImage());
-        holder.bspName.setText(bspList.get(position).getName());
-        holder.bspCat.setText(bspList.get(position).getCategory());
-        holder.bspPrice.setText(bspList.get(position).getNprice() + " SAR");
+        holder.bspIv.setImageResource(pList.get(position).getImage());
+        holder.bspName.setText(pList.get(position).getName());
+        holder.bspCat.setText(pList.get(position).getCategory());
+        holder.bspPrice.setText(pList.get(position).getNprice() + " SAR");
 
         holder.bspItem.setOnClickListener(view -> {
             gotoPdFragmentDemo();
@@ -51,7 +50,7 @@ public class BestSaleProAd extends RecyclerView.Adapter<BestSaleProAd.BestSalePr
 
     @Override
     public int getItemCount() {
-        return bspList.size();
+        return pList.size();
     }
 
     public class BestSaleProVH extends RecyclerView.ViewHolder{

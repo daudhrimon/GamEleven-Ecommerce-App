@@ -25,7 +25,7 @@ public class CateListAd extends RecyclerView.Adapter<CateListAd.CategoryListVH> 
     @NonNull
     @Override
     public CategoryListVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_category_list_item,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_category_list,parent,false);
         return new CategoryListVH(view);
     }
 

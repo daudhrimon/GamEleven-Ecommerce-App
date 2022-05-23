@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.daud.gameleven.Adapter.BestSaleProAd;
+import com.daud.gameleven.Adapter.ProductAd;
 import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.Adapter.BrandsAd;
 import com.daud.gameleven.Adapter.DailyFeaturesAd;
@@ -93,7 +93,7 @@ public class FragHome extends Fragment {
         brands.setAdapter(new BrandsAd(getContext(),pList));
 
         bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new BestSaleProAd(getContext(),pList));
+        bestSale.setAdapter(new ProductAd(getContext(),pList));
 
 
     }
