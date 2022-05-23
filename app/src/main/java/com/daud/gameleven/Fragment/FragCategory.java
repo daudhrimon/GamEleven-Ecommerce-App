@@ -15,7 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daud.gameleven.Activity.MainActivity;
-import com.daud.gameleven.Adapter.AdapterTextItems;
+import com.daud.gameleven.Adapter.CateListAd;
+import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.R;
 
 public class FragCategory extends Fragment {
@@ -75,7 +76,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void twoBtnClickHandler() {
@@ -83,7 +84,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Furniture Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void threeBtnClickHandler() {
@@ -91,7 +92,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Casual Bag");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void fourBtnClickHandler() {
@@ -99,7 +100,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void fiveBtnClickHandler() {
@@ -107,7 +108,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void sixBtnClickHandler() {
@@ -115,7 +116,7 @@ public class FragCategory extends Fragment {
         catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new AdapterTextItems(getContext(),textList,2));
+        itemsSuperRecycler.setAdapter(new CateListAd(getContext(),textList));
     }
 
     private void catBackClickHandler() {

@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.daud.gameleven.Adapter.BestSaleProAd;
-import com.daud.gameleven.Adapter.AdapterTextItems;
+import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.Adapter.BrandsAd;
 import com.daud.gameleven.Adapter.DailyFeaturesAd;
 import com.daud.gameleven.Adapter.FlashDealsAd;
-import com.daud.gameleven.Adapter.HotCategoriesAd;
+import com.daud.gameleven.Adapter.HotCateAd;
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -62,7 +62,7 @@ public class FragHome extends Fragment {
     private void topTextSliderHandler() {
         String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
         textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        textRecycler.setAdapter(new AdapterTextItems(getContext(),textList,1));
+        textRecycler.setAdapter(new TextListAd(getContext(),textList));
     }
 
     private void menuBtnOnClick() {
@@ -87,7 +87,7 @@ public class FragHome extends Fragment {
         dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(),pList));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new HotCategoriesAd(getContext(),pList));
+        hotCategories.setAdapter(new HotCateAd(getContext(),pList));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         brands.setAdapter(new BrandsAd(getContext(),pList));

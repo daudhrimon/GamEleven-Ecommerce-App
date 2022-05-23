@@ -19,11 +19,11 @@ import com.daud.gameleven.R;
 
 import java.util.List;
 
-public class HotCategoriesAd extends RecyclerView.Adapter<HotCategoriesAd.HotCategoriesVh> {
+public class HotCateAd extends RecyclerView.Adapter<HotCateAd.HotCategoriesVh> {
     private Context context;
     private List<ProductsModel> hcList;
 
-    public HotCategoriesAd(Context context, List<ProductsModel> hcList) {
+    public HotCateAd(Context context, List<ProductsModel> hcList) {
         this.context = context;
         this.hcList = hcList;
     }
