@@ -16,11 +16,11 @@ import com.daud.gameleven.R;
 
 import java.util.List;
 
-public class AdapterCart extends RecyclerView.Adapter<AdapterCart.CartVH> {
+public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
     private Context context;
     private List<ProductsModel> cList;
 
-    public AdapterCart(Context context, List<ProductsModel> cList) {
+    public CartAd(Context context, List<ProductsModel> cList) {
         this.context = context;
         this.cList = cList;
     }

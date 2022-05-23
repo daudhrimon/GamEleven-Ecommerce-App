@@ -13,11 +13,11 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.daud.gameleven.R;
 
-public class AdapterOnBoard extends PagerAdapter {
+public class OnBoardAd extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public AdapterOnBoard(Context context) {
+    public OnBoardAd(Context context) {
         this.context = context;
     }
 

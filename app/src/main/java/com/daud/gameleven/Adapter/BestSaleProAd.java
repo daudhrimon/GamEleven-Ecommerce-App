@@ -25,9 +25,9 @@ public class BestSaleProAd extends RecyclerView.Adapter<BestSaleProAd.BestSalePr
     private Context context;
     private List<ProductsModel> bspList;
 
-    public BestSaleProAd(Context context, List<ProductsModel> oList) {
+    public BestSaleProAd(Context context, List<ProductsModel> bspList) {
         this.context = context;
-        this.bspList = oList;
+        this.bspList = bspList;
     }
 
     @NonNull

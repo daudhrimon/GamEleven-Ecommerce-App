@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.daud.gameleven.Activity.MainActivity;
-import com.daud.gameleven.Adapter.AdapterCart;
+import com.daud.gameleven.Adapter.CartAd;
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
 
@@ -57,7 +57,7 @@ public class FragCart extends Fragment {
         cList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         cartRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        cartRecycler.setAdapter(new AdapterCart(getContext(),cList));
+        cartRecycler.setAdapter(new CartAd(getContext(),cList));
 
 
     }

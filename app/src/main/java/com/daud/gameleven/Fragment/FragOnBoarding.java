@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.Activity.SplashActivity;
-import com.daud.gameleven.Adapter.AdapterOnBoard;
+import com.daud.gameleven.Adapter.OnBoardAd;
 import com.daud.gameleven.R;
 
 public class FragOnBoarding extends Fragment {
@@ -31,7 +31,7 @@ public class FragOnBoarding extends Fragment {
 
         initial(view);
 
-        onbViewPager.setAdapter(new AdapterOnBoard(getContext()));
+        onbViewPager.setAdapter(new OnBoardAd(getContext()));
 
         addDots(0);
 

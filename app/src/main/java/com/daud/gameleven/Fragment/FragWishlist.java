@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.daud.gameleven.Activity.MainActivity;
-import com.daud.gameleven.Adapter.AdapterOthers;
+import com.daud.gameleven.Adapter.WishlistAd;
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
 
@@ -53,7 +53,7 @@ public class FragWishlist extends Fragment {
         wList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         wishRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        wishRecycler.setAdapter(new AdapterOthers(getContext(),wList,1));
+        wishRecycler.setAdapter(new WishlistAd(getContext(),wList));
     }
 
     private void initial(View view) {
