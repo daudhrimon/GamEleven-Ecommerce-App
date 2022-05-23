@@ -12,8 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.daud.gameleven.Adapter.AdapterHome;
+import com.daud.gameleven.Adapter.BestSaleProAd;
 import com.daud.gameleven.Adapter.AdapterTextItems;
+import com.daud.gameleven.Adapter.BrandsAd;
+import com.daud.gameleven.Adapter.DailyFeaturesAd;
+import com.daud.gameleven.Adapter.FlashDealsAd;
+import com.daud.gameleven.Adapter.HotCategoriesAd;
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -77,19 +81,19 @@ public class FragHome extends Fragment {
         pList.add(new ProductsModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
 
         flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        flashDeals.setAdapter(new AdapterHome(getContext(),pList,1));
+        flashDeals.setAdapter(new FlashDealsAd(getContext(),pList));
 
         dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        dailyFeatures.setAdapter(new AdapterHome(getContext(),pList,2));
+        dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(),pList));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new AdapterHome(getContext(),pList,3));
+        hotCategories.setAdapter(new HotCategoriesAd(getContext(),pList));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new AdapterHome(getContext(),pList,4));
+        brands.setAdapter(new BrandsAd(getContext(),pList));
 
         bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new AdapterHome(getContext(),pList,5));
+        bestSale.setAdapter(new BestSaleProAd(getContext(),pList));
 
 
     }

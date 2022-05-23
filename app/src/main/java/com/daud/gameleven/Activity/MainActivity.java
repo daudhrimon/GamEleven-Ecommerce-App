@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,10 @@ import com.daud.gameleven.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static CardView btmCard;
@@ -96,5 +101,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         getPreferences = getSharedPreferences("MySp",MODE_PRIVATE);
         editor = getPreferences.edit();
+    }
+
+    public static int getRandomColor() {
+        List<Integer> colorcode=new ArrayList<>();
+        colorcode.add(Color.parseColor("#D81D4C"));
+        colorcode.add(Color.parseColor("#68C037"));
+        colorcode.add(Color.parseColor("#094D82"));
+        colorcode.add(Color.parseColor("#2B2B2B"));
+
+        Random random=new Random();
+        int number=random.nextInt(colorcode.size());
+        return colorcode.get(number);
     }
 }
