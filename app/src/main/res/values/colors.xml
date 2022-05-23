@@ -31,5 +31,8 @@
     <color name="sign_bg_clr">#72142C</color>
     <color name="cart_wish_tc">#7E7E7E</color>
     <color name="category_tc">#797979</color>
+    <color name="pd_btn_clr">#7B7B7B</color>
+    <color name="rating_txt_clr">#021E65</color>
+    <color name="rating_txt_clr2">#A0A0A0</color>
 
 </resources>

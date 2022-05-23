@@ -20,12 +20,15 @@
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textRecycler"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -83,7 +86,8 @@
                         android:background="@drawable/selector_coupon"
                         android:clickable="true"
                         android:padding="18dp"
-                        android:src="@drawable/coupon_icon" />
+                        android:src="@drawable/coupon_icon"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -114,7 +118,8 @@
                         android:background="@drawable/selector_gift"
                         android:clickable="true"
                         android:padding="18dp"
-                        android:src="@drawable/gift_icon" />
+                        android:src="@drawable/gift_icon"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -145,7 +150,8 @@
                         android:background="@drawable/selector_slash"
                         android:clickable="true"
                         android:padding="18dp"
-                        android:src="@drawable/slash_icon" />
+                        android:src="@drawable/slash_icon"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -176,7 +182,8 @@
                         android:background="@drawable/selector_pc"
                         android:clickable="true"
                         android:padding="18dp"
-                        android:src="@drawable/pc_icon" />
+                        android:src="@drawable/pc_icon"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -347,6 +354,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
