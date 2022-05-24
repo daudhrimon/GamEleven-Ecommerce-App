@@ -99,6 +99,7 @@ public class FragHome extends Fragment {
 
     private void imageSliderHandler() {
         List<SlideModel> imageList = new ArrayList<>();
+        imageList.add(new SlideModel(R.drawable.slider_xd, ScaleTypes.FIT));
         imageList.add(new SlideModel(R.drawable.slider_one, ScaleTypes.FIT));
         imageList.add(new SlideModel(R.drawable.slider_two, ScaleTypes.FIT));
         imageList.add(new SlideModel(R.drawable.slider_three, ScaleTypes.FIT));
