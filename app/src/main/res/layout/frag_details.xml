@@ -5,45 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="11"
+    android:weightSum="10"
     tools:context=".Fragment.FragDetails">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coLay"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_weight="9.2">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:fitsSystemWindows="true"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@color/white"
+                app:contentScrim="@color/selector_clr"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <androidx.cardview.widget.CardView
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/imageSliderPd"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.denzcoskun.imageslider.ImageSlider
-                        android:id="@+id/imageSliderPd"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:iss_auto_cycle="true"
-                        app:iss_delay="0"
-                        app:iss_period="1000"
-                        app:iss_selected_dot="@drawable/dot_selected"
-                        app:iss_unselected_dot="@drawable/dot_unselected" />
-
-                </androidx.cardview.widget.CardView>
+                    android:layout_height="match_parent"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="0"
+                    app:iss_period="1000"
+                    android:background="@color/white"
+                    app:iss_selected_dot="@drawable/dot_selected"
+                    app:iss_unselected_dot="@drawable/dot_unselected"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="4dp"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -52,9 +49,9 @@
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbarPd"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="?actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -593,7 +590,7 @@
         android:id="@+id/bottomCard"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight=".8">
 
         <LinearLayout
             android:layout_width="match_parent"

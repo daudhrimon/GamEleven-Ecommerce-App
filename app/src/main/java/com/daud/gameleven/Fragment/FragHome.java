@@ -32,7 +32,6 @@ public class FragHome extends Fragment {
     private ImageButton menuBtn;
     private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
     private ImageSlider imageSlider;
-    private List<ProductsModel> pList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +69,7 @@ public class FragHome extends Fragment {
     }
 
     private void setRecyclersDemo() {
-        pList.clear();
+        List<ProductsModel> pList = new ArrayList<>();
         pList.add(new ProductsModel("Power Bank Water Gold","G11 Chair","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
         pList.add(new ProductsModel("Power Bank Water Gold","G11 Mouse","2","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
         pList.add(new ProductsModel("Power Bank Water Gold","Gaming Pc","3","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
@@ -116,6 +115,5 @@ public class FragHome extends Fragment {
         hotCategories = view.findViewById(R.id.hotCategories);
         brands = view.findViewById(R.id.brands);
         bestSale = view.findViewById(R.id.bestSale);
-        pList = new ArrayList<>();
     }
 }
