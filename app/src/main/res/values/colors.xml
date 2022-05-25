@@ -34,5 +34,7 @@
     <color name="pd_btn_clr">#7B7B7B</color>
     <color name="rating_txt_clr">#021E65</color>
     <color name="rating_txt_clr2">#A0A0A0</color>
+    <color name="adrsBtm_txtClr">#A0A0A0</color>
+    <color name="cateItems_bg">#F0F0F0</color>
 
 </resources>

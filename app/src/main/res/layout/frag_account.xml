@@ -123,8 +123,8 @@
                         android:backgroundTint="@color/white"
                         android:src="@drawable/home"
                         app:borderWidth="0dp"
-                        app:fabCustomSize="50dp"
                         app:elevation="4dp"
+                        app:fabCustomSize="50dp"
                         app:tint="@null"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -165,8 +165,8 @@
                         android:backgroundTint="@color/white"
                         android:src="@drawable/user"
                         app:borderWidth="0dp"
-                        app:fabCustomSize="50dp"
                         app:elevation="4dp"
+                        app:fabCustomSize="50dp"
                         app:tint="@null"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -207,8 +207,8 @@
                         android:backgroundTint="@color/white"
                         android:src="@drawable/address"
                         app:borderWidth="0dp"
-                        app:fabCustomSize="50dp"
                         app:elevation="4dp"
+                        app:fabCustomSize="50dp"
                         app:tint="@null"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -249,8 +249,8 @@
                         android:backgroundTint="@color/white"
                         android:src="@drawable/translate"
                         app:borderWidth="0dp"
-                        app:fabCustomSize="50dp"
                         app:elevation="4dp"
+                        app:fabCustomSize="50dp"
                         app:tint="@null"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -295,8 +295,8 @@
                 android:backgroundTint="@color/white"
                 android:src="@drawable/exit"
                 app:borderWidth="0dp"
-                app:fabCustomSize="50dp"
                 app:elevation="4dp"
+                app:fabCustomSize="50dp"
                 app:tint="@null"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

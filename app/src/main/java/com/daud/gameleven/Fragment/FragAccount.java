@@ -11,9 +11,12 @@ import android.widget.ImageButton;
 
 import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.R;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragAccount extends Fragment {
     private ImageButton accountBack;
+    private FloatingActionButton ordersFab,profileFab,addressFab,cngLanFab,logoutFab;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,7 +28,19 @@ public class FragAccount extends Fragment {
         accountBack.setOnClickListener(view1 -> {
             accountBackClickHandler();
         });
+
+        addressFab.setOnClickListener(view1 -> {
+            addressFabClickHandler();
+        });
+
         return view;
+    }
+
+    private void addressFabClickHandler() {
+        BottomSheetDialog btmDialog = new BottomSheetDialog(getContext());
+        btmDialog.setContentView(R.layout.address_btmsheet);
+
+        btmDialog.show();
     }
 
     private void accountBackClickHandler() {
@@ -35,5 +50,10 @@ public class FragAccount extends Fragment {
 
     private void initial(View view) {
         accountBack = view.findViewById(R.id.accountBack);
+        ordersFab = view.findViewById(R.id.ordersFab);
+        profileFab = view.findViewById(R.id.profileFab);
+        addressFab = view.findViewById(R.id.addressFab);
+        cngLanFab = view.findViewById(R.id.cngLanFab);
+        logoutFab = view.findViewById(R.id.logoutFab);
     }
 }
