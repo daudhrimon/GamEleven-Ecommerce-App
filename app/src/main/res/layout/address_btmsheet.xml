@@ -401,7 +401,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/selector_clr"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingVertical="16dp"
+                    android:paddingVertical="14dp"
                     android:text="SAVE ADDRESS"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
