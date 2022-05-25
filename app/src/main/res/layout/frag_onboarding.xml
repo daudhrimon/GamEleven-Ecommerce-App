@@ -48,21 +48,13 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/spView"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/roboto_med"
         android:text="SKIP"
         android:textColor="@color/onb_btn_txt_clr"
         android:textSize="17sp" />
-
-    <View
-        android:id="@+id/spView"
-        android:layout_width="160dp"
-        android:layout_height="3dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="@color/onb_btmview_clr" />
 
 </RelativeLayout>
