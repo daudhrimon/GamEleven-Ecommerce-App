@@ -27,7 +27,7 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
     @NonNull
     @Override
     public WishlistVh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_wishlist, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_wishlist_b, parent, false);
         return new WishlistVh(view);
     }
 

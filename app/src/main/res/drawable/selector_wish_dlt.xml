@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="false">
-        <shape android:shape="rectangle" >
-            <solid android:color="#EFEFEF"/>
-        </shape>
-    </item>
+    <item android:state_pressed="false"
+        android:drawable="@drawable/wd_unselect"/>
 
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle" >
-            <solid android:color="@color/selector_clr"/>
-        </shape>
-    </item>
+    <item android:state_pressed="true"
+        android:drawable="@drawable/wd_select"/>
 </selector>
