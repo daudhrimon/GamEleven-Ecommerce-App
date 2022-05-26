@@ -81,7 +81,7 @@
                     android:outlineSpotShadowColor="@color/trans"
                     android:src="@drawable/tick"
                     app:borderWidth="0dp"
-                    app:fabCustomSize="22dp"
+                    app:fabCustomSize="24dp"
                     app:maxImageSize="12dp"
                     app:tint="@color/white"
                     tools:ignore="SpeakableTextPresentCheck" />

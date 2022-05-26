@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -40,6 +41,23 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
         holder.cartId.setText(cList.get(position).getProductid());
         holder.cartPrice.setText(cList.get(position).getNprice()+" SAR");
 
+        holder.fabSelect.setOnClickListener(view -> {
+            fabSelectClickHandle(holder);
+        });
+
+        holder.fabUnselect.setOnClickListener(view -> {
+            fabUnselectClickHandle(holder);
+        });
+    }
+
+    private void fabSelectClickHandle(CartVH holder) {
+        holder.fabSelect.setVisibility(View.GONE);
+        holder.fabUnselect.setVisibility(View.VISIBLE);
+    }
+
+    private void fabUnselectClickHandle(CartVH holder) {
+        holder.fabUnselect.setVisibility(View.GONE);
+        holder.fabSelect.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -51,6 +69,7 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
         private ImageView cartIv;
         private TextView cartName,cartCat,cartId,cartPrice,cartCount;
         private ImageButton cartPlus,cartMinus;
+        private FloatingActionButton fabSelect, fabUnselect;
 
         public CartVH(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +81,8 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
             cartCount = itemView.findViewById(R.id.cartCount);
             cartPlus = itemView.findViewById(R.id.cartPlus);
             cartMinus = itemView.findViewById(R.id.cartMinus);
+            fabSelect = itemView.findViewById(R.id.fabSelect);
+            fabUnselect = itemView.findViewById(R.id.fabUnselect);
         }
     }
 }
