@@ -23,7 +23,6 @@ public class FragCategory extends Fragment {
     private LinearLayout oneBtn,twoBtn,threeBtn,fourBtn,fiveBtn,sixBtn;
     private RecyclerView itemsSuperRecycler;
     private TextView catName;
-    private LinearLayout catNameLay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,7 +71,6 @@ public class FragCategory extends Fragment {
 
     private void oneBtnClickHandler() {
         setButtonsColor(oneBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -80,7 +78,6 @@ public class FragCategory extends Fragment {
 
     private void twoBtnClickHandler() {
         setButtonsColor(twoBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Furniture Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -88,7 +85,6 @@ public class FragCategory extends Fragment {
 
     private void threeBtnClickHandler() {
         setButtonsColor(threeBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Casual Bag");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -96,7 +92,6 @@ public class FragCategory extends Fragment {
 
     private void fourBtnClickHandler() {
         setButtonsColor(fourBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -104,7 +99,6 @@ public class FragCategory extends Fragment {
 
     private void fiveBtnClickHandler() {
         setButtonsColor(fiveBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -112,7 +106,6 @@ public class FragCategory extends Fragment {
 
     private void sixBtnClickHandler() {
         setButtonsColor(sixBtn);
-        catNameLay.setVisibility(View.VISIBLE);
         catName.setText("Electronic Device");
         String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
@@ -144,6 +137,5 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
         itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         catName = view.findViewById(R.id.catName);
-        catNameLay = view.findViewById(R.id.catNameLay);
     }
 }
