@@ -22,14 +22,14 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragDetails extends Fragment {
+public class FragProDetails extends Fragment {
     private ImageSlider imageSliderPd;
     private RecyclerView relatedPR;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_details, container, false);
+        View view = inflater.inflate(R.layout.frag_prodetails, container, false);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbarPd);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(null);

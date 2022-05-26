@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.Activity.MainActivity;
-import com.daud.gameleven.Fragment.FragDetails;
+import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductsModel;
 import com.daud.gameleven.R;
 
@@ -67,7 +67,7 @@ public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH
 
     // go to details frag Demo
     private void gotoPdFragmentDemo(){
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragDetails()).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProDetails()).commit();
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }
