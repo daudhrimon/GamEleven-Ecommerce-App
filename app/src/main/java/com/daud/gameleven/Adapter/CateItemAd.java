@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.R;
 
-public class CateListAd extends RecyclerView.Adapter<CateListAd.CategoryListVH> {
+public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> {
     private Context context;
     private String [] clList;
 
-    public CateListAd(Context context, String[] clList) {
+    public CateItemAd(Context context, String[] clList) {
         this.context = context;
         this.clList = clList;
     }
