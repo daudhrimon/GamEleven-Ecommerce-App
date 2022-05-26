@@ -15,7 +15,7 @@ public class CheckoutFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_checkoutin, container, false);
+        View view = inflater.inflate(R.layout.frag_checkout, container, false);
         return view;
     }
 }
