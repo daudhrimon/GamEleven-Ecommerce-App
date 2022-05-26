@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.Adapter.ProductAd;
 import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.Adapter.BrandsAd;
@@ -66,6 +67,7 @@ public class FragHome extends Fragment {
 
     private void menuBtnOnClick() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).commit();
+        MainActivity.btmNav.setSelectedItemId(R.id.category);
     }
 
     private void setRecyclersDemo() {

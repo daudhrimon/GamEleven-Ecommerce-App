@@ -38,7 +38,7 @@ public class FragAccount extends Fragment {
 
     private void addressFabClickHandler() {
         BottomSheetDialog btmDialog = new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
-        btmDialog.setContentView(R.layout.address_full_btmsheet);
+        btmDialog.setContentView(R.layout.btmsheet_address_full);
 
         btmDialog.show();
     }

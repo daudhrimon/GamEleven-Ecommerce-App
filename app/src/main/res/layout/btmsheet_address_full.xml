@@ -13,18 +13,17 @@
         android:background="#EBEAEA"
         android:layout_gravity="center_horizontal"/>
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:scrollbars="vertical"
+        android:scrollbars="none"
         android:scrollingCache="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="25dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -413,6 +412,6 @@
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </LinearLayout>
