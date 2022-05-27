@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -19,9 +19,9 @@ import java.util.List;
 
 public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
     private Context context;
-    private List<ProductsModel> cList;
+    private List<ProductModel> cList;
 
-    public CartAd(Context context, List<ProductsModel> cList) {
+    public CartAd(Context context, List<ProductModel> cList) {
         this.context = context;
         this.cList = cList;
     }

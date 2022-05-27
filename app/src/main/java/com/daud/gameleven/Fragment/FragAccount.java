@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,6 +25,10 @@ public class FragAccount extends Fragment {
 
         initial(view);
 
+        ordersFab.setOnClickListener(view1 -> {
+            ordersFabClickHandler();
+        });
+
         accountBack.setOnClickListener(view1 -> {
             accountBackClickHandler();
         });
@@ -34,6 +38,12 @@ public class FragAccount extends Fragment {
         });
 
         return view;
+    }
+
+    private void ordersFabClickHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).commit();
+        MainActivity.btmCard.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
     }
 
     private void addressFabClickHandler() {

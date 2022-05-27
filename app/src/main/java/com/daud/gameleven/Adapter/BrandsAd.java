@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
 import java.util.List;
 
 public class BrandsAd extends RecyclerView.Adapter<BrandsAd.BrandsVH> {
     private Context context;
-    private List<ProductsModel> bList;
+    private List<ProductModel> bList;
 
-    public BrandsAd(Context context, List<ProductsModel> bList) {
+    public BrandsAd(Context context, List<ProductModel> bList) {
         this.context = context;
         this.bList = bList;
     }

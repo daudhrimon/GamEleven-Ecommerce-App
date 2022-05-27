@@ -3,7 +3,7 @@ package com.daud.gameleven.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsModel {
+public class ProductModel {
     private String name;
     private String model;
     private String productid;
@@ -16,11 +16,11 @@ public class ProductsModel {
     private int quantity;
     private int brandimage;
 
-    public ProductsModel() {
+    public ProductModel() {
     }
 
-    public ProductsModel(String name, String model, String productid, String category, String oprice, String nprice,
-                         int image, String description, String discount, int quantity, int brandimage) {
+    public ProductModel(String name, String model, String productid, String category, String oprice, String nprice,
+                        int image, String description, String discount, int quantity, int brandimage) {
         this.name = name;
         this.model = model;
         this.productid = productid;

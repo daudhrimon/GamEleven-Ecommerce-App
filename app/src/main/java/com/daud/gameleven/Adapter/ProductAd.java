@@ -12,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -22,9 +22,9 @@ import java.util.List;
 
 public class ProductAd extends RecyclerView.Adapter<ProductAd.BestSaleProVH> {
     private Context context;
-    private List<ProductsModel> pList;
+    private List<ProductModel> pList;
 
-    public ProductAd(Context context, List<ProductsModel> pList) {
+    public ProductAd(Context context, List<ProductModel> pList) {
         this.context = context;
         this.pList = pList;
     }

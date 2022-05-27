@@ -10,16 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
 import java.util.List;
 
 public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
     private Context context;
-    private List<ProductsModel> wList;
+    private List<ProductModel> wList;
 
-    public WishlistAd(Context context, List<ProductsModel> wList){
+    public WishlistAd(Context context, List<ProductModel> wList){
         this.context = context;
         this.wList = wList;
     }

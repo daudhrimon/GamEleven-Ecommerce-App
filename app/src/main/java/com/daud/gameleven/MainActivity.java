@@ -1,4 +1,4 @@
-package com.daud.gameleven.Activity;
+package com.daud.gameleven;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.daud.gameleven.Activity.MainActivity;
-import com.daud.gameleven.Fragment.FragHome;
-import com.daud.gameleven.Fragment.FragSignIn;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class FragSignUp extends Fragment {

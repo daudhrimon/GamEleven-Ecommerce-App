@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Activity.SplashActivity;
 import com.daud.gameleven.Adapter.OnBoardAd;
 import com.daud.gameleven.R;

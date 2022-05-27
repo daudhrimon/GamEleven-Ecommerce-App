@@ -11,18 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
 import java.util.List;
 
 public class DailyFeaturesAd extends RecyclerView.Adapter<DailyFeaturesAd.DailyFeaturesVH> {
     private Context context;
-    private List<ProductsModel> dfList;
+    private List<ProductModel> dfList;
 
-    public DailyFeaturesAd(Context context, List<ProductsModel> dfList) {
+    public DailyFeaturesAd(Context context, List<ProductModel> dfList) {
         this.context = context;
         this.dfList = dfList;
     }

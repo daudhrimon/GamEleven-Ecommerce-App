@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daud.gameleven.Fragment.FragOnBoarding;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class SplashActivity extends AppCompatActivity {

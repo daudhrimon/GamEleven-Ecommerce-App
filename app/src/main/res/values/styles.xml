@@ -26,4 +26,8 @@
     </style>
 
     <!-- STYLES FOR TOP ROUNDED BottomSheet (end)-->
+
+    <style name="TextAppearance.Subhead.Bold" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

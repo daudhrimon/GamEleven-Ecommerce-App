@@ -12,18 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.Activity.MainActivity;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
-import com.daud.gameleven.Model.ProductsModel;
+import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
 import java.util.List;
 
 public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH> {
     private Context context;
-    private List<ProductsModel> fdList;
+    private List<ProductModel> fdList;
 
-    public FlashDealsAd(Context context, List<ProductsModel> fdList) {
+    public FlashDealsAd(Context context, List<ProductModel> fdList) {
         this.context = context;
         this.fdList = fdList;
     }
