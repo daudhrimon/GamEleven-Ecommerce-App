@@ -25,29 +25,28 @@ public class FragSignUp extends Fragment {
         initial(view);
 
         sUpBack.setOnClickListener(view1 -> {
-            sUpBackClickHandler();
+            onBackPressedHandler();
         });
 
         signInBtn.setOnClickListener(view1 -> {
-            signInBtnClickHandler();
+            onBackPressedHandler();
         });
 
         return view;
     }
 
-    private void sUpBackClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
-    }
-
-    private void signInBtnClickHandler() {
+    private void onBackPressedHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn()).commit();
     }
 
     private void initial(View view) {
         signInBtn = view.findViewById(R.id.upSignInBtn);
         sUpBack = view.findViewById(R.id.sUpBack);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }

@@ -61,20 +61,20 @@ public class MainActivity extends AppCompatActivity {
     private void btmNavItemSelectHandler(MenuItem item) {
         switch (item.getItemId()){
             case R.id.category:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).addToBackStack(null).commit();
                 break;
             case R.id.wishlist:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragWishlist()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragWishlist()).addToBackStack(null).commit();
                 break;
             case R.id.cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCart()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCart()).addToBackStack(null).commit();
                 break;
             case R.id.account:
                 if (getPreferences.getInt("SIGNIN",0)==1){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).addToBackStack(null).commit();
                     break;
                 } else {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn()).addToBackStack(null).commit();
                     fab.setVisibility(View.GONE);
                     btmCard.setVisibility(View.GONE);
                     break;
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         btmNav.setSelectedItemId(R.id.home);
         btmCard.setVisibility(View.VISIBLE);
         fab.setVisibility(View.VISIBLE);
-    }
+    }*/
 
     private void initial() {
         btmCard = findViewById(R.id.btmCard);
@@ -114,4 +114,11 @@ public class MainActivity extends AppCompatActivity {
         int number=random.nextInt(colorcode.size());
         return colorcode.get(number);
     }
+
+    //Defined in Activity class, so override
+        @Override
+        public void onBackPressed() {
+            super.onBackPressed();
+        }
+
 }

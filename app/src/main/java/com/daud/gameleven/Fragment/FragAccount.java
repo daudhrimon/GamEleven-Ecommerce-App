@@ -3,6 +3,7 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,12 +26,16 @@ public class FragAccount extends Fragment {
 
         initial(view);
 
+        accountBack.setOnClickListener(view1 -> {
+            onBackPressedHandler();
+        });
+
         ordersFab.setOnClickListener(view1 -> {
             ordersFabClickHandler();
         });
 
-        accountBack.setOnClickListener(view1 -> {
-            accountBackClickHandler();
+        profileFab.setOnClickListener(view1 -> {
+            profileFabClickHandler();
         });
 
         addressFab.setOnClickListener(view1 -> {
@@ -41,9 +46,15 @@ public class FragAccount extends Fragment {
     }
 
     private void ordersFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).commit();
-        MainActivity.btmCard.setVisibility(View.GONE);
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).addToBackStack("A2P").commit();
         MainActivity.fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
+    }
+
+    private void profileFabClickHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile()).addToBackStack("A2O").commit();
+        MainActivity.fab.setVisibility(View.GONE);
+        MainActivity.btmNav.setVisibility(View.GONE);
     }
 
     private void addressFabClickHandler() {
@@ -53,7 +64,7 @@ public class FragAccount extends Fragment {
         btmDialog.show();
     }
 
-    private void accountBackClickHandler() {
+    private void onBackPressedHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
@@ -65,5 +76,11 @@ public class FragAccount extends Fragment {
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }

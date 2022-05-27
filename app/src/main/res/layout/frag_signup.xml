@@ -190,7 +190,7 @@
         android:id="@+id/createAcBtn"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/etLay"
         android:layout_marginHorizontal="28dp"
         android:layout_marginBottom="5dp"

@@ -31,7 +31,7 @@ public class FragSignIn extends Fragment {
         initial(view);
 
         sInBack.setOnClickListener(view1 -> {
-            sInBackClickHandler();
+            onBackPressedHandler();
         });
 
         signInBtn.setOnClickListener(view1 ->  {
@@ -45,7 +45,7 @@ public class FragSignIn extends Fragment {
         return view;
     }
 
-    private void sInBackClickHandler() {
+    private void onBackPressedHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
         MainActivity.btmCard.setVisibility(View.VISIBLE);
@@ -53,7 +53,7 @@ public class FragSignIn extends Fragment {
     }
 
     private void signUpBtnClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignUp()).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignUp()).addToBackStack(null).commit();
     }
 
     private void signInBtnClickHandler() {
@@ -90,5 +90,11 @@ public class FragSignIn extends Fragment {
         signInBtn = view.findViewById(R.id.signInBtn);
         signUpBtn = view.findViewById(R.id.signUpBtn);
         sInBack = view.findViewById(R.id.sInBack);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }

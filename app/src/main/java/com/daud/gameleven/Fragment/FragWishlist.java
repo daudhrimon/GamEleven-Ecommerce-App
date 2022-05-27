@@ -15,6 +15,7 @@ import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Adapter.WishlistAd;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
+import com.daud.gameleven.Util.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,33 +33,38 @@ public class FragWishlist extends Fragment {
         initial(view);
 
         wishBack.setOnClickListener(view1 -> {
-            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-            MainActivity.btmNav.setSelectedItemId(R.id.home);
+            onBackPressedHandler();
         });
-
-        showWishlistDemo();
 
         return view;
     }
 
-    private void showWishlistDemo() {
-        wList.clear();
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Chair","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Mouse","2","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        wList.add(new ProductModel("Power Bank Water Gold","Gaming Pc","3","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Headphone","4","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Chair","5","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Mouse","6","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        wList.add(new ProductModel("Power Bank Water Gold","Gaming Pc","7","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        wList.add(new ProductModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
+    @Override
+    public void onStart() {
+        super.onStart();
+        showWishlistDemo();
+    }
 
+    private void showWishlistDemo() {
+        Data data = new Data();
         wishRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        wishRecycler.setAdapter(new WishlistAd(getContext(),wList));
+        wishRecycler.setAdapter(new WishlistAd(getContext(),data.getWishlist()));
+    }
+
+    private void onBackPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
     private void initial(View view) {
         wishBack = view.findViewById(R.id.wishBack);
         wishRecycler = view.findViewById(R.id.wishRecycler);
         wList = new ArrayList<>();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }

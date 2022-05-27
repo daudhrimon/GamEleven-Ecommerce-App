@@ -40,13 +40,16 @@ public class FragOrderList extends Fragment {
 
         backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
-            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-            MainActivity.btmNav.setSelectedItemId(R.id.home);
-            MainActivity.btmCard.setVisibility(View.VISIBLE);
-            MainActivity.fab.setVisibility(View.VISIBLE);
+            onBackPressedHandler();
         });
 
         return view;
+    }
+
+    private void onBackPressedHandler() {
+        getParentFragmentManager().popBackStack("A2O",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -86,5 +89,11 @@ public class FragOrderList extends Fragment {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }

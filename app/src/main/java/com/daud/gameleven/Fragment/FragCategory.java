@@ -32,7 +32,7 @@ public class FragCategory extends Fragment {
         initial(view);
 
         catBack.setOnClickListener(view1 -> {
-            catBackClickHandler();
+            onBackPressedHandler();
         });
         
         oneBtn.setOnClickListener(view1 -> {
@@ -111,7 +111,7 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
     }
 
-    private void catBackClickHandler() {
+    private void onBackPressedHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
@@ -137,5 +137,11 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
         itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         catName = view.findViewById(R.id.catName);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onBackPressedHandler();
     }
 }
