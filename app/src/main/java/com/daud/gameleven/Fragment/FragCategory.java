@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,7 +67,6 @@ public class FragCategory extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
         oneBtnClickHandler();
     }
 
@@ -112,7 +113,7 @@ public class FragCategory extends Fragment {
     }
 
     private void onBackPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -137,11 +138,5 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
         itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         catName = view.findViewById(R.id.catName);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        onBackPressedHandler();
     }
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,8 @@ public class FragOrderList extends Fragment {
         tab_layout = (TabLayout) view.findViewById(R.id.tab_layout);
         tab_layout.setupWithViewPager(view_pager);
 
+        onBackPressed(view);
+
         backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
             backBtnClickHandler();
@@ -48,6 +51,7 @@ public class FragOrderList extends Fragment {
 
     private void backBtnClickHandler() {
         getParentFragmentManager().popBackStack();
+        //getParentFragmentManager().popBackStack("POP",0);
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
     }
@@ -91,11 +95,18 @@ public class FragOrderList extends Fragment {
         }
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getParentFragmentManager().popBackStack("OL",FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backBtnClickHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

@@ -3,6 +3,8 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,7 +48,7 @@ public class FragCart extends Fragment {
     }
 
     private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -61,11 +63,5 @@ public class FragCart extends Fragment {
         cartBack = view.findViewById(R.id.cartBack);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        backPressedHandler();
     }
 }

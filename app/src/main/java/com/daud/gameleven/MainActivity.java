@@ -3,6 +3,8 @@ package com.daud.gameleven;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -53,44 +55,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fabOnClickHandler() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        btmNav.setSelectedItemId(R.id.home);
-
+        if (btmNav.getSelectedItemId()!=R.id.home){
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+            btmNav.setSelectedItemId(R.id.home);
+        }
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
         switch (item.getItemId()){
             case R.id.category:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).addToBackStack(null).commit();
-                break;
+                if (btmNav.getSelectedItemId() != R.id.category){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory())
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                } break;
+
             case R.id.wishlist:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragWishlist()).addToBackStack(null).commit();
-                break;
+                if (btmNav.getSelectedItemId() != R.id.wishlist) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragWishlist())
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                } break;
+
             case R.id.cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCart()).addToBackStack(null).commit();
-                break;
+                if (btmNav.getSelectedItemId() != R.id.cart) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCart())
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                } break;
+
             case R.id.account:
+                if (btmNav.getSelectedItemId() != R.id.account){
                 if (getPreferences.getInt("SIGNIN",0)==1){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).addToBackStack(null).commit();
-                    break;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount())
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
                 } else {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn()).addToBackStack(null).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn())
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
                     fab.setVisibility(View.GONE);
                     btmCard.setVisibility(View.GONE);
-                    break;
                 }
+                } break;
 
             default:break;
         }
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        btmNav.setSelectedItemId(R.id.home);
-        btmCard.setVisibility(View.VISIBLE);
-        fab.setVisibility(View.VISIBLE);
-    }*/
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0 && btmNav.getSelectedItemId() != R.id.home) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome())
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+            btmNav.setSelectedItemId(R.id.home);
+            btmCard.setVisibility(View.VISIBLE);
+            fab.setVisibility(View.VISIBLE);
+        }
+    }
 
     private void initial() {
         btmCard = findViewById(R.id.btmCard);
@@ -114,11 +132,4 @@ public class MainActivity extends AppCompatActivity {
         int number=random.nextInt(colorcode.size());
         return colorcode.get(number);
     }
-
-    //Defined in Activity class, so override
-        @Override
-        public void onBackPressed() {
-            super.onBackPressed();
-        }
-
 }

@@ -3,6 +3,7 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ public class FragAccount extends Fragment {
 
         initial(view);
 
+
         accountBack.setOnClickListener(view1 -> {
             onBackPressedHandler();
         });
@@ -46,15 +48,17 @@ public class FragAccount extends Fragment {
     }
 
     private void ordersFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).addToBackStack("OL").commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList())
+                .addToBackStack("POP").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
         MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void profileFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile()).addToBackStack("PR").commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile())
+                .addToBackStack("POP").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
         MainActivity.fab.setVisibility(View.GONE);
-        MainActivity.btmNav.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void addressFabClickHandler() {
@@ -65,7 +69,7 @@ public class FragAccount extends Fragment {
     }
 
     private void onBackPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -76,11 +80,5 @@ public class FragAccount extends Fragment {
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        onBackPressedHandler();
     }
 }

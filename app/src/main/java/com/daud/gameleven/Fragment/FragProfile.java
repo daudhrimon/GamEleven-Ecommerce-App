@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,8 @@ public class FragProfile extends Fragment {
 
         initial(view);
 
+        onBackPressed(view);
+
         backBtn.setOnClickListener(view1 -> {
             backBtnClickHandler();
         });
@@ -43,7 +46,8 @@ public class FragProfile extends Fragment {
 
     private void backBtnClickHandler() {
         getParentFragmentManager().popBackStack();
-        MainActivity.btmNav.setVisibility(View.VISIBLE);
+        //getParentFragmentManager().popBackStack("POP",0);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
@@ -66,11 +70,18 @@ public class FragProfile extends Fragment {
         backBtn = view.findViewById(R.id.profileBack);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getParentFragmentManager().popBackStack("PR", FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        MainActivity.btmNav.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backBtnClickHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }
