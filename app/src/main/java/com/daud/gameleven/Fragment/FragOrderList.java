@@ -40,14 +40,14 @@ public class FragOrderList extends Fragment {
 
         backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
-            onBackPressedHandler();
+            backBtnClickHandler();
         });
 
         return view;
     }
 
-    private void onBackPressedHandler() {
-        getParentFragmentManager().popBackStack("A2O",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    private void backBtnClickHandler() {
+        getParentFragmentManager().popBackStack();
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
     }
@@ -94,6 +94,8 @@ public class FragOrderList extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        onBackPressedHandler();
+        getParentFragmentManager().popBackStack("OL",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 }

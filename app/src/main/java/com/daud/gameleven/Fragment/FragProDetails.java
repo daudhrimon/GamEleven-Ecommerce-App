@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
@@ -68,5 +70,13 @@ public class FragProDetails extends Fragment {
     private void initial(View view) {
         imageSliderPd = view.findViewById(R.id.imageSliderPd);
         relatedPR = view.findViewById(R.id.relatedPR);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getParentFragmentManager().popBackStack("PD", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 }

@@ -67,7 +67,7 @@ public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH
 
     // go to details frag Demo
     private void gotoPdFragmentDemo(){
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProDetails()).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProDetails()).addToBackStack("PD").commit();
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }

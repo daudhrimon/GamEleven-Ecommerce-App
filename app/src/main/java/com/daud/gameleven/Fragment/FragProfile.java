@@ -1,18 +1,15 @@
 package com.daud.gameleven.Fragment;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
@@ -30,7 +27,7 @@ public class FragProfile extends Fragment {
         initial(view);
 
         backBtn.setOnClickListener(view1 -> {
-            onBackPressedHandler();
+            backBtnClickHandler();
         });
 
         personEtv.setOnClickListener(view1 -> {
@@ -44,8 +41,8 @@ public class FragProfile extends Fragment {
         return view;
     }
 
-    private void onBackPressedHandler() {
-        getParentFragmentManager().popBackStack("A2P", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    private void backBtnClickHandler() {
+        getParentFragmentManager().popBackStack();
         MainActivity.btmNav.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
     }
@@ -53,7 +50,6 @@ public class FragProfile extends Fragment {
     private void personEtvClickHandler() {
         BottomSheetDialog btmSheet =  new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_personalinfo);
-
         btmSheet.show();
     }
 
@@ -73,6 +69,8 @@ public class FragProfile extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        onBackPressedHandler();
+        getParentFragmentManager().popBackStack("PR", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        MainActivity.btmNav.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 }

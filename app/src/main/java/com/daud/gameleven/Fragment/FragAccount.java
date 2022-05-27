@@ -46,13 +46,13 @@ public class FragAccount extends Fragment {
     }
 
     private void ordersFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).addToBackStack("A2P").commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList()).addToBackStack("OL").commit();
         MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void profileFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile()).addToBackStack("A2O").commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile()).addToBackStack("PR").commit();
         MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmNav.setVisibility(View.GONE);
     }
