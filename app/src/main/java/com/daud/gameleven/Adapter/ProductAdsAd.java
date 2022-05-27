@@ -20,24 +20,24 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class ProductAd extends RecyclerView.Adapter<ProductAd.BestSaleProVH> {
+public class ProductAdsAd extends RecyclerView.Adapter<ProductAdsAd.ProductAdsVH> {
     private Context context;
     private List<ProductModel> pList;
 
-    public ProductAd(Context context, List<ProductModel> pList) {
+    public ProductAdsAd(Context context, List<ProductModel> pList) {
         this.context = context;
         this.pList = pList;
     }
 
     @NonNull
     @Override
-    public BestSaleProVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_products,parent,false);
-        return new BestSaleProVH(view);
+    public ProductAdsVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_productads,parent,false);
+        return new ProductAdsVH(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BestSaleProVH holder, int position) {
+    public void onBindViewHolder(@NonNull ProductAdsVH holder, int position) {
         holder.bspIv.setImageResource(pList.get(position).getImage());
         holder.bspName.setText(pList.get(position).getName());
         holder.bspCat.setText(pList.get(position).getCategory());
@@ -53,13 +53,13 @@ public class ProductAd extends RecyclerView.Adapter<ProductAd.BestSaleProVH> {
         return pList.size();
     }
 
-    public class BestSaleProVH extends RecyclerView.ViewHolder{
+    public class ProductAdsVH extends RecyclerView.ViewHolder{
         private ImageView bspIv;
         private TextView bspName,bspCat,bspPrice;
         private FloatingActionButton bspFab;
         private LinearLayout bspItem;
 
-        public BestSaleProVH(@NonNull View itemView) {
+        public ProductAdsVH(@NonNull View itemView) {
             super(itemView);
             bspIv = itemView.findViewById(R.id.bspIv);
             bspName = itemView.findViewById(R.id.bspName);

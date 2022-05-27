@@ -9,8 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Fragment.FragProduct;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> {
@@ -40,8 +43,14 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
         });
 
         holder.itemView.setOnClickListener(view -> {
-            catItemsExpandBtnClick(holder);
+            itemClickHandler(holder);
         });
+    }
+
+    private void itemClickHandler(CategoryListVH holder) {
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct()).commit();
+        MainActivity.btmCard.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
     }
 
     private void catItemsExpandBtnClick(CategoryListVH holder) {

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.daud.gameleven.MainActivity;
-import com.daud.gameleven.Adapter.ProductAd;
+import com.daud.gameleven.Adapter.ProductAdsAd;
 import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.Adapter.BrandsAd;
 import com.daud.gameleven.Adapter.DailyFeaturesAd;
@@ -21,6 +21,7 @@ import com.daud.gameleven.Adapter.FlashDealsAd;
 import com.daud.gameleven.Adapter.HotCateAd;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
+import com.daud.gameleven.Util.Data;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -71,30 +72,22 @@ public class FragHome extends Fragment {
     }
 
     private void setRecyclersDemo() {
-        List<ProductModel> pList = new ArrayList<>();
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Chair","1","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Mouse","2","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        pList.add(new ProductModel("Power Bank Water Gold","Gaming Pc","3","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Headphone","4","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Chair","5","Sound Box","750.00","550.00",R.drawable.one,"Discription","200.00",10,R.drawable.diesel));
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Mouse","6","Sound Box","430.00","230.00",R.drawable.two,"Discription","200.00",10,R.drawable.gionee));
-        pList.add(new ProductModel("Power Bank Water Gold","Gaming Pc","7","Sound Box","1430.00","1230.00",R.drawable.three,"Discription","200.00",10,R.drawable.fedex));
-        pList.add(new ProductModel("Power Bank Water Gold","G11 Headphone","8","Sound Box","1430.00","1230.00",R.drawable.four,"Discription","200.00",10,R.drawable.micromax));
+        Data data = new Data();
 
         flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        flashDeals.setAdapter(new FlashDealsAd(getContext(),pList));
+        flashDeals.setAdapter(new FlashDealsAd(getContext(),data.getAllProduct()));
 
         dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(),pList));
+        dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(),data.getAllProduct()));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new HotCateAd(getContext(),pList));
+        hotCategories.setAdapter(new HotCateAd(getContext(),data.getAllProduct()));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new BrandsAd(getContext(),pList));
+        brands.setAdapter(new BrandsAd(getContext(),data.getAllProduct()));
 
         bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new ProductAd(getContext(),pList));
+        bestSale.setAdapter(new ProductAdsAd(getContext(),data.getAllProduct()));
 
 
     }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.FragProducts"
+    tools:context=".Fragment.FragProduct"
     android:background="@color/main_bg_clr"
     android:orientation="vertical">
 
@@ -113,13 +113,13 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/product_rv"
+        android:id="@+id/productRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4.5dp"
         app:spanCount="2"
         tools:itemCount="12"
-        tools:listitem="@layout/vh_products"
+        tools:listitem="@layout/vh_productads"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 </LinearLayout>
