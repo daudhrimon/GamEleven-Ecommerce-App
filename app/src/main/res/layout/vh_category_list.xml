@@ -13,7 +13,7 @@
         android:layout_above="@id/btmView"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginVertical="4dp"
+        android:layout_marginVertical="5dp"
         android:paddingHorizontal="6dp"
         android:layout_toStartOf="@id/expandLay"
         android:background="@drawable/selector_cate_item"

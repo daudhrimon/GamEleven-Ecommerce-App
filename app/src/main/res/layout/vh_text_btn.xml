@@ -4,8 +4,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="2dp"
-    android:clickable="true">
+    android:padding="3dp"
+    android:clickable="true"
+    android:background="@drawable/selector_cate_item">
 
     <TextView
         android:id="@+id/tv"
