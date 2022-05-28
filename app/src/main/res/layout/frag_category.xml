@@ -325,7 +325,7 @@
                 android:id="@+id/itemsSuperRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="8dp"
+                android:layout_marginHorizontal="6dp"
                 android:paddingTop="5dp" />
 
 
