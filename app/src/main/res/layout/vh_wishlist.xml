@@ -21,14 +21,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="5"
         android:orientation="vertical"
-        android:layout_marginStart="11dp">
+        android:layout_marginStart="11dp"
+        android:paddingBottom="6dp">
 
         <TextView
             android:id="@+id/wishName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="1dp"
+            android:paddingTop="10dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Power Bank Water Gold"
             android:textColor="#7E7E7E"
@@ -38,7 +38,7 @@
             android:id="@+id/wishCat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="9dp"
+            android:paddingTop="1dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Sound Box"
             android:textColor="#7E7E7E"
@@ -48,7 +48,7 @@
             android:id="@+id/wishPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
+            android:paddingVertical="9dp"
             android:fontFamily="@font/roboto_med"
             android:text="500.00 SAR"
             android:textColor="@color/selector_clr"

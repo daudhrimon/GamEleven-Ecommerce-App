@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg_clr"
-    tools:context=".Fragment.FragCart">
+    tools:context=".Fragment.FragCart"
+    android:paddingBottom="24dp">
 
     <!--TOOLBAR -->
 
@@ -50,119 +51,112 @@
         android:layout_above="@+id/btmCard"
         android:layout_below="@id/toolBar" />
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:id="@+id/btmCard"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="59dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"
-        android:layout_marginTop="12dp"
-        android:outlineSpotShadowColor="@color/trans">
+        android:background="@color/white"
+        android:paddingHorizontal="15dp"
+        android:elevation="6dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="15dp">
+        <LinearLayout
+            android:id="@+id/selectLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/selectLay"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSelect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:orientation="horizontal">
+                android:backgroundTint="@color/selector_clr"
+                android:outlineSpotShadowColor="@color/trans"
+                android:src="@drawable/tick"
+                app:borderWidth="0dp"
+                app:fabCustomSize="23dp"
+                app:maxImageSize="12dp"
+                app:tint="@color/white"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabSelect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:backgroundTint="@color/selector_clr"
-                    android:outlineSpotShadowColor="@color/trans"
-                    android:src="@drawable/tick"
-                    app:borderWidth="0dp"
-                    app:fabCustomSize="23dp"
-                    app:maxImageSize="12dp"
-                    app:tint="@color/white"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabUnselect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:backgroundTint="#EAEAEA"
-                    android:outlineSpotShadowColor="@color/trans"
-                    android:src="@drawable/cart_unselected"
-                    android:visibility="gone"
-                    app:borderWidth="0dp"
-                    app:fabCustomSize="22dp"
-                    app:maxImageSize="22dp"
-                    app:tint="@color/trans" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/all"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabUnselect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/selectLay"
-                android:fontFamily="@font/roboto_med"
-                android:text="All"
-                android:textColor="#5A5A5A"
-                android:textSize="14sp" />
+                android:layout_alignParentStart="true"
+                android:backgroundTint="#EAEAEA"
+                android:outlineSpotShadowColor="@color/trans"
+                android:src="@drawable/cart_unselected"
+                android:visibility="gone"
+                app:borderWidth="0dp"
+                app:fabCustomSize="22dp"
+                app:maxImageSize="22dp"
+                app:tint="@color/trans" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/selectLay"
+            android:fontFamily="@font/roboto_med"
+            android:text="All"
+            android:textColor="#5A5A5A"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/all"
+            android:fontFamily="@font/roboto_med"
+            android:text="Total : "
+            android:textColor="#5A5A5A"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/totalCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/total"
+            android:fontFamily="@font/roboto_med"
+            android:text="SAR 2000.00"
+            android:textColor="@color/selector_clr"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/checkOut"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="11dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="6dp"
+            android:layout_toEndOf="@id/totalCount"
+            android:background="@drawable/selector_buynow"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            tools:ignore="TouchTargetSizeCheck">
 
             <TextView
-                android:id="@+id/total"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="15dp"
-                android:layout_toEndOf="@id/all"
                 android:fontFamily="@font/roboto_med"
-                android:text="Total : "
-                android:textColor="#5A5A5A"
+                android:text="Check Out"
+                android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/totalCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/total"
-                android:fontFamily="@font/roboto_med"
-                android:text="SAR 2000.00"
-                android:textColor="@color/selector_clr"
-                android:textSize="14sp" />
+        </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/checkOut"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginVertical="11dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="5dp"
-                android:layout_toEndOf="@id/totalCount"
-                android:background="@drawable/selector_buynow"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                tools:ignore="TouchTargetSizeCheck">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_med"
-                    android:text="Check Out"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -3,7 +3,9 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +29,12 @@ public class FragSignIn extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_signin, container, false);
+        onBackPressed(view);
 
         initial(view);
 
         sInBack.setOnClickListener(view1 -> {
-            onBackPressedHandler();
+            backPressedHandler();
         });
 
         signInBtn.setOnClickListener(view1 ->  {
@@ -43,13 +46,6 @@ public class FragSignIn extends Fragment {
         });
 
         return view;
-    }
-
-    private void onBackPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void signUpBtnClickHandler() {
@@ -83,6 +79,12 @@ public class FragSignIn extends Fragment {
         }
     }
 
+    private void backPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
+    }
+
     private void initial(View view) {
         sInPhnEt = view.findViewById(R.id.sInPhnEt);
         sInPassEt = view.findViewById(R.id.sInPassEt);
@@ -92,9 +94,18 @@ public class FragSignIn extends Fragment {
         sInBack = view.findViewById(R.id.sInBack);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        onBackPressedHandler();
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

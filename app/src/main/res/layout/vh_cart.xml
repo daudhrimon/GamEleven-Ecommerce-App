@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="121dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginVertical="3dp"
     android:background="@color/white">
 
     <ImageView
         android:id="@+id/cartIv"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
+        android:layout_width="87dp"
+        android:layout_height="98dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginHorizontal="24dp"
+        android:layout_marginHorizontal="22dp"
+        android:padding="8dp"
         android:paddingHorizontal="6dp"
         android:scaleType="fitXY"
         android:src="@drawable/one" />
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/cartId"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="6dp"
         android:layout_marginBottom="5dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -60,12 +61,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
         android:layout_toStartOf="@id/selectBtn"
         android:layout_toEndOf="@id/cartIv"
         android:fontFamily="@font/roboto_regular"
         android:maxLines="2"
+        android:paddingTop="10dp"
         android:text="Power Bank Water Gold"
         android:textColor="@color/cart_wish_tc"
         android:textSize="16sp" />
@@ -75,11 +75,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/cartName"
-        android:layout_marginBottom="3dp"
         android:layout_toStartOf="@id/selectBtn"
         android:layout_toEndOf="@id/cartIv"
         android:fontFamily="@font/roboto_regular"
         android:maxLines="1"
+        android:paddingTop="1dp"
         android:text="Sound Box"
         android:textColor="@color/cart_wish_tc"
         android:textSize="16sp" />
@@ -91,6 +91,7 @@
         android:layout_below="@id/cartCat"
         android:layout_toStartOf="@id/selectBtn"
         android:layout_toEndOf="@id/cartIv"
+        android:paddingVertical="1dp"
         android:fontFamily="@font/roboto_regular"
         android:maxLines="1"
         android:text="12345"
@@ -102,13 +103,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cartId"
-        android:layout_alignParentBottom="true"
-        android:layout_marginVertical="5dp"
         android:layout_toStartOf="@id/cartCounter"
         android:layout_toEndOf="@id/cartIv"
         android:fontFamily="@font/roboto_med"
         android:gravity="center_vertical"
         android:maxLines="1"
+        android:paddingVertical="8dp"
         android:text="550.00"
         android:textColor="@color/selector_clr"
         android:textSize="15sp" />
@@ -117,32 +117,32 @@
         android:id="@+id/cartCounter"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/cartId"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="18dp"
-        android:gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="14">
 
         <ImageButton
             android:id="@+id/cartPlus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:backgroundTint="#F0F0F0"
-            app:tint="#837A7A"
             android:src="@drawable/plus"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/cartCount"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_med"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_marginHorizontal="2dp"
+            android:maxLines="1"
+            android:fontFamily="@font/roboto_regular"
             android:text="01"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#837A7A"
             android:textSize="18sp" />
 
@@ -150,9 +150,8 @@
             android:id="@+id/cartMinus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:backgroundTint="#F0F0F0"
-            app:tint="#837A7A"
             android:src="@drawable/minus"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

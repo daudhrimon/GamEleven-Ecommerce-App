@@ -49,14 +49,14 @@ public class FragAccount extends Fragment {
 
     private void ordersFabClickHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList())
-                .addToBackStack("POP").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
         MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void profileFabClickHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile())
-                .addToBackStack("POP").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
         MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
     }
