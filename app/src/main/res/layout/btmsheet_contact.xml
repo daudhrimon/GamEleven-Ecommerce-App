@@ -30,7 +30,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Contact Number*"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textColor="@color/adrsBtm_txtClr"
+            android:textColor="@color/rating_txt_clr2"
             android:textSize="15sp" />
 
         <EditText
@@ -41,7 +41,7 @@
             android:hint="Enter your contact Number"
             android:paddingHorizontal="11dp"
             android:paddingVertical="16dp"
-            android:textColor="@color/adrsBtm_txtClr"
+            android:textColor="@color/rating_txt_clr2"
             android:textSize="13sp" />
 
     </LinearLayout>
