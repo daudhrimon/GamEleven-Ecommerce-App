@@ -1,5 +1,7 @@
 package com.daud.gameleven.Fragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
@@ -44,7 +47,24 @@ public class FragAccount extends Fragment {
             addressFabClickHandler();
         });
 
+        cngLanFab.setOnClickListener(view1 -> {
+            cngLanFabClickHandler();
+        });
+
         return view;
+    }
+
+    private void cngLanFabClickHandler() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.alertdialog_language,null,false);
+        TextView cancelBtn = view.findViewById(R.id.cancelBtn);
+        builder.setView(view);
+        final Dialog dialog = builder.create();
+        dialog.show();
+
+        cancelBtn.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
     }
 
     private void ordersFabClickHandler() {

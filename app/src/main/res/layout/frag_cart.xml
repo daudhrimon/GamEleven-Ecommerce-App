@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_bg_clr"
     tools:context=".Fragment.FragCart"
-    android:paddingBottom="24dp">
+    android:paddingBottom="25dp">
 
     <!--TOOLBAR -->
 
@@ -57,8 +57,8 @@
         android:layout_height="59dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        android:paddingHorizontal="15dp"
-        android:elevation="6dp">
+        android:elevation="8dp"
+        android:paddingHorizontal="15dp">
 
         <LinearLayout
             android:id="@+id/selectLay"
