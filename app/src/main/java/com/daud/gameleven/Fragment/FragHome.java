@@ -41,10 +41,9 @@ public class FragHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_home, container, false);
+        onBackPressed(view);
 
         initial(view);
-
-        onBackPressed(view);
 
         menuBtn.setOnClickListener(view1 -> {
             menuBtnOnClick();

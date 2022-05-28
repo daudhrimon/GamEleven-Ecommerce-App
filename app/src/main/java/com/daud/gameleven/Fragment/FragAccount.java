@@ -24,10 +24,9 @@ public class FragAccount extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_account, container, false);
+        onBackPressed(view);
 
         initial(view);
-
-        onBackPressed(view);
 
         accountBack.setOnClickListener(view1 -> {
             backPressedHandler();

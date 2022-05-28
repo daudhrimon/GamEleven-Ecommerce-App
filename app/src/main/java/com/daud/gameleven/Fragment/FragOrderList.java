@@ -32,6 +32,7 @@ public class FragOrderList extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.frag_orderlist, container, false);
+        onBackPressed(view);
 
         view_pager = (ViewPager) view.findViewById(R.id.view_pager);
         setupViewPager(view_pager);
@@ -39,21 +40,12 @@ public class FragOrderList extends Fragment {
         tab_layout = (TabLayout) view.findViewById(R.id.tab_layout);
         tab_layout.setupWithViewPager(view_pager);
 
-        onBackPressed(view);
-
         backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
         });
 
         return view;
-    }
-
-    private void backPressedHandler() {
-        getParentFragmentManager().popBackStack();
-        //getParentFragmentManager().popBackStack("POP",0);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -93,6 +85,12 @@ public class FragOrderList extends Fragment {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+    }
+
+    private void backPressedHandler() {
+        getParentFragmentManager().popBackStack();
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

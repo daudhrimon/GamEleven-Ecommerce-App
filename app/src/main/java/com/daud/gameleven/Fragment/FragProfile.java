@@ -23,10 +23,9 @@ public class FragProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_profile, container, false);
+        onBackPressed(view);
 
         initial(view);
-
-        onBackPressed(view);
 
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -43,13 +42,6 @@ public class FragProfile extends Fragment {
         return view;
     }
 
-    private void backPressedHandler() {
-        getParentFragmentManager().popBackStack();
-        //getParentFragmentManager().popBackStack("POP",0);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
-    }
-
     private void personEtvClickHandler() {
         BottomSheetDialog btmSheet =  new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_personalinfo);
@@ -61,6 +53,12 @@ public class FragProfile extends Fragment {
         btmSheet.setContentView(R.layout.btmsheet_email);
 
         btmSheet.show();
+    }
+
+    private void backPressedHandler() {
+        getParentFragmentManager().popBackStack();
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void initial(View view) {

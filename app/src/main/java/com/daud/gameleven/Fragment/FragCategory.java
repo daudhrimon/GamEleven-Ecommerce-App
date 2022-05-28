@@ -30,10 +30,9 @@ public class FragCategory extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_category, container, false);
+        onBackPressed(view);
 
         initial(view);
-
-        onBackPressed(view);
 
         catBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -114,12 +113,6 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
     }
 
-    private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
-    }
-
     private void setButtonsColor(LinearLayout Lay){
         oneBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
         twoBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
@@ -128,6 +121,12 @@ public class FragCategory extends Fragment {
         fiveBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
         sixBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
         Lay.setBackgroundColor(Color.parseColor("#FFFFFF"));
+    }
+
+    private void backPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
     private void initial(View view) {

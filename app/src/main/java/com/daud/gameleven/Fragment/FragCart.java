@@ -32,10 +32,9 @@ public class FragCart extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_cart, container, false);
+        onBackPressed(view);
 
         initial(view);
-
-        onBackPressed(view);
 
         cartBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -50,17 +49,17 @@ public class FragCart extends Fragment {
         cartDemo();
     }
 
-    private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
-    }
-
     private void cartDemo() {
         Data data = new Data();
 
         cartRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         cartRecycler.setAdapter(new CartAd(getContext(),data.getCarts()));
+    }
+
+    private void backPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
     private void initial(View view) {
