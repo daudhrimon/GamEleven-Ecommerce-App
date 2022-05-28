@@ -3,6 +3,7 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.daud.gameleven.MainActivity;
@@ -36,6 +38,7 @@ public class FragHome extends Fragment {
     private ImageButton menuBtn;
     private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
     private ImageSlider imageSlider;
+    private ImageView couponBtn,giftCBtn,slashBtn,pcbBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +50,20 @@ public class FragHome extends Fragment {
 
         menuBtn.setOnClickListener(view1 -> {
             menuBtnOnClick();
+        });
+
+        ///////////////////////////////////////
+        couponBtn.setOnClickListener(view1 -> {
+            demoClick();
+        });
+        giftCBtn.setOnClickListener(view1 -> {
+            demoClick();
+        });
+        slashBtn.setOnClickListener(view1 -> {
+            demoClick();
+        });
+        pcbBtn.setOnClickListener(view1 -> {
+            demoClick();
         });
 
         return view;
@@ -61,6 +78,13 @@ public class FragHome extends Fragment {
         imageSliderHandler();
 
         setRecyclersDemo();
+    }
+
+    private void demoClick(){
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        MainActivity.fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void topTextSliderHandler() {
@@ -105,6 +129,8 @@ public class FragHome extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         menuBtn = view.findViewById(R.id.menuBtn);
         imageSlider = view.findViewById(R.id.imageSlider);
         textRecycler = view.findViewById(R.id.textRecycler);
@@ -114,8 +140,10 @@ public class FragHome extends Fragment {
         hotCategories = view.findViewById(R.id.hotCategories);
         brands = view.findViewById(R.id.brands);
         bestSale = view.findViewById(R.id.bestSale);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+        couponBtn = view.findViewById(R.id.couponBtn);
+        giftCBtn =view.findViewById(R.id.giftCBtn);
+        slashBtn =view.findViewById(R.id.slashBtn);
+        pcbBtn =view.findViewById(R.id.pcbBtn);
     }
 
     private void onBackPressed(View view) {

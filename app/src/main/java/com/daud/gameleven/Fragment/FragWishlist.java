@@ -61,11 +61,11 @@ public class FragWishlist extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         wishBack = view.findViewById(R.id.wishBack);
         wishRecycler = view.findViewById(R.id.wishRecycler);
         wList = new ArrayList<>();
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

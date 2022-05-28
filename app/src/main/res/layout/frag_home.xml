@@ -120,6 +120,7 @@
                     android:weightSum="10">
 
                     <ImageView
+                        android:id="@+id/couponBtn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
@@ -153,6 +154,7 @@
                     android:weightSum="10">
 
                     <ImageView
+                        android:id="@+id/giftCBtn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
@@ -186,6 +188,7 @@
                     android:weightSum="10">
 
                     <ImageView
+                        android:id="@+id/slashBtn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
@@ -219,6 +222,7 @@
                     android:weightSum="10">
 
                     <ImageView
+                        android:id="@+id/pcbBtn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"

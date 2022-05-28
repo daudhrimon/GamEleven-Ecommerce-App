@@ -45,8 +45,8 @@ public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
     private void textBtnClickHandler() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
-        MainActivity.btmCard.setVisibility(View.GONE);
         MainActivity.fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     @Override

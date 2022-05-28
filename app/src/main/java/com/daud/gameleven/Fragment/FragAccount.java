@@ -95,14 +95,14 @@ public class FragAccount extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         accountBack = view.findViewById(R.id.accountBack);
         ordersFab = view.findViewById(R.id.ordersFab);
         profileFab = view.findViewById(R.id.profileFab);
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {
