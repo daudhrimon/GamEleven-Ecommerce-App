@@ -100,7 +100,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="6dp"
@@ -113,8 +113,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:weightSum="10">
@@ -125,7 +125,7 @@
                         android:layout_weight="8"
                         android:background="@drawable/selector_coupon"
                         android:clickable="true"
-                        android:padding="18dp"
+                        android:padding="17dp"
                         android:src="@drawable/coupon_icon"
                         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -145,8 +145,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:weightSum="10">
@@ -157,7 +157,7 @@
                         android:layout_weight="8"
                         android:background="@drawable/selector_gift"
                         android:clickable="true"
-                        android:padding="18dp"
+                        android:padding="17dp"
                         android:src="@drawable/gift_icon"
                         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -177,8 +177,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:weightSum="10">
@@ -189,7 +189,7 @@
                         android:layout_weight="8"
                         android:background="@drawable/selector_slash"
                         android:clickable="true"
-                        android:padding="18dp"
+                        android:padding="17dp"
                         android:src="@drawable/slash_icon"
                         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -209,8 +209,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:weightSum="10">
@@ -221,7 +221,7 @@
                         android:layout_weight="8"
                         android:background="@drawable/selector_pc"
                         android:clickable="true"
-                        android:padding="18dp"
+                        android:padding="17dp"
                         android:src="@drawable/pc_icon"
                         tools:ignore="SpeakableTextPresentCheck" />
 
