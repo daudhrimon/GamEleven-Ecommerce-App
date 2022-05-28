@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.FragProduct"
     android:background="@color/main_bg_clr"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Fragment.FragProduct">
 
     <LinearLayout
         android:id="@+id/toolBar"
@@ -19,11 +19,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="1dp"
             app:cardBackgroundColor="@color/search_bg_clr"
             app:cardCornerRadius="23dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="1dp"
             app:cardElevation="0dp">
 
             <androidx.appcompat.widget.SearchView
@@ -104,9 +104,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/sort"
-                android:textAllCaps="false"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Shot"
+                android:textAllCaps="false"
                 android:textColor="#797979"
                 android:textSize="16sp" />
 
@@ -117,11 +117,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productRv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4.5dp"
-        app:spanCount="2"
-        tools:itemCount="12"
-        tools:listitem="@layout/vh_productads"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+        android:layout_height="match_parent"
+        android:paddingHorizontal="4.5dp" />
 
 </LinearLayout>
