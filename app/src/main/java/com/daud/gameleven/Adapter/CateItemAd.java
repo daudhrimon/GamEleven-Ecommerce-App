@@ -43,7 +43,7 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
             catItemsExpandBtnClick(holder);
         });
 
-        holder.itemView.setOnClickListener(view -> {
+        holder.itemBtn.setOnClickListener(view -> {
             itemClickHandler(holder);
         });
     }
@@ -73,11 +73,12 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     public class CategoryListVH extends RecyclerView.ViewHolder {
         private TextView itemTv;
         private ImageButton expandBtn;
-        private LinearLayout superLay;
+        private LinearLayout itemBtn,superLay;
 
         public CategoryListVH(@NonNull View itemView) {
             super(itemView);
             itemTv = itemView.findViewById(R.id.itemTv);
+            itemBtn = itemView.findViewById(R.id.itemBtn);
             expandBtn = itemView.findViewById(R.id.expandBtn);
             superLay = itemView.findViewById(R.id.superLay);
         }

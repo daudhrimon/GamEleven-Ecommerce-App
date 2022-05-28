@@ -6,17 +6,30 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/itemTv"
+    <LinearLayout
+        android:id="@+id/itemBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+        android:clickable="true"
+        android:background="@drawable/selector_cate_item"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/expandLay"
         android:layout_above="@id/btmView"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/roboto_regular"
-        android:text="Gaming Device"
-        android:textColor="#797979"
-        android:textSize="14sp" />
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/itemTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Gaming Device"
+            android:textColor="#797979"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/expandLay"
@@ -51,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/expandLay"
-        android:layout_marginEnd="5dp"
+        android:layout_marginHorizontal="5dp"
         android:background="@color/search_bg_clr" />
 
     <LinearLayout
