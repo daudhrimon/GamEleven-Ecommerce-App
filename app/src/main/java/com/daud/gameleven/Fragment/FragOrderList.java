@@ -43,13 +43,13 @@ public class FragOrderList extends Fragment {
 
         backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
-            backBtnClickHandler();
+            backPressedHandler();
         });
 
         return view;
     }
 
-    private void backBtnClickHandler() {
+    private void backPressedHandler() {
         getParentFragmentManager().popBackStack();
         //getParentFragmentManager().popBackStack("POP",0);
         MainActivity.btmCard.setVisibility(View.VISIBLE);
@@ -102,7 +102,7 @@ public class FragOrderList extends Fragment {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (i==KeyEvent.KEYCODE_BACK){
-                    backBtnClickHandler();
+                    backPressedHandler();
                     return true;
                 }
                 return false;

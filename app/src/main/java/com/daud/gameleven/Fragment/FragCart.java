@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,8 @@ public class FragCart extends Fragment {
 
         initial(view);
 
+        onBackPressed(view);
+
         cartBack.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -48,7 +51,8 @@ public class FragCart extends Fragment {
     }
 
     private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -63,5 +67,20 @@ public class FragCart extends Fragment {
         cartBack = view.findViewById(R.id.cartBack);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

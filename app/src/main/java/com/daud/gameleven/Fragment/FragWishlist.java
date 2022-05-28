@@ -3,11 +3,11 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +34,10 @@ public class FragWishlist extends Fragment {
 
         initial(view);
 
+        onBackPressed(view);
+
         wishBack.setOnClickListener(view1 -> {
-            onBackPressedHandler();
+            backPressedHandler();
         });
 
         return view;
@@ -53,8 +55,9 @@ public class FragWishlist extends Fragment {
         wishRecycler.setAdapter(new WishlistAd(getContext(),data.getWishlist()));
     }
 
-    private void onBackPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+    private void backPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -62,5 +65,20 @@ public class FragWishlist extends Fragment {
         wishBack = view.findViewById(R.id.wishBack);
         wishRecycler = view.findViewById(R.id.wishRecycler);
         wList = new ArrayList<>();
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

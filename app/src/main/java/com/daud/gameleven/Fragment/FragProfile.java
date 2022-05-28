@@ -3,7 +3,6 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -30,7 +29,7 @@ public class FragProfile extends Fragment {
         onBackPressed(view);
 
         backBtn.setOnClickListener(view1 -> {
-            backBtnClickHandler();
+            backPressedHandler();
         });
 
         personEtv.setOnClickListener(view1 -> {
@@ -44,7 +43,7 @@ public class FragProfile extends Fragment {
         return view;
     }
 
-    private void backBtnClickHandler() {
+    private void backPressedHandler() {
         getParentFragmentManager().popBackStack();
         //getParentFragmentManager().popBackStack("POP",0);
         MainActivity.btmCard.setVisibility(View.VISIBLE);
@@ -77,7 +76,7 @@ public class FragProfile extends Fragment {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (i==KeyEvent.KEYCODE_BACK){
-                    backBtnClickHandler();
+                    backPressedHandler();
                     return true;
                 }
                 return false;

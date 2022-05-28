@@ -42,71 +42,59 @@ public class MainActivity extends AppCompatActivity {
         initial();
 
         fab.setOnClickListener(view -> {
+            if (btmNav.getSelectedItemId() != R.id.home) {
             fabOnClickHandler();
+            }
         });
 
         btmNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                btmNavItemSelectHandler(item);
+                if (item.getItemId() != btmNav.getSelectedItemId()) {
+                    btmNavItemSelectHandler(item);
+                }
                 return true;
             }
         });
     }
 
     private void fabOnClickHandler() {
-        if (btmNav.getSelectedItemId()!=R.id.home){
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-            btmNav.setSelectedItemId(R.id.home);
-        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+        btmNav.setSelectedItemId(R.id.home);
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.category:
-                if (btmNav.getSelectedItemId() != R.id.category){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory())
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-                } break;
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCategory())
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                break;
 
             case R.id.wishlist:
-                if (btmNav.getSelectedItemId() != R.id.wishlist) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragWishlist())
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-                } break;
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragWishlist())
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                break;
 
             case R.id.cart:
-                if (btmNav.getSelectedItemId() != R.id.cart) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCart())
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-                } break;
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCart())
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                break;
 
             case R.id.account:
-                if (btmNav.getSelectedItemId() != R.id.account){
-                if (getPreferences.getInt("SIGNIN",0)==1){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount())
+                if (getPreferences.getInt("SIGNIN", 0) == 1) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragAccount())
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
                 } else {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignIn())
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragSignIn())
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
                     fab.setVisibility(View.GONE);
                     btmCard.setVisibility(View.GONE);
                 }
-                } break;
+                break;
 
-            default:break;
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount() == 0 && btmNav.getSelectedItemId() != R.id.home) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome())
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-            btmNav.setSelectedItemId(R.id.home);
-            btmCard.setVisibility(View.VISIBLE);
-            fab.setVisibility(View.VISIBLE);
+            default:
+                break;
         }
     }
 
@@ -116,20 +104,20 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         btmNav.getMenu().getItem(2).setEnabled(false);
         btmNav.setSelectedItemId(R.id.home);
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).commit();
-        getPreferences = getSharedPreferences("MySp",MODE_PRIVATE);
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome()).commit();
+        getPreferences = getSharedPreferences("MySp", MODE_PRIVATE);
         editor = getPreferences.edit();
     }
 
     public static int getRandomColor() {
-        List<Integer> colorcode=new ArrayList<>();
+        List<Integer> colorcode = new ArrayList<>();
         colorcode.add(Color.parseColor("#D81D4C"));
         colorcode.add(Color.parseColor("#68C037"));
         colorcode.add(Color.parseColor("#094D82"));
         colorcode.add(Color.parseColor("#2B2B2B"));
 
-        Random random=new Random();
-        int number=random.nextInt(colorcode.size());
+        Random random = new Random();
+        int number = random.nextInt(colorcode.size());
         return colorcode.get(number);
     }
 }

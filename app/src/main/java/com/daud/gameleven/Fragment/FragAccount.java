@@ -3,9 +3,9 @@ package com.daud.gameleven.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,9 +27,10 @@ public class FragAccount extends Fragment {
 
         initial(view);
 
+        onBackPressed(view);
 
         accountBack.setOnClickListener(view1 -> {
-            onBackPressedHandler();
+            backPressedHandler();
         });
 
         ordersFab.setOnClickListener(view1 -> {
@@ -68,8 +69,9 @@ public class FragAccount extends Fragment {
         btmDialog.show();
     }
 
-    private void onBackPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+    private void backPressedHandler() {
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.home);
     }
 
@@ -80,5 +82,20 @@ public class FragAccount extends Fragment {
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

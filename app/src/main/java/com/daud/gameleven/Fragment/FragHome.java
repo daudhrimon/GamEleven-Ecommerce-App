@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Adapter.ProductAdsAd;
@@ -41,6 +43,8 @@ public class FragHome extends Fragment {
         View view = inflater.inflate(R.layout.frag_home, container, false);
 
         initial(view);
+
+        onBackPressed(view);
 
         menuBtn.setOnClickListener(view1 -> {
             menuBtnOnClick();
@@ -111,5 +115,20 @@ public class FragHome extends Fragment {
         hotCategories = view.findViewById(R.id.hotCategories);
         brands = view.findViewById(R.id.brands);
         bestSale = view.findViewById(R.id.bestSale);
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    Toast.makeText(getContext(), "Back Button Pressed", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }
