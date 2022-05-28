@@ -57,8 +57,6 @@ public class FragProfile extends Fragment {
 
     private void backPressedHandler() {
         getParentFragmentManager().popBackStack();
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void initial(View view) {

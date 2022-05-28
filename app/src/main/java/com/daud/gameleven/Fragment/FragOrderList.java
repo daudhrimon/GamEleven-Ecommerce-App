@@ -89,8 +89,6 @@ public class FragOrderList extends Fragment {
 
     private void backPressedHandler() {
         getParentFragmentManager().popBackStack();
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

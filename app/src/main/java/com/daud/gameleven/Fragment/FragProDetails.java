@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class FragProDetails extends Fragment {
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(null);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        onBackPressed(view);
 
         initial(view);
 
@@ -72,11 +74,22 @@ public class FragProDetails extends Fragment {
         relatedPR = view.findViewById(R.id.relatedPR);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getParentFragmentManager().popBackStack("PD", FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+    private void backPressedHandler(){
+        getParentFragmentManager().popBackStack();
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                  backPressedHandler();
+                  return true;
+                }
+                return false;
+            }
+        });
     }
 }

@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
@@ -25,6 +27,7 @@ public class FragProduct extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_product, container, false);
+        onBackPressed(view);
 
         initial(view);
 
@@ -44,8 +47,27 @@ public class FragProduct extends Fragment {
         productRv.setAdapter(new ProductAdsAd(getContext(),data.getAllProduct()));
     }
 
+    private void backPressedHandler() {
+        getParentFragmentManager().popBackStack();
+    }
+
     private void initial(View view) {
         productRv = view.findViewById(R.id.productRv);
         productRv.setLayoutManager(new GridLayoutManager(getContext(),2));
+    }
+
+    private void onBackPressed(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

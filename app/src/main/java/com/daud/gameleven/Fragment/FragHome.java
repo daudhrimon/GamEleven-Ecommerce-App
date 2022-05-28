@@ -114,6 +114,8 @@ public class FragHome extends Fragment {
         hotCategories = view.findViewById(R.id.hotCategories);
         brands = view.findViewById(R.id.brands);
         bestSale = view.findViewById(R.id.bestSale);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

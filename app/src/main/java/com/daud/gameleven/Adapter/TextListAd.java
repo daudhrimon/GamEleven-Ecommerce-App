@@ -4,11 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Fragment.FragProduct;
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
@@ -29,7 +34,19 @@ public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
 
     @Override
     public void onBindViewHolder(@NonNull TextListVH holder, int position) {
+
         holder.tv.setText(textList[position]);
+
+        holder.textBtn.setOnClickListener(view -> {
+            textBtnClickHandler();
+        });
+    }
+
+    private void textBtnClickHandler() {
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        MainActivity.btmCard.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
     }
 
     @Override
@@ -39,9 +56,12 @@ public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
 
     public class TextListVH extends RecyclerView.ViewHolder {
         private TextView tv;
+        private LinearLayout textBtn;
+
         public TextListVH(@NonNull View itemView) {
             super(itemView);
             tv = itemView.findViewById(R.id.tv);
+            textBtn = itemView.findViewById(R.id.textBtn);
         }
     }
 }

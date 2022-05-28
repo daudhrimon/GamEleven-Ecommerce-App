@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.Fragment.FragProduct;
@@ -48,7 +49,8 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     }
 
     private void itemClickHandler(CategoryListVH holder) {
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct()).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
         MainActivity.btmCard.setVisibility(View.GONE);
         MainActivity.fab.setVisibility(View.GONE);
     }

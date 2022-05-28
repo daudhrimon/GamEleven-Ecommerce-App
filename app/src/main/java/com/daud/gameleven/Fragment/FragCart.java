@@ -66,6 +66,8 @@ public class FragCart extends Fragment {
         cartBack = view.findViewById(R.id.cartBack);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

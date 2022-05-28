@@ -64,6 +64,8 @@ public class FragWishlist extends Fragment {
         wishBack = view.findViewById(R.id.wishBack);
         wishRecycler = view.findViewById(R.id.wishRecycler);
         wList = new ArrayList<>();
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

@@ -81,6 +81,8 @@ public class FragAccount extends Fragment {
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {

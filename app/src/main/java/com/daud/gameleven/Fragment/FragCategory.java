@@ -140,6 +140,8 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
         itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         catName = view.findViewById(R.id.catName);
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
     }
 
     private void onBackPressed(View view) {
