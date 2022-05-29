@@ -52,7 +52,7 @@
                 android:id="@+id/fabUnselect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/cart_unselected"
+                android:src="@drawable/shape_cart_unselect"
                 app:elevation="0dp"
                 app:fabCustomSize="24dp"
                 app:maxImageSize="25dp"
