@@ -44,10 +44,22 @@ public class FragProDetails extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_prodetails, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -105,7 +117,14 @@ public class FragProDetails extends Fragment {
         imageSliderPd.setImageList(imageList);
     }
 
+    private void backPressedHandler(){
+        getParentFragmentManager().popBackStack();
+    }
+
     private void initial(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        //////////////////////////////////////////////////////
         imageSliderPd = view.findViewById(R.id.imageSliderPd);
         backBtn = view.findViewById(R.id.proDetailsBack);
         buyBtn = view.findViewById(R.id.buyBtn);
@@ -114,24 +133,5 @@ public class FragProDetails extends Fragment {
         specBtn = view.findViewById(R.id.specBtn);
         specTv = view.findViewById(R.id.specTv);
         relatedPR = view.findViewById(R.id.relatedPR);
-    }
-
-    private void backPressedHandler(){
-        getParentFragmentManager().popBackStack();
-    }
-
-    private void onBackPressed(View view) {
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                  backPressedHandler();
-                  return true;
-                }
-                return false;
-            }
-        });
     }
 }

@@ -29,18 +29,25 @@ public class FragOrderList extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_orderlist, container, false);
-        onBackPressed(view);
 
-        view_pager = (ViewPager) view.findViewById(R.id.view_pager);
-        setupViewPager(view_pager);
+        initial(view);
 
-        tab_layout = (TabLayout) view.findViewById(R.id.tab_layout);
-        tab_layout.setupWithViewPager(view_pager);
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
-        backBtn = view.findViewById(R.id.backOrder);
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -91,18 +98,14 @@ public class FragOrderList extends Fragment {
         getParentFragmentManager().popBackStack();
     }
 
-    private void onBackPressed(View view) {
+    private void initial(View view) {
         view.setFocusableInTouchMode(true);
         view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
+        ///////////////////////////////////////////////////////////
+        view_pager = (ViewPager) view.findViewById(R.id.view_pager);
+        setupViewPager(view_pager);
+        tab_layout = (TabLayout) view.findViewById(R.id.tab_layout);
+        tab_layout.setupWithViewPager(view_pager);
+        backBtn = view.findViewById(R.id.backOrder);
     }
 }

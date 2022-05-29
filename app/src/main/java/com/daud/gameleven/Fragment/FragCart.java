@@ -38,10 +38,22 @@ public class FragCart extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         View view = inflater.inflate(R.layout.frag_cart, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         cartBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -103,8 +115,9 @@ public class FragCart extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        /////////////////////////////////////////////////
         cartBack = view.findViewById(R.id.cartBack);
         cartDlt = view.findViewById(R.id.cartDlt);
         fabAllSe = view.findViewById(R.id.fabAllSe);
@@ -112,20 +125,5 @@ public class FragCart extends Fragment {
         cartCOut = view.findViewById(R.id.cartCOut);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
-    }
-
-    private void onBackPressed(View view) {
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 }

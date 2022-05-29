@@ -26,10 +26,22 @@ public class FragAccount extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         View view = inflater.inflate(R.layout.frag_account, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         accountBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -70,15 +82,11 @@ public class FragAccount extends Fragment {
     private void ordersFabClickHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList())
                 .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-        MainActivity.fab.setVisibility(View.GONE);
-        MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void profileFabClickHandler() {
         getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile())
                 .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-        MainActivity.fab.setVisibility(View.GONE);
-        MainActivity.btmCard.setVisibility(View.GONE);
     }
 
     private void addressFabClickHandler() {
@@ -95,28 +103,14 @@ public class FragAccount extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        //////////////////////////////////////////////////
         accountBack = view.findViewById(R.id.accountBack);
         ordersFab = view.findViewById(R.id.ordersFab);
         profileFab = view.findViewById(R.id.profileFab);
         addressFab = view.findViewById(R.id.addressFab);
         cngLanFab = view.findViewById(R.id.cngLanFab);
         logoutFab = view.findViewById(R.id.logoutFab);
-    }
-
-    private void onBackPressed(View view) {
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 }

@@ -29,10 +29,22 @@ public class FragCategory extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         View view = inflater.inflate(R.layout.frag_category, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==KeyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         catBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -130,8 +142,9 @@ public class FragCategory extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        /////////////////////////////////////////////////
         catBack = view.findViewById(R.id.catBack);
         oneBtn = view.findViewById(R.id.oneBtn);
         twoBtn = view.findViewById(R.id.twoBtn);
@@ -142,20 +155,5 @@ public class FragCategory extends Fragment {
         itemsSuperRecycler = view.findViewById(R.id.itemsSuperRecycler);
         itemsSuperRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         catName = view.findViewById(R.id.catName);
-    }
-
-    private void onBackPressed(View view) {
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 }

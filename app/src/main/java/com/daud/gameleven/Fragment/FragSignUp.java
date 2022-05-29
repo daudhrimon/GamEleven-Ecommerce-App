@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class FragSignUp extends Fragment {
@@ -20,10 +21,22 @@ public class FragSignUp extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_signup, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         sUpBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -41,23 +54,10 @@ public class FragSignUp extends Fragment {
     }
 
     private void initial(View view) {
-        signInBtn = view.findViewById(R.id.upSignInBtn);
-        sUpBack = view.findViewById(R.id.sUpBack);
-    }
-
-
-    private void onBackPressed(View view) {
         view.setFocusableInTouchMode(true);
         view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
+        ////////////////////////////////////////////////
+        signInBtn = view.findViewById(R.id.upSignInBtn);
+        sUpBack = view.findViewById(R.id.sUpBack);
     }
 }

@@ -26,10 +26,22 @@ public class FragProduct extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_product, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         return view;
     }
@@ -52,22 +64,10 @@ public class FragProduct extends Fragment {
     }
 
     private void initial(View view) {
-        productRv = view.findViewById(R.id.productRv);
-        productRv.setLayoutManager(new GridLayoutManager(getContext(),2));
-    }
-
-    private void onBackPressed(View view) {
         view.setFocusableInTouchMode(true);
         view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
+        /////////////////////////////////////////////////
+        productRv = view.findViewById(R.id.productRv);
+        productRv.setLayoutManager(new GridLayoutManager(getContext(),2));
     }
 }

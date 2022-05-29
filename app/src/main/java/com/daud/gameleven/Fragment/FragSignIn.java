@@ -28,10 +28,22 @@ public class FragSignIn extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_signin, container, false);
-        onBackPressed(view);
 
         initial(view);
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         sInBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -74,8 +86,6 @@ public class FragSignIn extends Fragment {
         if (sInPassEt.getText().toString().equals("123456") && sInPassEt.getText().toString().equals("123456")){
             MainActivity.editor.putInt("SIGNIN",1).commit();
             getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
-            MainActivity.btmCard.setVisibility(View.VISIBLE);
-            MainActivity.fab.setVisibility(View.VISIBLE);
         }
     }
 
@@ -86,26 +96,14 @@ public class FragSignIn extends Fragment {
     }
 
     private void initial(View view) {
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        ///////////////////////////////////////////////
         sInPhnEt = view.findViewById(R.id.sInPhnEt);
         sInPassEt = view.findViewById(R.id.sInPassEt);
         forgotPass = view.findViewById(R.id.forgotPass);
         signInBtn = view.findViewById(R.id.signInBtn);
         signUpBtn = view.findViewById(R.id.signUpBtn);
         sInBack = view.findViewById(R.id.sInBack);
-    }
-
-    private void onBackPressed(View view) {
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 }

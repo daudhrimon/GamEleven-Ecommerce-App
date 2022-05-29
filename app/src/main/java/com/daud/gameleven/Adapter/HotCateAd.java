@@ -71,7 +71,5 @@ public class HotCateAd extends RecyclerView.Adapter<HotCateAd.HotCategoriesVh> {
     private void gotoPdFragmentDemo(){
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProDetails())
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
-        MainActivity. fab.setVisibility(View.GONE);
-        MainActivity.btmCard.setVisibility(View.GONE);
     }
 }
