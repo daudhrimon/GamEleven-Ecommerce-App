@@ -16,18 +16,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Adapter.CartAd;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragCart extends Fragment {
     private ImageButton cartBack,cartDlt;
+    private FloatingActionButton fabAllSe,fabAllUn;
+    private LinearLayout cartCOut;
     private RecyclerView cartRecycler;
     private List<ProductModel> cList;
 
@@ -46,6 +50,16 @@ public class FragCart extends Fragment {
         cartDlt.setOnClickListener(view1 -> {
             cartDltClickHandler();
 
+        });
+
+        fabAllSe.setOnClickListener(view1 -> {
+            fabAllSe.setVisibility(View.GONE);
+            fabAllUn.setVisibility(View.VISIBLE);
+        });
+
+        fabAllUn.setOnClickListener(view1 -> {
+            fabAllUn.setVisibility(View.GONE);
+            fabAllSe.setVisibility(View.VISIBLE);
         });
 
         return view;
@@ -93,6 +107,9 @@ public class FragCart extends Fragment {
         MainActivity.fab.setVisibility(View.VISIBLE);
         cartBack = view.findViewById(R.id.cartBack);
         cartDlt = view.findViewById(R.id.cartDlt);
+        fabAllSe = view.findViewById(R.id.fabAllSe);
+        fabAllUn = view.findViewById(R.id.fabAllUn);
+        cartCOut = view.findViewById(R.id.cartCOut);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
     }

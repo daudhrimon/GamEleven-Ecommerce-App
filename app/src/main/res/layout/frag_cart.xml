@@ -159,7 +159,7 @@
             android:textSize="14sp" />
 
         <LinearLayout
-            android:id="@+id/checkOut"
+            android:id="@+id/cartCOut"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
