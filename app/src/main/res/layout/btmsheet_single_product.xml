@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="8dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingTop="28dp"
+        android:paddingBottom="18dp">
 
         <ImageView
             android:id="@+id/cartIv"
