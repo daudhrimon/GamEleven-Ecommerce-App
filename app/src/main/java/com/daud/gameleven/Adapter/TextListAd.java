@@ -18,7 +18,7 @@ import com.daud.gameleven.R;
 
 public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
     private Context context;
-    private String [] textList;
+    private String[] textList;
 
     public TextListAd(Context context, String[] textList) {
         this.context = context;

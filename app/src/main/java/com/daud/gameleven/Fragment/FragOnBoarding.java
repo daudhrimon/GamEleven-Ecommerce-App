@@ -19,7 +19,7 @@ import com.daud.gameleven.R;
 
 public class FragOnBoarding extends Fragment {
     private ViewPager onbViewPager;
-    private ImageView dot1,dot2,dot3;
+    private ImageView dot1, dot2, dot3;
     private Button skipBtn;
     private ImageView[] dots;
     int Position;
@@ -45,10 +45,10 @@ public class FragOnBoarding extends Fragment {
     }
 
     private void skipBtnOnClick() {
-        if (Position < 2){
-            onbViewPager.setCurrentItem(Position+1);
-        }else{
-            SplashActivity.editor.putInt("RUN",1).commit();
+        if (Position < 2) {
+            onbViewPager.setCurrentItem(Position + 1);
+        } else {
+            SplashActivity.editor.putInt("RUN", 1).commit();
             startActivity(new Intent(getContext(), MainActivity.class));
             getActivity().finish();
         }
@@ -56,18 +56,22 @@ public class FragOnBoarding extends Fragment {
 
     ViewPager.OnPageChangeListener changeListener = new ViewPager.OnPageChangeListener() {
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        }
+
         @Override
         public void onPageSelected(int position) {
             Position = position;
             addDots(position);
         }
+
         @Override
-        public void onPageScrollStateChanged(int state) {}
+        public void onPageScrollStateChanged(int state) {
+        }
     };
 
-    private void addDots(int position){
-        switch (position){
+    private void addDots(int position) {
+        switch (position) {
             case 0:
                 dot1.setImageResource(R.drawable.dot_selected);
                 dot2.setImageResource(R.drawable.dot_unselected);

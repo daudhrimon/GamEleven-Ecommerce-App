@@ -41,7 +41,7 @@ public class FragSignUp extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         ////////////////////////////////////////////////
         signInBtn = view.findViewById(R.id.upSignInBtn);

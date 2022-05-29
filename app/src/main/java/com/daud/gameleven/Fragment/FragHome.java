@@ -36,9 +36,9 @@ import java.util.List;
 
 public class FragHome extends Fragment {
     private ImageButton menuBtn;
-    private RecyclerView textRecycler,flashDeals,dailyFeatures,hotCategories,brands,bestSale;
+    private RecyclerView textRecycler, flashDeals, dailyFeatures, hotCategories, brands, bestSale;
     private ImageSlider imageSlider;
-    private ImageView couponBtn,giftCBtn,slashBtn,pcbBtn;
+    private ImageView couponBtn, giftCBtn, slashBtn, pcbBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,22 +79,22 @@ public class FragHome extends Fragment {
         setRecyclersDemo();
     }
 
-    private void demoClick(){
+    private void demoClick() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProduct()).addToBackStack(null).commit();
     }
 
     private void topTextSliderHandler() {
-        String[] textList = {"Hot","Computer & Office","Phone Accessories","Gaming PC","Toys"};
+        String[] textList = {"Hot", "Computer & Office", "Phone Accessories", "Gaming PC", "Toys"};
         textRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        textRecycler.setAdapter(new TextListAd(getContext(),textList));
+        textRecycler.setAdapter(new TextListAd(getContext(), textList));
     }
 
     private void menuBtnOnClick() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.mainFrame,new FragCategory()).commit();
+                .replace(R.id.mainFrame, new FragCategory()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.category);
     }
 
@@ -102,19 +102,19 @@ public class FragHome extends Fragment {
         Data data = new Data();
 
         flashDeals.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        flashDeals.setAdapter(new FlashDealsAd(getContext(),data.getAllProduct()));
+        flashDeals.setAdapter(new FlashDealsAd(getContext(), data.getAllProduct()));
 
         dailyFeatures.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(),data.getAllProduct()));
+        dailyFeatures.setAdapter(new DailyFeaturesAd(getContext(), data.getAllProduct()));
 
         hotCategories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        hotCategories.setAdapter(new HotCateAd(getContext(),data.getAllProduct()));
+        hotCategories.setAdapter(new HotCateAd(getContext(), data.getAllProduct()));
 
         brands.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        brands.setAdapter(new BrandsAd(getContext(),data.getAllProduct()));
+        brands.setAdapter(new BrandsAd(getContext(), data.getAllProduct()));
 
-        bestSale.setLayoutManager(new GridLayoutManager(getContext(),2));
-        bestSale.setAdapter(new ProductAdsAd(getContext(),data.getAllProduct()));
+        bestSale.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        bestSale.setAdapter(new ProductAdsAd(getContext(), data.getAllProduct()));
 
 
     }
@@ -143,8 +143,8 @@ public class FragHome extends Fragment {
         brands = view.findViewById(R.id.brands);
         bestSale = view.findViewById(R.id.bestSale);
         couponBtn = view.findViewById(R.id.couponBtn);
-        giftCBtn =view.findViewById(R.id.giftCBtn);
-        slashBtn =view.findViewById(R.id.slashBtn);
-        pcbBtn =view.findViewById(R.id.pcbBtn);
+        giftCBtn = view.findViewById(R.id.giftCBtn);
+        slashBtn = view.findViewById(R.id.slashBtn);
+        pcbBtn = view.findViewById(R.id.pcbBtn);
     }
 }

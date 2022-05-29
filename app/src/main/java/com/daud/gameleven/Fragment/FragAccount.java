@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragAccount extends Fragment {
     private ImageButton accountBack;
-    private FloatingActionButton ordersFab,profileFab,addressFab,cngLanFab,logoutFab;
+    private FloatingActionButton ordersFab, profileFab, addressFab, cngLanFab, logoutFab;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +55,7 @@ public class FragAccount extends Fragment {
 
     private void cngLanFabClickHandler() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.alertdialog_language,null,false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.alertdialog_language, null, false);
         TextView cancelBtn = view.findViewById(R.id.cancelBtn);
         builder.setView(view);
         final Dialog dialog = builder.create();
@@ -67,17 +67,17 @@ public class FragAccount extends Fragment {
     }
 
     private void ordersFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragOrderList())
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragOrderList())
                 .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 
     private void profileFabClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragProfile())
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProfile())
                 .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 
     private void addressFabClickHandler() {
-        BottomSheetDialog btmDialog = new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
+        BottomSheetDialog btmDialog = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
         btmDialog.setContentView(R.layout.btmsheet_address_full);
 
         btmDialog.show();
@@ -86,7 +86,7 @@ public class FragAccount extends Fragment {
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-                .replace(R.id.mainFrame,new FragHome()).commit();
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void initial(View view) {

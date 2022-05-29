@@ -3,10 +3,10 @@
     android:id="@+id/textBtn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="2.5dp"
+    android:background="@drawable/selector_cate_item"
     android:clickable="true"
-    android:background="@drawable/selector_cate_item">
+    android:orientation="vertical"
+    android:padding="2.5dp">
 
     <TextView
         android:id="@+id/tv"

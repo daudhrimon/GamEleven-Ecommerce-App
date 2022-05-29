@@ -9,8 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="24dp"
         android:paddingHorizontal="8dp"
+        android:paddingTop="24dp"
         android:paddingBottom="16dp">
 
         <ImageView
@@ -29,8 +29,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@id/cartIv"
             android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/cartIv"
             android:fontFamily="@font/roboto_regular"
             android:paddingTop="10dp"
             android:text="Power Bank Water Gold"
@@ -42,8 +42,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/cartName"
-            android:layout_toEndOf="@id/cartIv"
             android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/cartIv"
             android:fontFamily="@font/roboto_regular"
             android:paddingTop="1dp"
             android:text="Sound Box"
@@ -55,8 +55,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/cartCat"
-            android:layout_toEndOf="@id/cartIv"
             android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/cartIv"
             android:fontFamily="@font/roboto_regular"
             android:paddingVertical="1dp"
             android:text="12345"
@@ -127,8 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingHorizontal="24dp"
-            android:weightSum="2"
-            android:paddingVertical="16dp">
+            android:paddingVertical="16dp"
+            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"

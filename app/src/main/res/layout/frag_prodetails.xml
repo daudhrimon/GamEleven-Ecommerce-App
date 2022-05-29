@@ -236,8 +236,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/white"
-                            android:gravity="center"
-                            android:clickable="true">
+                            android:clickable="true"
+                            android:gravity="center">
 
                             <TextView
                                 android:id="@+id/specTv"
@@ -333,8 +333,8 @@
                         android:id="@+id/header"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:layout_marginStart="11dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto_med"
                         android:text="Related Products"
                         android:textColor="@color/rating_txt_clr"

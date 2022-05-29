@@ -42,8 +42,8 @@ public class FragProduct extends Fragment {
 
     private void demoDataSet() {
         Data data = new Data();
-        productRv.setLayoutManager(new GridLayoutManager(getContext(),2));
-        productRv.setAdapter(new ProductAdsAd(getContext(),data.getAllProduct()));
+        productRv.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        productRv.setAdapter(new ProductAdsAd(getContext(), data.getAllProduct()));
     }
 
     private void backPressedHandler() {
@@ -51,10 +51,10 @@ public class FragProduct extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         /////////////////////////////////////////////////
         productRv = view.findViewById(R.id.productRv);
-        productRv.setLayoutManager(new GridLayoutManager(getContext(),2));
+        productRv.setLayoutManager(new GridLayoutManager(getContext(), 2));
     }
 }

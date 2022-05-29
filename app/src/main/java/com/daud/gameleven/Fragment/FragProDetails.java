@@ -30,8 +30,8 @@ import java.util.List;
 public class FragProDetails extends Fragment {
     private ImageSlider imageSliderPd;
     private ImageButton backBtn;
-    private LinearLayout buyBtn,desBtn,specBtn;
-    private TextView desTv,specTv;
+    private LinearLayout buyBtn, desBtn, specBtn;
+    private TextView desTv, specTv;
     private RecyclerView relatedPR;
 
     @Override
@@ -46,11 +46,11 @@ public class FragProDetails extends Fragment {
         });
 
         desBtn.setOnClickListener(view1 -> {
-            setBtnColor(desBtn,desTv,specBtn,specTv);
+            setBtnColor(desBtn, desTv, specBtn, specTv);
         });
 
         specBtn.setOnClickListener(view1 -> {
-            setBtnColor(specBtn,specTv,desBtn,desTv);
+            setBtnColor(specBtn, specTv, desBtn, desTv);
         });
 
         buyBtn.setOnClickListener(view1 -> {
@@ -61,7 +61,7 @@ public class FragProDetails extends Fragment {
     }
 
     private void buyBtnClickHandler() {
-        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
+        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_single_product);
         LinearLayout spCOut = btmSheet.findViewById(R.id.spCOut);
         btmSheet.show();
@@ -69,11 +69,11 @@ public class FragProDetails extends Fragment {
         spCOut.setOnClickListener(view -> {
             getParentFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.mainFrame,new FragCOutInfo()).addToBackStack(null).commit();
+                    .replace(R.id.mainFrame, new FragCOutInfo()).addToBackStack(null).commit();
         });
     }
 
-    private void setBtnColor(LinearLayout firstLay, TextView firstTv,LinearLayout secLay,TextView secTv){
+    private void setBtnColor(LinearLayout firstLay, TextView firstTv, LinearLayout secLay, TextView secTv) {
         firstLay.setBackgroundColor(getResources().getColor(R.color.selector_clr));
         firstTv.setTextColor(getResources().getColor(R.color.white));
         secLay.setBackgroundColor(getResources().getColor(R.color.white));
@@ -91,8 +91,8 @@ public class FragProDetails extends Fragment {
 
     private void setRelatedProductDemo() {
         Data data = new Data();
-        relatedPR.setLayoutManager(new GridLayoutManager(getContext(),2));
-        relatedPR.setAdapter(new ProductAdsAd(getContext(),data.getAllProduct()));
+        relatedPR.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        relatedPR.setAdapter(new ProductAdsAd(getContext(), data.getAllProduct()));
     }
 
 
@@ -104,12 +104,12 @@ public class FragProDetails extends Fragment {
         imageSliderPd.setImageList(imageList);
     }
 
-    private void backPressedHandler(){
+    private void backPressedHandler() {
         getParentFragmentManager().popBackStack();
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         //////////////////////////////////////////////////////
         imageSliderPd = view.findViewById(R.id.imageSliderPd);

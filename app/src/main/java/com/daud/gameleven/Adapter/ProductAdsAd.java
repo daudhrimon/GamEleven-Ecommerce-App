@@ -33,7 +33,7 @@ public class ProductAdsAd extends RecyclerView.Adapter<ProductAdsAd.ProductAdsVH
     @NonNull
     @Override
     public ProductAdsVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_productads,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_productads, parent, false);
         return new ProductAdsVH(view);
     }
 
@@ -54,9 +54,9 @@ public class ProductAdsAd extends RecyclerView.Adapter<ProductAdsAd.ProductAdsVH
         return pList.size();
     }
 
-    public class ProductAdsVH extends RecyclerView.ViewHolder{
+    public class ProductAdsVH extends RecyclerView.ViewHolder {
         private ImageView bspIv;
-        private TextView bspName,bspCat,bspPrice;
+        private TextView bspName, bspCat, bspPrice;
         private FloatingActionButton bspFab;
         private LinearLayout bspItem;
 
@@ -72,7 +72,7 @@ public class ProductAdsAd extends RecyclerView.Adapter<ProductAdsAd.ProductAdsVH
     }
 
     // go to details frag Demo
-    private void gotoPdFragmentDemo(){
+    private void gotoPdFragmentDemo() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();

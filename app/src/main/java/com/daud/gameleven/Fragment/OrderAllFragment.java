@@ -33,7 +33,7 @@ public class OrderAllFragment extends Fragment {
         Data data = new Data();
 
         //set data and list adapter
-        OrderAd mAdapter = new OrderAd(data.getAllOrderList(),getContext());
+        OrderAd mAdapter = new OrderAd(data.getAllOrderList(), getContext());
         recyclerView.setAdapter(mAdapter);
 
         return root;

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         fab.setOnClickListener(view -> {
             if (btmNav.getSelectedItemId() != R.id.home) {
-            fabOnClickHandler();
+                fabOnClickHandler();
             }
         });
 
@@ -115,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount()==0 && btmNav.getSelectedItemId()!=R.id.home){
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0 && btmNav.getSelectedItemId() != R.id.home) {
             fabOnClickHandler();
-        }else if (getSupportFragmentManager().getBackStackEntryCount()==0 && btmNav.getSelectedItemId()==R.id.home){
+        } else if (getSupportFragmentManager().getBackStackEntryCount() == 0 && btmNav.getSelectedItemId() == R.id.home) {
             Toast.makeText(this, "NO TASK", Toast.LENGTH_SHORT).show();
         } else {
             getSupportFragmentManager().popBackStack();

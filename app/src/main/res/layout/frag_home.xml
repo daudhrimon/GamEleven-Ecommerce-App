@@ -33,20 +33,20 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="2dp"
             android:layout_weight="8"
+            app:cardBackgroundColor="@color/search_bg_clr"
             app:cardCornerRadius="23dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/search_bg_clr">
+            app:cardElevation="0dp">
 
-                <androidx.appcompat.widget.SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:focusable="false"
-                    android:focusableInTouchMode="true"
-                    android:focusedByDefault="false"
-                    android:theme="@style/AppSearchView"
-                    app:iconifiedByDefault="false"
-                    app:queryBackground="@null"
-                    app:queryHint="What would you like to buy?" />
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                android:theme="@style/AppSearchView"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@null"
+                app:queryHint="What would you like to buy?" />
 
         </androidx.cardview.widget.CardView>
 
@@ -135,9 +135,9 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="3dp"
                         android:layout_weight="2"
-                        android:maxLines="1"
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:text="Coupons"
                         android:textColor="@color/home_txt_clr"
                         android:textSize="12sp" />
@@ -169,9 +169,9 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="3dp"
                         android:layout_weight="2"
-                        android:maxLines="1"
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:text="Gift Card"
                         android:textColor="@color/home_txt_clr"
                         android:textSize="12sp" />
@@ -203,9 +203,9 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="3dp"
                         android:layout_weight="2"
-                        android:maxLines="1"
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:text="Slash"
                         android:textColor="@color/home_txt_clr"
                         android:textSize="12sp" />
@@ -237,9 +237,9 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="3dp"
                         android:layout_weight="2"
-                        android:maxLines="1"
                         android:fontFamily="@font/roboto_med"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:text="PC Assemble"
                         android:textColor="@color/home_txt_clr"
                         android:textSize="12sp" />

@@ -9,10 +9,10 @@
     <View
         android:layout_width="89dp"
         android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
-        android:background="#EBEAEA"
-        android:layout_gravity="center_horizontal"/>
+        android:background="#EBEAEA" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,8 +29,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="7dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -99,8 +99,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="7dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -129,8 +129,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="7dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -159,8 +159,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="7dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -189,8 +189,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="7dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -330,8 +330,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
                 android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="7dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -404,8 +404,8 @@
                 android:backgroundTint="@color/selector_clr"
                 android:fontFamily="@font/roboto_med"
                 android:text="SAVE ADDRESS"
-                android:textColor="@color/white"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
         </LinearLayout>

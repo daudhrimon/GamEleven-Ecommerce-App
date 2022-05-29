@@ -30,7 +30,7 @@ public class BrandsAd extends RecyclerView.Adapter<BrandsAd.BrandsVH> {
     @NonNull
     @Override
     public BrandsVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_brands,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_brands, parent, false);
         return new BrandsVH(view);
     }
 
@@ -50,7 +50,7 @@ public class BrandsAd extends RecyclerView.Adapter<BrandsAd.BrandsVH> {
     }
 
     public class BrandsVH extends RecyclerView.ViewHolder {
-        private ImageView bIv,brand;
+        private ImageView bIv, brand;
 
         public BrandsVH(@NonNull View itemView) {
             super(itemView);
@@ -60,7 +60,7 @@ public class BrandsAd extends RecyclerView.Adapter<BrandsAd.BrandsVH> {
     }
 
     // go to details frag Demo
-    private void gotoPdFragmentDemo(){
+    private void gotoPdFragmentDemo() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();

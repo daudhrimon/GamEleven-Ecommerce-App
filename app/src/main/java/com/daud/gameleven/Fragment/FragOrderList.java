@@ -85,7 +85,7 @@ public class FragOrderList extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         ///////////////////////////////////////////////////////////
         view_pager = (ViewPager) view.findViewById(R.id.view_pager);

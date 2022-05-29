@@ -52,8 +52,8 @@
         android:backgroundTint="@color/selector_clr"
         android:fontFamily="@font/roboto_med"
         android:text="SAVE NUMBER"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="15sp" />
 
 </LinearLayout>

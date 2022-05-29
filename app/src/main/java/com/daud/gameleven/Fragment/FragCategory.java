@@ -22,7 +22,7 @@ import com.daud.gameleven.R;
 
 public class FragCategory extends Fragment {
     private ImageButton catBack;
-    private LinearLayout oneBtn,twoBtn,threeBtn,fourBtn,fiveBtn,sixBtn;
+    private LinearLayout oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn, sixBtn;
     private RecyclerView itemsSuperRecycler;
     private TextView catName;
 
@@ -36,23 +36,23 @@ public class FragCategory extends Fragment {
         catBack.setOnClickListener(view1 -> {
             backPressedHandler();
         });
-        
+
         oneBtn.setOnClickListener(view1 -> {
             oneBtnClickHandler();
         });
-        
+
         twoBtn.setOnClickListener(view1 -> {
             twoBtnClickHandler();
         });
-        
+
         threeBtn.setOnClickListener(view1 -> {
             threeBtnClickHandler();
         });
-        
+
         fourBtn.setOnClickListener(view1 -> {
             fourBtnClickHandler();
         });
-        
+
         fiveBtn.setOnClickListener(view1 -> {
             fiveBtnClickHandler();
         });
@@ -60,7 +60,7 @@ public class FragCategory extends Fragment {
         sixBtn.setOnClickListener(view1 -> {
             sixBtnClickHandler();
         });
-        
+
         return view;
     }
 
@@ -73,46 +73,46 @@ public class FragCategory extends Fragment {
     private void oneBtnClickHandler() {
         setButtonsColor(oneBtn);
         catName.setText("Electronic Device");
-        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)", "Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
     private void twoBtnClickHandler() {
         setButtonsColor(twoBtn);
         catName.setText("Furniture Device");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio", "Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
     private void threeBtnClickHandler() {
         setButtonsColor(threeBtn);
         catName.setText("Casual Bag");
-        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)", "Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
     private void fourBtnClickHandler() {
         setButtonsColor(fourBtn);
         catName.setText("Electronic Device");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio", "Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
     private void fiveBtnClickHandler() {
         setButtonsColor(fiveBtn);
         catName.setText("Electronic Device");
-        String[] textList = {"Merchandise","Retro Gaming Consoles","Pre Owned (Badel)","Xbox","PlayStation 4","Gaming Setup","Tv & Audio"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)", "Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
     private void sixBtnClickHandler() {
         setButtonsColor(sixBtn);
         catName.setText("Electronic Device");
-        String[] textList = {"Xbox","PlayStation 4","Gaming Setup","Tv & Audio","Merchandise","Retro Gaming Consoles","Pre Owned (Badel)"};
-        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(),textList));
+        String[] textList = {"Xbox", "PlayStation 4", "Gaming Setup", "Tv & Audio", "Merchandise", "Retro Gaming Consoles", "Pre Owned (Badel)"};
+        itemsSuperRecycler.setAdapter(new CateItemAd(getContext(), textList));
     }
 
-    private void setButtonsColor(LinearLayout Lay){
+    private void setButtonsColor(LinearLayout Lay) {
         oneBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
         twoBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
         threeBtn.setBackgroundColor(Color.parseColor("#F0F0F0"));
@@ -124,7 +124,7 @@ public class FragCategory extends Fragment {
 
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-                .replace(R.id.mainFrame,new FragHome()).commit();
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void initial(View view) {

@@ -17,7 +17,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class FragProfile extends Fragment {
     private ImageButton backBtn;
-    private TextView personEtv,emailEtv;
+    private TextView personEtv, emailEtv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,13 +42,13 @@ public class FragProfile extends Fragment {
     }
 
     private void personEtvClickHandler() {
-        BottomSheetDialog btmSheet =  new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
+        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_personalinfo);
         btmSheet.show();
     }
 
     private void emailEtvClickHandler() {
-        BottomSheetDialog btmSheet =  new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
+        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_email);
         btmSheet.show();
     }
@@ -58,7 +58,7 @@ public class FragProfile extends Fragment {
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         //////////////////////////////////////////////
         personEtv = view.findViewById(R.id.personEtv);

@@ -50,13 +50,13 @@ public class FragWishlist extends Fragment {
     private void showWishlistDemo() {
         Data data = new Data();
         wishRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        wishRecycler.setAdapter(new WishlistAd(getContext(),data.getWishlist()));
+        wishRecycler.setAdapter(new WishlistAd(getContext(), data.getWishlist()));
     }
 
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-                .replace(R.id.mainFrame,new FragHome()).commit();
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void initial(View view) {

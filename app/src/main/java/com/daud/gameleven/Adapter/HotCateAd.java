@@ -32,7 +32,7 @@ public class HotCateAd extends RecyclerView.Adapter<HotCateAd.HotCategoriesVh> {
     @NonNull
     @Override
     public HotCategoriesVh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_hot_categories,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_hot_categories, parent, false);
         return new HotCategoriesVh(view);
     }
 
@@ -63,12 +63,12 @@ public class HotCateAd extends RecyclerView.Adapter<HotCateAd.HotCategoriesVh> {
             super(itemView);
             hcIv = itemView.findViewById(R.id.hcIv);
             hcTv = itemView.findViewById(R.id.hcTv);
-            hcCard =itemView.findViewById(R.id.hcCard);
+            hcCard = itemView.findViewById(R.id.hcCard);
         }
     }
 
     // go to details frag Demo
-    private void gotoPdFragmentDemo(){
+    private void gotoPdFragmentDemo() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();

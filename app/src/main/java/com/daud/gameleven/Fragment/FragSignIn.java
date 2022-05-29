@@ -22,7 +22,7 @@ public class FragSignIn extends Fragment {
     private EditText sInPhnEt;
     private TextInputEditText sInPassEt;
     private TextView forgotPass;
-    private Button signInBtn,signUpBtn;
+    private Button signInBtn, signUpBtn;
     private ImageButton sInBack;
 
     @Override
@@ -36,8 +36,8 @@ public class FragSignIn extends Fragment {
             backPressedHandler();
         });
 
-        signInBtn.setOnClickListener(view1 ->  {
-           signInBtnClickHandler();
+        signInBtn.setOnClickListener(view1 -> {
+            signInBtnClickHandler();
         });
 
         signUpBtn.setOnClickListener(view1 -> {
@@ -48,42 +48,42 @@ public class FragSignIn extends Fragment {
     }
 
     private void signUpBtnClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragSignUp()).addToBackStack(null).commit();
+        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragSignUp()).addToBackStack(null).commit();
     }
 
     private void signInBtnClickHandler() {
-        if (sInPhnEt.getText().toString().isEmpty()){
+        if (sInPhnEt.getText().toString().isEmpty()) {
             sInPhnEt.setError("Empty");
             sInPhnEt.requestFocus();
             return;
         }
 
-        if (sInPassEt.getText().toString().isEmpty()){
+        if (sInPassEt.getText().toString().isEmpty()) {
             sInPassEt.setError("Empty");
             sInPassEt.requestFocus();
             return;
         }
 
-        if (sInPassEt.getText().toString().length() < 6){
+        if (sInPassEt.getText().toString().length() < 6) {
             sInPassEt.setError("Password is too Short");
             sInPassEt.requestFocus();
             return;
         }
 
-        if (sInPassEt.getText().toString().equals("123456") && sInPassEt.getText().toString().equals("123456")){
-            MainActivity.editor.putInt("SIGNIN",1).commit();
-            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragAccount()).commit();
+        if (sInPassEt.getText().toString().equals("123456") && sInPassEt.getText().toString().equals("123456")) {
+            MainActivity.editor.putInt("SIGNIN", 1).commit();
+            getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragAccount()).commit();
         }
     }
 
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.mainFrame,new FragHome()).commit();
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void initial(View view) {
-        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
         ///////////////////////////////////////////////
         sInPhnEt = view.findViewById(R.id.sInPhnEt);

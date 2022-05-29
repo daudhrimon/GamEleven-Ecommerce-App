@@ -39,7 +39,7 @@ public class OnBoardAd extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.lay_onboarding,container,false);
+        View view = layoutInflater.inflate(R.layout.lay_onboarding, container, false);
 
         ImageView onImage = view.findViewById(R.id.onImage);
         TextView onHeader = view.findViewById(R.id.onHeader);

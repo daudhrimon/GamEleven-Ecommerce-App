@@ -24,11 +24,11 @@ import com.daud.gameleven.R;
 
 import java.util.List;
 
-public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
+public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh> {
     private Context context;
     private List<ProductModel> wList;
 
-    public WishlistAd(Context context, List<ProductModel> wList){
+    public WishlistAd(Context context, List<ProductModel> wList) {
         this.context = context;
         this.wList = wList;
     }
@@ -65,7 +65,7 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
     private void wishDeleteClickHandler(WishlistVh holder) {
         holder.wishDlt.setBackgroundResource(R.drawable.wd_select);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.aleartdialog_delete,null);
+        View view = LayoutInflater.from(context).inflate(R.layout.aleartdialog_delete, null);
         TextView alertTv = view.findViewById(R.id.alertTv);
         Button cancelBtn = view.findViewById(R.id.cancelBtn);
         Button okBtn = view.findViewById(R.id.okBtn);
@@ -90,10 +90,10 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
         return wList.size();
     }
 
-    public class WishlistVh extends RecyclerView.ViewHolder{
+    public class WishlistVh extends RecyclerView.ViewHolder {
         private ImageView wishIv;
-        private TextView wishName,wishCat,wishPrice;
-        private LinearLayout wishItem,wishDlt;
+        private TextView wishName, wishCat, wishPrice;
+        private LinearLayout wishItem, wishDlt;
 
         public WishlistVh(@NonNull View itemView) {
             super(itemView);

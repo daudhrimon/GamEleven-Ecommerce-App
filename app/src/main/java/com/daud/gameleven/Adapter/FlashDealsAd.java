@@ -32,14 +32,14 @@ public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH
     @NonNull
     @Override
     public FlashDealsVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_flash_deals,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_flash_deals, parent, false);
         return new FlashDealsVH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FlashDealsVH holder, int position) {
         holder.fdIv.setImageResource(fdList.get(position).getImage());
-        holder.fdTv.setText(fdList.get(position).getNprice()+" SAR");
+        holder.fdTv.setText(fdList.get(position).getNprice() + " SAR");
         holder.fdCard.setBackgroundColor(MainActivity.getRandomColor());
 
         holder.fdIv.setOnClickListener(view -> {
@@ -62,12 +62,12 @@ public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH
             super(itemView);
             fdIv = itemView.findViewById(R.id.fdIv);
             fdTv = itemView.findViewById(R.id.fdTv);
-            fdCard =itemView.findViewById(R.id.fdCard);
+            fdCard = itemView.findViewById(R.id.fdCard);
         }
     }
 
     // go to details frag Demo
-    private void gotoPdFragmentDemo(){
+    private void gotoPdFragmentDemo() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();

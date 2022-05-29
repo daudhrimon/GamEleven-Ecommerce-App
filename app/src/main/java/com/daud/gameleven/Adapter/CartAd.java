@@ -33,7 +33,7 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
     @NonNull
     @Override
     public CartVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_cart,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_cart, parent, false);
         return new CartVH(view);
     }
 
@@ -43,7 +43,7 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
         holder.cartName.setText(cList.get(position).getName());
         holder.cartCat.setText(cList.get(position).getCategory());
         holder.cartId.setText(cList.get(position).getProductid());
-        holder.cartPrice.setText(cList.get(position).getNprice()+" SAR");
+        holder.cartPrice.setText(cList.get(position).getNprice() + " SAR");
 
         holder.fabSelect.setOnClickListener(view -> {
             fabSelectClickHandle(holder);
@@ -59,9 +59,9 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
     }
 
     private void cartItemClickHandler() {
-        ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.mainFrame,new FragProDetails()).addToBackStack(null).commit();
+                .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();
     }
 
     private void fabSelectClickHandle(CartVH holder) {
@@ -81,8 +81,8 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
 
     public class CartVH extends RecyclerView.ViewHolder {
         private ImageView cartIv;
-        private TextView cartName,cartCat,cartId,cartPrice,cartCount;
-        private ImageButton cartPlus,cartMinus;
+        private TextView cartName, cartCat, cartId, cartPrice, cartCount;
+        private ImageButton cartPlus, cartMinus;
         private FloatingActionButton fabSelect, fabUnselect;
         private RelativeLayout cartItem;
 

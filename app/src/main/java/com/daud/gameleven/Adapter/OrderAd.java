@@ -53,7 +53,7 @@ public class OrderAd extends RecyclerView.Adapter<OrderAd.OrderVH> {
     }
 
     public class OrderVH extends RecyclerView.ViewHolder {
-        TextView orderId,modelId,deliv,date;
+        TextView orderId, modelId, deliv, date;
 
         public OrderVH(@NonNull View itemView) {
             super(itemView);

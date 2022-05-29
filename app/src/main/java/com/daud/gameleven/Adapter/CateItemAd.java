@@ -19,7 +19,7 @@ import com.daud.gameleven.R;
 
 public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> {
     private Context context;
-    private String [] clList;
+    private String[] clList;
 
     public CateItemAd(Context context, String[] clList) {
         this.context = context;
@@ -29,7 +29,7 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     @NonNull
     @Override
     public CategoryListVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_category_list,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_category_list, parent, false);
         return new CategoryListVH(view);
     }
 
@@ -55,10 +55,10 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     }
 
     private void catItemsExpandBtnClick(CategoryListVH holder) {
-        if (holder.superLay.getVisibility()==View.GONE){
+        if (holder.superLay.getVisibility() == View.GONE) {
             holder.superLay.setVisibility(View.VISIBLE);
             holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
-        }else{
+        } else {
             holder.superLay.setVisibility(View.GONE);
             holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
         }
@@ -72,7 +72,7 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     public class CategoryListVH extends RecyclerView.ViewHolder {
         private TextView itemTv;
         private ImageButton expandBtn;
-        private LinearLayout itemBtn,superLay;
+        private LinearLayout itemBtn, superLay;
 
         public CategoryListVH(@NonNull View itemView) {
             super(itemView);

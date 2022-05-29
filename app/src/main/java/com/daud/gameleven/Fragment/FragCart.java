@@ -24,8 +24,8 @@ import com.daud.gameleven.Util.Data;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragCart extends Fragment {
-    private ImageButton cartBack,cartDlt;
-    private FloatingActionButton fabAllSe,fabAllUn;
+    private ImageButton cartBack, cartDlt;
+    private FloatingActionButton fabAllSe, fabAllUn;
     private LinearLayout cartCOut;
     private RecyclerView cartRecycler;
 
@@ -65,12 +65,12 @@ public class FragCart extends Fragment {
     private void cartCheckOutClickHandler() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.mainFrame,new FragCOutInfo()).addToBackStack(null).commit();
+                .replace(R.id.mainFrame, new FragCOutInfo()).addToBackStack(null).commit();
     }
 
     private void cartDltClickHandler() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.aleartdialog_delete,null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.aleartdialog_delete, null);
         Button cancelBtn = view.findViewById(R.id.cancelBtn);
         Button okBtn = view.findViewById(R.id.okBtn);
         builder.setView(view);
@@ -84,8 +84,6 @@ public class FragCart extends Fragment {
         cancelBtn.setOnClickListener(view1 -> {
             dialog.dismiss();
         });
-
-
     }
 
     @Override
@@ -98,13 +96,13 @@ public class FragCart extends Fragment {
         Data data = new Data();
 
         cartRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        cartRecycler.setAdapter(new CartAd(getContext(),data.getCarts()));
+        cartRecycler.setAdapter(new CartAd(getContext(), data.getCarts()));
     }
 
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-                .replace(R.id.mainFrame,new FragHome()).commit();
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void initial(View view) {

@@ -31,7 +31,7 @@ public class DailyFeaturesAd extends RecyclerView.Adapter<DailyFeaturesAd.DailyF
     @NonNull
     @Override
     public DailyFeaturesVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.vh_daily_features,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.vh_daily_features, parent, false);
         return new DailyFeaturesVH(view);
     }
 
@@ -39,7 +39,7 @@ public class DailyFeaturesAd extends RecyclerView.Adapter<DailyFeaturesAd.DailyF
     public void onBindViewHolder(@NonNull DailyFeaturesVH holder, int position) {
 
         holder.dfIv.setImageResource(dfList.get(position).getImage());
-        holder.dfTv.setText(dfList.get(position).getNprice()+" SAR");
+        holder.dfTv.setText(dfList.get(position).getNprice() + " SAR");
 
         holder.dfIv.setOnClickListener(view -> {
             gotoPdFragmentDemo();
@@ -63,7 +63,7 @@ public class DailyFeaturesAd extends RecyclerView.Adapter<DailyFeaturesAd.DailyF
     }
 
     // go to details frag Demo
-    private void gotoPdFragmentDemo(){
+    private void gotoPdFragmentDemo() {
         ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();
