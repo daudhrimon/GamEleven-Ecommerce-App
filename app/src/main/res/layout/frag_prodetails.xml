@@ -628,7 +628,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="12dp"
                 android:layout_weight="5"
-                android:background="@drawable/selector_addtocart"
+                android:background="@drawable/selector_mycart"
                 android:clickable="true"
                 android:orientation="horizontal"
                 android:weightSum="3"

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="3dp"
+        android:background="@color/white"
+        android:paddingVertical="18dp">
+
+        <ImageView
+            android:id="@+id/cartIv"
+            android:layout_width="87dp"
+            android:layout_height="98dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="22dp"
+            android:padding="7dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/one" />
+
+        <LinearLayout
+            android:id="@+id/selectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cartId"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="5dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/selector_clr"
+                app:elevation="0dp"
+                android:src="@drawable/tick"
+                app:borderWidth="0dp"
+                app:fabCustomSize="24dp"
+                app:maxImageSize="12dp"
+                app:tint="@color/white"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabUnselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart_unselected"
+                app:elevation="0dp"
+                app:fabCustomSize="24dp"
+                app:maxImageSize="25dp"
+                app:borderWidth="0dp"
+                app:tint="@null"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cartName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/selectBtn"
+            android:layout_toEndOf="@id/cartIv"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingTop="10dp"
+            android:text="Power Bank Water Gold"
+            android:textColor="@color/cart_wish_tc"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cartCat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cartName"
+            android:layout_toStartOf="@id/selectBtn"
+            android:layout_toEndOf="@id/cartIv"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingTop="1dp"
+            android:text="Sound Box"
+            android:textColor="@color/cart_wish_tc"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cartId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cartCat"
+            android:layout_toStartOf="@id/selectBtn"
+            android:layout_toEndOf="@id/cartIv"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingVertical="1dp"
+            android:text="12345"
+            android:textColor="#B2B2B2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cartId"
+            android:layout_toStartOf="@id/cartCounter"
+            android:layout_toEndOf="@id/cartIv"
+            android:fontFamily="@font/roboto_med"
+            android:gravity="center_vertical"
+            android:paddingVertical="8dp"
+            android:text="550.00"
+            android:textColor="@color/selector_clr"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/cartCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cartId"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/cartPlus"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/selector_cart_pm"
+                android:src="@drawable/plus"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/cartCount"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="01"
+                android:gravity="center"
+                android:textColor="#837A7A"
+                android:textSize="18sp" />
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/cartMinus"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/selector_cart_pm"
+                android:src="@drawable/minus"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="59dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:paddingHorizontal="18dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_addtocart"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                tools:ignore="TouchTargetSizeCheck"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_med"
+                    android:text="Add to Cart"
+                    android:textAlignment="center"
+                    android:textColor="#989898"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_buynow"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                tools:ignore="TouchTargetSizeCheck"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_med"
+                    android:text="Check Out"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

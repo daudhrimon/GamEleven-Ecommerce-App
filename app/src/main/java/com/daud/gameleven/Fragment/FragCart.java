@@ -1,5 +1,7 @@
 package com.daud.gameleven.Fragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.daud.gameleven.MainActivity;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragCart extends Fragment {
-    private ImageButton cartBack;
+    private ImageButton cartBack,cartDlt;
     private RecyclerView cartRecycler;
     private List<ProductModel> cList;
 
@@ -40,7 +43,30 @@ public class FragCart extends Fragment {
             backPressedHandler();
         });
 
+        cartDlt.setOnClickListener(view1 -> {
+            cartDltClickHandler();
+
+        });
+
         return view;
+    }
+
+    private void cartDltClickHandler() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.aleartdialog_delete,null);
+        Button cancelBtn = view.findViewById(R.id.cancelBtn);
+        Button okBtn = view.findViewById(R.id.okBtn);
+        builder.setView(view);
+        final Dialog dialog = builder.create();
+        dialog.show();
+
+        okBtn.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
+
+        cancelBtn.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
     }
 
     @Override
@@ -66,6 +92,7 @@ public class FragCart extends Fragment {
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
         cartBack = view.findViewById(R.id.cartBack);
+        cartDlt = view.findViewById(R.id.cartDlt);
         cartRecycler = view.findViewById(R.id.cartRecycler);
         cList = new ArrayList<>();
     }

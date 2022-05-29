@@ -19,26 +19,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="3">
 
-            <ImageButton
-                android:id="@+id/cartBack"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="58dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_med"
-                android:text="Shopping Cart"
-                android:textColor="@color/frag_name_clr"
-                android:textSize="16sp" />
+                <ImageButton
+                    android:id="@+id/cartBack"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_med"
+                    android:text="Shopping Cart"
+                    android:textColor="@color/frag_name_clr"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/cartDlt"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/delete"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
 
         </LinearLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 
@@ -69,32 +97,30 @@
             android:orientation="horizontal">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabSelect"
+                android:id="@+id/fabAllSe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:backgroundTint="@color/selector_clr"
-                android:outlineSpotShadowColor="@color/trans"
+                app:elevation="0dp"
                 android:src="@drawable/tick"
                 app:borderWidth="0dp"
-                app:fabCustomSize="23dp"
+                app:fabCustomSize="24dp"
                 app:maxImageSize="12dp"
                 app:tint="@color/white"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabUnselect"
+                android:id="@+id/fabAllUn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:backgroundTint="#EAEAEA"
-                android:outlineSpotShadowColor="@color/trans"
                 android:src="@drawable/cart_unselected"
-                android:visibility="gone"
+                app:elevation="0dp"
+                app:fabCustomSize="24dp"
+                app:maxImageSize="25dp"
                 app:borderWidth="0dp"
-                app:fabCustomSize="22dp"
-                app:maxImageSize="22dp"
-                app:tint="@color/trans" />
+                app:tint="@null"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
