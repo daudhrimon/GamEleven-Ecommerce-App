@@ -28,8 +28,6 @@ public class FragSignIn extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        MainActivity. fab.setVisibility(View.GONE);
-        MainActivity.btmCard.setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.frag_signin, container, false);
 
         initial(view);
@@ -96,6 +94,8 @@ public class FragSignIn extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         ///////////////////////////////////////////////

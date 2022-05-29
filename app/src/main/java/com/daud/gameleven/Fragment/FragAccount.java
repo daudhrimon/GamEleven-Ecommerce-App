@@ -26,8 +26,6 @@ public class FragAccount extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        MainActivity.btmCard.setVisibility(View.VISIBLE);
-        MainActivity.fab.setVisibility(View.VISIBLE);
         View view = inflater.inflate(R.layout.frag_account, container, false);
 
         initial(view);
@@ -103,6 +101,8 @@ public class FragAccount extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity.btmCard.setVisibility(View.VISIBLE);
+        MainActivity.fab.setVisibility(View.VISIBLE);
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         //////////////////////////////////////////////////

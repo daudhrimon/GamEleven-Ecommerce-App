@@ -27,12 +27,9 @@ public class FragOrderList extends Fragment {
     private ViewPager view_pager;
     private TabLayout tab_layout;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        MainActivity. fab.setVisibility(View.GONE);
-        MainActivity.btmCard.setVisibility(View.GONE);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_orderlist, container, false);
 
         initial(view);
@@ -99,6 +96,8 @@ public class FragOrderList extends Fragment {
     }
 
     private void initial(View view) {
+        MainActivity. fab.setVisibility(View.GONE);
+        MainActivity.btmCard.setVisibility(View.GONE);
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         ///////////////////////////////////////////////////////////
