@@ -2,6 +2,7 @@ package com.daud.gameleven.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -11,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
 import com.daud.gameleven.MainActivity;
@@ -28,19 +32,21 @@ import java.util.List;
 
 public class FragProDetails extends Fragment {
     private ImageSlider imageSliderPd;
+    private ImageButton backBtn;
+    private LinearLayout buyBtn,desBtn,specBtn;
     private RecyclerView relatedPR;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_prodetails, container, false);
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbarPd);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(null);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         onBackPressed(view);
 
         initial(view);
+
+        backBtn.setOnClickListener(view1 -> {
+            backPressedHandler();
+        });
 
         return view;
     }
@@ -71,6 +77,10 @@ public class FragProDetails extends Fragment {
 
     private void initial(View view) {
         imageSliderPd = view.findViewById(R.id.imageSliderPd);
+        backBtn = view.findViewById(R.id.proDetailsBack);
+        buyBtn = view.findViewById(R.id.buyBtn);
+        desBtn = view.findViewById(R.id.desBtn);
+        specBtn = view.findViewById(R.id.specBtn);
         relatedPR = view.findViewById(R.id.relatedPR);
     }
 

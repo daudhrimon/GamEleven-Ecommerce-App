@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@color/selector_clr"
+                app:contentScrim="@color/main_bg_clr"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <com.denzcoskun.imageslider.ImageSlider
@@ -50,7 +50,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar" />
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar">
+
+                    <ImageButton
+                        android:id="@+id/proDetailsBack"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/back"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -140,8 +150,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/cmnt"
-                        android:layout_marginTop="15dp"
                         android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="18dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
@@ -201,11 +211,14 @@
                         android:weightSum="2">
 
                         <LinearLayout
+                            android:id="@+id/desBtn"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/selector_clr"
-                            android:gravity="center">
+                            android:clickable="true"
+                            android:gravity="center"
+                            tools:ignore="TouchTargetSizeCheck">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -217,11 +230,13 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/specBtn"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/white"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:clickable="true">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -672,6 +687,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/buyBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="2dp"

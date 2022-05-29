@@ -24,14 +24,16 @@
             <ImageButton
                 android:id="@+id/sUpBack"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="58dp"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="14dp"
                 android:src="@drawable/ic_baseline_keyboard_backspace_24"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:fontFamily="@font/roboto_med"
                 android:text="Sign Up"
                 android:textColor="@color/white"
