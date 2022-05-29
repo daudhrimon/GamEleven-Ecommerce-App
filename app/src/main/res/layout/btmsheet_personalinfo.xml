@@ -10,7 +10,7 @@
         android:layout_height="4dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="23dp"
         android:background="#EBEAEA" />
 
     <LinearLayout
@@ -22,21 +22,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginVertical="7dp"
+            android:layout_marginHorizontal="2dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="7dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="First Name"
                     android:textColor="#9A9A9A"
@@ -59,14 +60,14 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="7dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Last Name"
                     android:textColor="#9A9A9A"
@@ -91,13 +92,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginVertical="7dp"
+            android:layout_marginHorizontal="2dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Contact Number*"
                 android:textColor="#9A9A9A"
@@ -119,13 +121,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginVertical="7dp"
+            android:layout_marginHorizontal="2dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Date of birth"
                 android:textColor="#9A9A9A"
@@ -148,13 +151,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginHorizontal="2dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Gender"
                 android:textColor="#9A9A9A"
@@ -188,9 +192,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="2dp"
-            android:layout_marginVertical="10dp"
+            android:layout_height="59dp"
+            android:layout_marginVertical="15dp"
             android:backgroundTint="#E55D2F"
             android:fontFamily="@font/roboto_med"
             android:text="SAVE PERSONAL INFORMATION"

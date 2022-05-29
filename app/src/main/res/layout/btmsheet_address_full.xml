@@ -22,28 +22,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="22dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="First Name*"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -66,14 +67,14 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Last Name*"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -98,13 +99,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="7dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -127,13 +129,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="7dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Contact Number*"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -156,13 +159,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="7dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Address*"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -185,7 +189,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -199,7 +204,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Area"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -229,7 +234,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="City*"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -261,14 +266,14 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Region"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -292,14 +297,14 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Country*"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -325,21 +330,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginHorizontal="2dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Zip"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -362,14 +368,14 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Company"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -394,8 +400,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
-                android:layout_marginHorizontal="2dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginVertical="15dp"
                 android:backgroundTint="@color/selector_clr"
                 android:fontFamily="@font/roboto_med"
                 android:text="SAVE ADDRESS"
