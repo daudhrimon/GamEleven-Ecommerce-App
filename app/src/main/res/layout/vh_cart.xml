@@ -25,8 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/cartId"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginEnd="5dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabSelect"
@@ -36,8 +35,8 @@
             app:elevation="0dp"
             android:src="@drawable/tick"
             app:borderWidth="0dp"
-            app:fabCustomSize="24dp"
-            app:maxImageSize="12dp"
+            app:fabCustomSize="22dp"
+            app:maxImageSize="11dp"
             app:tint="@color/white"
             android:visibility="gone"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -48,8 +47,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/cart_unselected"
             app:elevation="0dp"
-            app:fabCustomSize="24dp"
-            app:maxImageSize="25dp"
+            app:fabCustomSize="22dp"
+            app:maxImageSize="22dp"
             app:borderWidth="0dp"
             app:tint="@null"
             tools:ignore="SpeakableTextPresentCheck" />
