@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="3dp"
-        android:background="@color/white"
-        android:paddingVertical="18dp">
+        android:paddingTop="24dp"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/cartIv"
@@ -25,50 +24,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/one" />
 
-        <LinearLayout
-            android:id="@+id/selectBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/cartId"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="5dp">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabSelect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/selector_clr"
-                app:elevation="0dp"
-                android:src="@drawable/tick"
-                app:borderWidth="0dp"
-                app:fabCustomSize="24dp"
-                app:maxImageSize="12dp"
-                app:tint="@color/white"
-                android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabUnselect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/shape_cart_unselect"
-                app:elevation="0dp"
-                app:fabCustomSize="24dp"
-                app:maxImageSize="25dp"
-                app:borderWidth="0dp"
-                app:tint="@null"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </LinearLayout>
-
         <TextView
             android:id="@+id/cartName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@id/selectBtn"
             android:layout_toEndOf="@id/cartIv"
+            android:layout_alignParentEnd="true"
             android:fontFamily="@font/roboto_regular"
             android:paddingTop="10dp"
             android:text="Power Bank Water Gold"
@@ -80,8 +42,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/cartName"
-            android:layout_toStartOf="@id/selectBtn"
             android:layout_toEndOf="@id/cartIv"
+            android:layout_alignParentEnd="true"
             android:fontFamily="@font/roboto_regular"
             android:paddingTop="1dp"
             android:text="Sound Box"
@@ -93,8 +55,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/cartCat"
-            android:layout_toStartOf="@id/selectBtn"
             android:layout_toEndOf="@id/cartIv"
+            android:layout_alignParentEnd="true"
             android:fontFamily="@font/roboto_regular"
             android:paddingVertical="1dp"
             android:text="12345"
@@ -125,8 +87,8 @@
             android:orientation="horizontal">
 
             <ImageButton
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/cartPlus"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:background="@drawable/selector_cart_pm"
@@ -138,14 +100,14 @@
                 android:layout_width="34dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/roboto_regular"
-                android:text="01"
                 android:gravity="center"
+                android:text="01"
                 android:textColor="#837A7A"
                 android:textSize="18sp" />
 
             <ImageButton
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/cartMinus"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:background="@drawable/selector_cart_pm"
@@ -158,24 +120,25 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="59dp">
+        android:layout_height="74dp"
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingHorizontal="24dp"
             android:weightSum="2"
-            android:paddingHorizontal="18dp">
+            android:paddingVertical="16dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_addtocart"
                 android:clickable="true"
                 android:gravity="center_vertical"
-                tools:ignore="TouchTargetSizeCheck"
-                android:layout_marginVertical="10dp"
-                android:layout_marginEnd="6dp">
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -195,9 +158,7 @@
                 android:background="@drawable/selector_buynow"
                 android:clickable="true"
                 android:gravity="center_vertical"
-                tools:ignore="TouchTargetSizeCheck"
-                android:layout_marginVertical="10dp"
-                android:layout_marginStart="6dp">
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"

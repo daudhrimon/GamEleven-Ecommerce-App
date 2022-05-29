@@ -10,6 +10,8 @@
         <shape android:shape="rectangle">
             <corners android:radius="8dp"/>
             <solid android:color="#6FD81D4C"/>
+            <stroke android:width="2dp"
+                android:color="@color/dot_selected_border"/>
         </shape>
     </item>
 </selector>
