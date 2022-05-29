@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg_clr"
-    tools:context=".Fragment.FragCheckoutIn">
+    tools:context=".Fragment.FragCOutInfo">
 
     <!--TOOLBAR -->
 

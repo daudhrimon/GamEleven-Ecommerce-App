@@ -1,5 +1,6 @@
 package com.daud.gameleven.Adapter;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -12,8 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
@@ -45,6 +50,16 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
         holder.wishDlt.setOnClickListener(view -> {
             wishDeleteClickHandler(holder);
         });
+
+        holder.wishItem.setOnClickListener(view1 -> {
+            wishItemClickHandler();
+        });
+    }
+
+    private void wishItemClickHandler() {
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();
     }
 
     private void wishDeleteClickHandler(WishlistVh holder) {
@@ -78,7 +93,7 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
     public class WishlistVh extends RecyclerView.ViewHolder{
         private ImageView wishIv;
         private TextView wishName,wishCat,wishPrice;
-        private LinearLayout wishDlt;
+        private LinearLayout wishItem,wishDlt;
 
         public WishlistVh(@NonNull View itemView) {
             super(itemView);
@@ -86,6 +101,7 @@ public class WishlistAd extends RecyclerView.Adapter<WishlistAd.WishlistVh>{
             wishName = itemView.findViewById(R.id.wishName);
             wishCat = itemView.findViewById(R.id.wishCat);
             wishPrice = itemView.findViewById(R.id.wishPrice);
+            wishItem = itemView.findViewById(R.id.wishItem);
             wishDlt = itemView.findViewById(R.id.wishDlt);
         }
     }

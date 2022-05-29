@@ -30,17 +30,6 @@ public class FragProduct extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         return view;
     }
 
@@ -64,8 +53,6 @@ public class FragProduct extends Fragment {
     private void initial(View view) {
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         /////////////////////////////////////////////////
         productRv = view.findViewById(R.id.productRv);
         productRv.setLayoutManager(new GridLayoutManager(getContext(),2));

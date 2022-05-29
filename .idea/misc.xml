@@ -30,6 +30,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_pc.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_slash.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_wish_dlt.xml" value="0.1155" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/selector_wishlist.xml" value="0.1095" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/shape_addtocart.xml" value="0.1105" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/shape_home_ideals.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/top_rounded_dialog.xml" value="0.109" />
@@ -70,6 +71,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_category.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_checkout.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_checkoutin.xml" value="0.2" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_coutinfo.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_details.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_editprofile.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_filter.xml" value="0.2" />

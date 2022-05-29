@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.daud.gameleven.Fragment.FragAccount;
 import com.daud.gameleven.Fragment.FragCart;
@@ -59,37 +60,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fabOnClickHandler() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-        btmNav.setSelectedItemId(R.id.home);
+        getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
     private void btmNavItemSelectHandler(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.category:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCategory())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.mainFrame, new FragCategory()).commit();
                 break;
 
             case R.id.wishlist:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragWishlist())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.mainFrame, new FragWishlist()).commit();
                 break;
 
             case R.id.cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragCart())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.mainFrame, new FragCart()).commit();
                 break;
 
             case R.id.account:
                 if (getPreferences.getInt("SIGNIN", 0) == 1) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragAccount())
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                    getSupportFragmentManager().beginTransaction()
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .replace(R.id.mainFrame, new FragAccount()).commit();
                 } else {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragSignIn())
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-                    fab.setVisibility(View.GONE);
-                    btmCard.setVisibility(View.GONE);
+                    getSupportFragmentManager().beginTransaction()
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .replace(R.id.mainFrame, new FragSignIn()).commit();
                 }
                 break;
 
@@ -107,6 +111,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragHome()).commit();
         getPreferences = getSharedPreferences("MySp", MODE_PRIVATE);
         editor = getPreferences.edit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount()==0 && btmNav.getSelectedItemId()!=R.id.home){
+            fabOnClickHandler();
+        }else if (getSupportFragmentManager().getBackStackEntryCount()==0 && btmNav.getSelectedItemId()==R.id.home){
+            Toast.makeText(this, "NO TASK", Toast.LENGTH_SHORT).show();
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
     }
 
     public static int getRandomColor() {

@@ -10,12 +10,13 @@ import android.view.ViewGroup;
 
 import com.daud.gameleven.R;
 
-public class FragCheckoutIn extends Fragment {
+public class FragCOutInfo extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_checkoutin, container, false);
+        View view = inflater.inflate(R.layout.frag_coutinfo, container, false);
+
         return view;
     }
 }

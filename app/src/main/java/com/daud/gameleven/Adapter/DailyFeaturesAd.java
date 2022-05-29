@@ -64,7 +64,8 @@ public class DailyFeaturesAd extends RecyclerView.Adapter<DailyFeaturesAd.DailyF
 
     // go to details frag Demo
     private void gotoPdFragmentDemo(){
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProDetails())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragProDetails()).addToBackStack(null).commit();
     }
 }

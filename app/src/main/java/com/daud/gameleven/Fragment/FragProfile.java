@@ -26,17 +26,6 @@ public class FragProfile extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -71,8 +60,6 @@ public class FragProfile extends Fragment {
     private void initial(View view) {
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         //////////////////////////////////////////////
         personEtv = view.findViewById(R.id.personEtv);
         emailEtv = view.findViewById(R.id.emailEtv);

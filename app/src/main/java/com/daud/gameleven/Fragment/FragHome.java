@@ -47,17 +47,6 @@ public class FragHome extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    Toast.makeText(getContext(), "Back Button Pressed", Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         menuBtn.setOnClickListener(view1 -> {
             menuBtnOnClick();
         });
@@ -91,8 +80,9 @@ public class FragHome extends Fragment {
     }
 
     private void demoClick(){
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragProduct()).addToBackStack(null).commit();
     }
 
     private void topTextSliderHandler() {
@@ -102,7 +92,9 @@ public class FragHome extends Fragment {
     }
 
     private void menuBtnOnClick() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragCategory()).commit();
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame,new FragCategory()).commit();
         MainActivity.btmNav.setSelectedItemId(R.id.category);
     }
 
@@ -139,8 +131,7 @@ public class FragHome extends Fragment {
     private void initial(View view) {
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
+        MainActivity.btmNav.setSelectedItemId(R.id.home);
         ///////////////////////////////////////////////////
         menuBtn = view.findViewById(R.id.menuBtn);
         imageSlider = view.findViewById(R.id.imageSlider);

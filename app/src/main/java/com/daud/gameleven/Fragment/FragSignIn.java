@@ -32,17 +32,6 @@ public class FragSignIn extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         sInBack.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -88,16 +77,14 @@ public class FragSignIn extends Fragment {
     }
 
     private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame,new FragHome()).commit();
     }
 
     private void initial(View view) {
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         ///////////////////////////////////////////////
         sInPhnEt = view.findViewById(R.id.sInPhnEt);
         sInPassEt = view.findViewById(R.id.sInPassEt);

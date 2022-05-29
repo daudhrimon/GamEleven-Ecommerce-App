@@ -43,8 +43,9 @@ public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {
     }
 
     private void textBtnClickHandler() {
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragProduct()).addToBackStack(null).commit();
     }
 
     @Override

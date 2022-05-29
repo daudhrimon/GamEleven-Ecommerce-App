@@ -1,20 +1,14 @@
 package com.daud.gameleven.Fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -23,7 +17,6 @@ import android.widget.TextView;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
 import com.daud.gameleven.MainActivity;
-import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -48,23 +41,8 @@ public class FragProDetails extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
-        });
-
-        buyBtn.setOnClickListener(view1 -> {
-            buyBtnClickHandler();
         });
 
         desBtn.setOnClickListener(view1 -> {
@@ -75,13 +53,24 @@ public class FragProDetails extends Fragment {
             setBtnColor(specBtn,specTv,desBtn,desTv);
         });
 
+        buyBtn.setOnClickListener(view1 -> {
+            buyBtnClickHandler();
+        });
+
         return view;
     }
 
     private void buyBtnClickHandler() {
         BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(),R.style.AppBottomSheetDialogTheme);
         btmSheet.setContentView(R.layout.btmsheet_single_product);
+        LinearLayout spCOut = btmSheet.findViewById(R.id.spCOut);
         btmSheet.show();
+
+        spCOut.setOnClickListener(view -> {
+            getParentFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.mainFrame,new FragCOutInfo()).addToBackStack(null).commit();
+        });
     }
 
     private void setBtnColor(LinearLayout firstLay, TextView firstTv,LinearLayout secLay,TextView secTv){
@@ -122,8 +111,6 @@ public class FragProDetails extends Fragment {
     private void initial(View view) {
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         //////////////////////////////////////////////////////
         imageSliderPd = view.findViewById(R.id.imageSliderPd);
         backBtn = view.findViewById(R.id.proDetailsBack);

@@ -49,8 +49,9 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     }
 
     private void itemClickHandler(CategoryListVH holder) {
-        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragProduct())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+        ((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragProduct()).addToBackStack(null).commit();
     }
 
     private void catItemsExpandBtnClick(CategoryListVH holder) {

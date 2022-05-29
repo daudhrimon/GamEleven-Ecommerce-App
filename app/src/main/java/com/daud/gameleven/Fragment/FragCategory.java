@@ -33,17 +33,6 @@ public class FragCategory extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         catBack.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -134,16 +123,13 @@ public class FragCategory extends Fragment {
     }
 
     private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
+        getParentFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .replace(R.id.mainFrame,new FragHome()).commit();
     }
 
     private void initial(View view) {
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         /////////////////////////////////////////////////
         catBack = view.findViewById(R.id.catBack);
         oneBtn = view.findViewById(R.id.oneBtn);

@@ -25,17 +25,6 @@ public class FragSignUp extends Fragment {
 
         initial(view);
 
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
-
         sUpBack.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -54,8 +43,6 @@ public class FragSignUp extends Fragment {
     private void initial(View view) {
         MainActivity. fab.setVisibility(View.GONE);
         MainActivity.btmCard.setVisibility(View.GONE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         ////////////////////////////////////////////////
         signInBtn = view.findViewById(R.id.upSignInBtn);
         sUpBack = view.findViewById(R.id.sUpBack);

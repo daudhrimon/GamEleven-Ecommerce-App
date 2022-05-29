@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,20 +19,15 @@ import android.widget.LinearLayout;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Adapter.CartAd;
-import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragCart extends Fragment {
     private ImageButton cartBack,cartDlt;
     private FloatingActionButton fabAllSe,fabAllUn;
     private LinearLayout cartCOut;
     private RecyclerView cartRecycler;
-    private List<ProductModel> cList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,17 +35,6 @@ public class FragCart extends Fragment {
         View view = inflater.inflate(R.layout.frag_cart, container, false);
 
         initial(view);
-
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i==KeyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    return true;
-                }
-                return false;
-            }
-        });
 
         cartBack.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -72,7 +55,17 @@ public class FragCart extends Fragment {
             fabAllSe.setVisibility(View.VISIBLE);
         });
 
+        cartCOut.setOnClickListener(view1 -> {
+            cartCheckOutClickHandler();
+        });
+
         return view;
+    }
+
+    private void cartCheckOutClickHandler() {
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame,new FragCOutInfo()).addToBackStack(null).commit();
     }
 
     private void cartDltClickHandler() {
@@ -91,6 +84,8 @@ public class FragCart extends Fragment {
         cancelBtn.setOnClickListener(view1 -> {
             dialog.dismiss();
         });
+
+
     }
 
     @Override
@@ -107,16 +102,14 @@ public class FragCart extends Fragment {
     }
 
     private void backPressedHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame,new FragHome())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
-        MainActivity.btmNav.setSelectedItemId(R.id.home);
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .replace(R.id.mainFrame,new FragHome()).commit();
     }
 
     private void initial(View view) {
         MainActivity.btmCard.setVisibility(View.VISIBLE);
         MainActivity.fab.setVisibility(View.VISIBLE);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
         /////////////////////////////////////////////////
         cartBack = view.findViewById(R.id.cartBack);
         cartDlt = view.findViewById(R.id.cartDlt);
@@ -124,6 +117,5 @@ public class FragCart extends Fragment {
         fabAllUn = view.findViewById(R.id.fabAllUn);
         cartCOut = view.findViewById(R.id.cartCOut);
         cartRecycler = view.findViewById(R.id.cartRecycler);
-        cList = new ArrayList<>();
     }
 }

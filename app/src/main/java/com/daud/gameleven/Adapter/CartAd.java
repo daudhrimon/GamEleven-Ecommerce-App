@@ -6,11 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -48,6 +52,16 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
         holder.fabUnselect.setOnClickListener(view -> {
             fabUnselectClickHandle(holder);
         });
+
+        holder.cartItem.setOnClickListener(view -> {
+            cartItemClickHandler();
+        });
+    }
+
+    private void cartItemClickHandler() {
+        ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame,new FragProDetails()).addToBackStack(null).commit();
     }
 
     private void fabSelectClickHandle(CartVH holder) {
@@ -70,6 +84,7 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
         private TextView cartName,cartCat,cartId,cartPrice,cartCount;
         private ImageButton cartPlus,cartMinus;
         private FloatingActionButton fabSelect, fabUnselect;
+        private RelativeLayout cartItem;
 
         public CartVH(@NonNull View itemView) {
             super(itemView);
@@ -83,6 +98,7 @@ public class CartAd extends RecyclerView.Adapter<CartAd.CartVH> {
             cartMinus = itemView.findViewById(R.id.cartMinus);
             fabSelect = itemView.findViewById(R.id.fabSelect);
             fabUnselect = itemView.findViewById(R.id.fabUnselect);
+            cartItem = itemView.findViewById(R.id.cartItem);
         }
     }
 }
