@@ -1,11 +1,13 @@
 package com.daud.gameleven.Fragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,8 @@ public class FragCOutInfo extends Fragment {
         View view = inflater.inflate(R.layout.frag_coutinfo, container, false);
 
         initial(view);
+
+        showAddressBtmSheet();
 
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
@@ -58,6 +62,36 @@ public class FragCOutInfo extends Fragment {
         });
 
         return view;
+    }
+
+    private void showAddressBtmSheet() {
+        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
+        btmSheet.setContentView(R.layout.btmsheet_no_address);
+        ImageButton backBtn = btmSheet.findViewById(R.id.addressBack);
+        ImageButton plusBtn = btmSheet.findViewById(R.id.addressPlus);
+        btmSheet.setCancelable(false);
+        btmSheet.show();
+
+        backBtn.setOnClickListener(view -> {
+            backPressedHandler();
+            btmSheet.dismiss();
+        });
+
+        plusBtn.setOnClickListener(view -> {
+            btmSheet.dismiss();
+        });
+
+        btmSheet.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
+                if (i==keyEvent.KEYCODE_BACK){
+                    backPressedHandler();
+                    btmSheet.dismiss();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     private void fullAddressBtmSheet() {

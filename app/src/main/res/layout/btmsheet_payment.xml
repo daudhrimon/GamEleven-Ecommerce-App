@@ -125,7 +125,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="5dp"
+        android:elevation="10dp"
         app:cardBackgroundColor="@color/white">
 
         <LinearLayout
@@ -142,8 +142,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_med"
-                android:paddingVertical="14dp"
-                android:text="SAVE ADDRESS"
+                android:paddingVertical="13dp"
+                android:text="Make Payment"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
