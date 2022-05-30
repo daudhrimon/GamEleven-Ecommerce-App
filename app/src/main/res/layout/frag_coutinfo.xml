@@ -25,8 +25,8 @@
             <ImageButton
                 android:id="@+id/cOutBack"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:src="@drawable/back"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
