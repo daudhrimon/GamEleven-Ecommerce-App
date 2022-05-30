@@ -13,7 +13,7 @@
             <corners android:radius="8dp"/>
             <solid android:color="@color/daily_features_bg"/>
             <stroke android:width="2dp"
-                android:color="@color/dot_selected_border"/>
+                android:color="#80EFB9A8"/>
         </shape>
     </item>
 </selector>

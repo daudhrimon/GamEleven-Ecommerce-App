@@ -6,7 +6,7 @@
     android:layout_marginStart="10dp"
     android:layout_marginTop="5dp"
     android:layout_marginEnd="10dp"
-    android:background="@color/white"
+    android:background="@drawable/selector_rounded_product"
     android:gravity="center"
     android:orientation="horizontal"
     android:weightSum="2">
