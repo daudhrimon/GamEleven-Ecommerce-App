@@ -1,4 +1,4 @@
-package com.daud.gameleven.Activity;
+package com.daud.gameleven;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
@@ -15,8 +14,6 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daud.gameleven.Fragment.FragOnBoarding;
-import com.daud.gameleven.MainActivity;
-import com.daud.gameleven.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView spImg;

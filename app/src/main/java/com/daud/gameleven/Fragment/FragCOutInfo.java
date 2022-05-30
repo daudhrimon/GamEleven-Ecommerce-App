@@ -51,6 +51,10 @@ public class FragCOutInfo extends Fragment {
             addContactBtmSheet();
         });
 
+        orderBtn.setOnClickListener(view1 -> {
+            ///////////////////////////////////////////////////////////////////////////////////////
+        });
+
         /////////////////////////////////////////
 
         demo1.setOnClickListener(view1 -> {
