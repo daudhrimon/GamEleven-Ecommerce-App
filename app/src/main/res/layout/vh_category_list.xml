@@ -43,9 +43,9 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
             android:background="@color/search_bg_clr" />
 
         <ImageButton
@@ -86,11 +86,14 @@
             app:cardCornerRadius="15dp">
 
             <LinearLayout
+                android:id="@+id/cate1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:weightSum="12">
+                android:weightSum="12"
+                android:background="@drawable/selector_wishlist"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/superIv"
@@ -123,11 +126,14 @@
             app:cardCornerRadius="15dp">
 
             <LinearLayout
+                android:id="@+id/cate2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:weightSum="12">
+                android:weightSum="12"
+                android:background="@drawable/selector_wishlist"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -158,11 +164,14 @@
             app:cardCornerRadius="15dp">
 
             <LinearLayout
+                android:id="@+id/cate3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:weightSum="12">
+                android:weightSum="12"
+                android:background="@drawable/selector_wishlist"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="match_parent"

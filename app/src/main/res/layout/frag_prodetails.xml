@@ -623,6 +623,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp"
             android:weightSum="13">
@@ -631,8 +632,7 @@
                 android:id="@+id/addWishBtn"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:src="@drawable/heart"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -641,9 +641,8 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="12dp"
                 android:layout_weight="5"
                 android:background="@drawable/selector_mycart"
                 android:clickable="true"
@@ -653,16 +652,16 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1.9"
-                    android:gravity="center_vertical">
+                    android:gravity="center">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_med"
+                        android:paddingVertical="9dp"
                         android:text="My Cart"
-                        android:textAlignment="center"
                         android:textColor="@color/selector_clr"
                         android:textSize="14sp" />
 
@@ -673,14 +672,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.1"
                     android:background="@drawable/shape_addtocart"
-                    android:gravity="center_vertical">
+                    android:gravity="center">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_med"
                         android:text="0"
-                        android:textAlignment="center"
                         android:textColor="@color/rating_txt_clr"
                         android:textSize="16sp" />
 
@@ -691,21 +689,20 @@
             <LinearLayout
                 android:id="@+id/buyBtn"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="2dp"
-                android:layout_marginVertical="12dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
                 android:layout_weight="6"
                 android:background="@drawable/selector_buynow"
                 android:clickable="true"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_med"
+                    android:paddingVertical="9dp"
                     android:text="Buy Now"
-                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 

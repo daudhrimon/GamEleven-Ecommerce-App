@@ -70,6 +70,7 @@ public class FragProDetails extends Fragment {
             getParentFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .replace(R.id.mainFrame, new FragCOutInfo()).addToBackStack(null).commit();
+            btmSheet.dismiss();
         });
     }
 

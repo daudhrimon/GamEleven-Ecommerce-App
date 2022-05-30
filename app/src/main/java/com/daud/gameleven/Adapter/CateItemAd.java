@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Fragment.FragProduct;
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
@@ -46,6 +47,24 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
         holder.itemBtn.setOnClickListener(view -> {
             itemClickHandler(holder);
         });
+
+        holder.cate1.setOnClickListener(view -> {
+            demoClick();
+        });
+
+        holder.cate2.setOnClickListener(view -> {
+            demoClick();
+        });
+
+        holder.cate3.setOnClickListener(view -> {
+            demoClick();
+        });
+    }
+
+    private void demoClick() {
+        ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame,new FragProDetails()).addToBackStack(null).commit();
     }
 
     private void itemClickHandler(CategoryListVH holder) {
@@ -72,7 +91,7 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     public class CategoryListVH extends RecyclerView.ViewHolder {
         private TextView itemTv;
         private ImageButton expandBtn;
-        private LinearLayout itemBtn, superLay;
+        private LinearLayout itemBtn, superLay,cate1,cate2,cate3; // cate 123 have to remove //
 
         public CategoryListVH(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +99,9 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
             itemBtn = itemView.findViewById(R.id.itemBtn);
             expandBtn = itemView.findViewById(R.id.expandBtn);
             superLay = itemView.findViewById(R.id.superLay);
+            cate1 = itemView.findViewById(R.id.cate1);
+            cate2 = itemView.findViewById(R.id.cate2);
+            cate3 = itemView.findViewById(R.id.cate3);
         }
     }
 
