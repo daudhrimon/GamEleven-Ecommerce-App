@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +68,7 @@ public class FragProDetails extends Fragment {
         spCOut.setOnClickListener(view -> {
             getParentFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.mainFrame, new FragCOutInfo()).addToBackStack(null).commit();
+                    .replace(R.id.mainFrame, new FragCkOutInfo()).addToBackStack(null).commit();
             btmSheet.dismiss();
         });
     }

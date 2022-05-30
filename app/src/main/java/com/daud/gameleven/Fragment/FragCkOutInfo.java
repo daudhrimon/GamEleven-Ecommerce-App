@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.KeyEvent;
@@ -20,7 +19,7 @@ import com.daud.gameleven.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class FragCOutInfo extends Fragment {
+public class FragCkOutInfo extends Fragment {
     private ImageButton backBtn;
     private TextView fullAdrs;
     private FloatingActionButton halfAdrs, addContact;
@@ -29,7 +28,7 @@ public class FragCOutInfo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_coutinfo, container, false);
+        View view = inflater.inflate(R.layout.frag_ckoutinfo, container, false);
 
         initial(view);
 
