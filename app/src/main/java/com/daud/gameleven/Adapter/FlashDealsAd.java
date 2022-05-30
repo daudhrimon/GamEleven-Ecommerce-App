@@ -17,6 +17,7 @@ import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
+import com.daud.gameleven.Util.Data;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class FlashDealsAd extends RecyclerView.Adapter<FlashDealsAd.FlashDealsVH
     public void onBindViewHolder(@NonNull FlashDealsVH holder, int position) {
         holder.fdIv.setImageResource(fdList.get(position).getImage());
         holder.fdTv.setText(fdList.get(position).getNprice() + " SAR");
-        holder.fdCard.setBackgroundColor(MainActivity.getRandomColor());
+        holder.fdCard.setBackgroundColor(Data.getRandomColor());
 
         holder.fdIv.setOnClickListener(view -> {
             gotoPdFragmentDemo();

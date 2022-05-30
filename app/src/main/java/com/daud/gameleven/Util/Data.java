@@ -1,13 +1,27 @@
 package com.daud.gameleven.Util;
 
+import android.graphics.Color;
+
 import com.daud.gameleven.Model.OrderModel;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Data {
+    public static int getRandomColor() {
+        List<Integer> colorcode = new ArrayList<>();
+        colorcode.add(Color.parseColor("#D81D4C"));
+        colorcode.add(Color.parseColor("#68C037"));
+        colorcode.add(Color.parseColor("#094D82"));
+        colorcode.add(Color.parseColor("#2B2B2B"));
+
+        Random random = new Random();
+        int number = random.nextInt(colorcode.size());
+        return colorcode.get(number);
+    }
 
     public List<OrderModel> getAllOrderList() {
         List<OrderModel> list = new ArrayList<>();

@@ -17,6 +17,7 @@ import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
+import com.daud.gameleven.Util.Data;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class HotCateAd extends RecyclerView.Adapter<HotCateAd.HotCategoriesVh> {
 
         holder.hcIv.setImageResource(hcList.get(position).getImage());
         holder.hcTv.setText(hcList.get(position).getModel());
-        holder.hcCard.setBackgroundColor(MainActivity.getRandomColor());
+        holder.hcCard.setBackgroundColor(Data.getRandomColor());
 
         holder.hcIv.setOnClickListener(view -> {
             gotoPdFragmentDemo();

@@ -123,16 +123,4 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().popBackStack();
         }
     }
-
-    public static int getRandomColor() {
-        List<Integer> colorcode = new ArrayList<>();
-        colorcode.add(Color.parseColor("#D81D4C"));
-        colorcode.add(Color.parseColor("#68C037"));
-        colorcode.add(Color.parseColor("#094D82"));
-        colorcode.add(Color.parseColor("#2B2B2B"));
-
-        Random random = new Random();
-        int number = random.nextInt(colorcode.size());
-        return colorcode.get(number);
-    }
 }
