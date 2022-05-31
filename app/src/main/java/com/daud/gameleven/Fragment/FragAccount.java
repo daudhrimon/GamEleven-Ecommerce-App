@@ -12,16 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragAccount extends Fragment {
     private ImageButton accountBack;
-    private FloatingActionButton ordersFab, profileFab, addressFab, cngLanFab, logoutFab;
+    private RelativeLayout ordersLay, profileLay, addressLay, cngLanLay, logoutLay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,19 +34,19 @@ public class FragAccount extends Fragment {
             backPressedHandler();
         });
 
-        ordersFab.setOnClickListener(view1 -> {
+        ordersLay.setOnClickListener(view1 -> {
             ordersFabClickHandler();
         });
 
-        profileFab.setOnClickListener(view1 -> {
+        profileLay.setOnClickListener(view1 -> {
             profileFabClickHandler();
         });
 
-        addressFab.setOnClickListener(view1 -> {
+        addressLay.setOnClickListener(view1 -> {
             addressFabClickHandler();
         });
 
-        cngLanFab.setOnClickListener(view1 -> {
+        cngLanLay.setOnClickListener(view1 -> {
             cngLanFabClickHandler();
         });
 
@@ -94,10 +94,10 @@ public class FragAccount extends Fragment {
         MainActivity.fab.setVisibility(View.VISIBLE);
         //////////////////////////////////////////////////
         accountBack = view.findViewById(R.id.accountBack);
-        ordersFab = view.findViewById(R.id.ordersFab);
-        profileFab = view.findViewById(R.id.profileFab);
-        addressFab = view.findViewById(R.id.addressFab);
-        cngLanFab = view.findViewById(R.id.cngLanFab);
-        logoutFab = view.findViewById(R.id.logoutFab);
+        ordersLay = view.findViewById(R.id.ordersLay);
+        profileLay = view.findViewById(R.id.profileLay);
+        addressLay = view.findViewById(R.id.addressLay);
+        cngLanLay = view.findViewById(R.id.cngLanLay);
+        logoutLay = view.findViewById(R.id.logoutLay);
     }
 }

@@ -32,7 +32,7 @@ public class FragCkOutInfo extends Fragment {
 
         initial(view);
 
-        showAddressBtmSheet();
+        //showAddressBtmSheet();
 
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
