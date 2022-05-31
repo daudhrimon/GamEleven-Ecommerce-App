@@ -51,7 +51,9 @@ public class FragCkOutInfo extends Fragment {
         });
 
         orderBtn.setOnClickListener(view1 -> {
-            ///////////////////////////////////////////////////////////////////////////////////////
+            getParentFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.mainFrame,new FragOrderDetails()).addToBackStack(null).commit();
         });
 
         /////////////////////////////////////////

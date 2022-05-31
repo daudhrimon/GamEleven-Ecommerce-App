@@ -12,6 +12,8 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/cart_unselected.xml" value="0.1155" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/coupons_shape.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/dot_selected.xml" value="0.121" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/dot_selected_od.xml" value="0.1105" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/dot_unselected_od.xml" value="0.1105" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/edit_text_round_bg_outline.xml" value="0.1" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/gift_shape.xml" value="0.1145" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.1065" />
@@ -59,6 +61,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_contact.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_email.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_no_address.xml" value="0.2" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_payment.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_personalinfo.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/btmsheet_single_product.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/checkout_information.xml" value="0.25" />
@@ -75,6 +78,7 @@
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_category.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_checkout.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_checkoutin.xml" value="0.2" />
+        <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_ckoutinfo.xml" value="0.25" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_coutinfo.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_details.xml" value="0.2" />
         <entry key="..\:/Users/Daud Hoshen Rimon/StudioProjects/GamEleven-Ecommerce-App/app/src/main/res/layout/frag_editprofile.xml" value="0.2" />
