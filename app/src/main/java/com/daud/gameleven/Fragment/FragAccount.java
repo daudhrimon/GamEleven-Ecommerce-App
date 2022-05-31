@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +42,7 @@ public class FragAccount extends Fragment {
         });
 
         addressLay.setOnClickListener(view1 -> {
-            addressFabClickHandler();
+            addressNullBtmSheet();
         });
 
         cngLanLay.setOnClickListener(view1 -> {
@@ -76,7 +75,24 @@ public class FragAccount extends Fragment {
                 .addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 
-    private void addressFabClickHandler() {
+    private void addressNullBtmSheet(){
+        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
+        btmSheet.setContentView(R.layout.btmsheet_no_address);
+        ImageButton backBtn = btmSheet.findViewById(R.id.addressBack);
+        ImageButton plusBtn = btmSheet.findViewById(R.id.addressPlus);
+        btmSheet.show();
+
+        backBtn.setOnClickListener(view -> {
+            btmSheet.dismiss();
+        });
+
+        plusBtn.setOnClickListener(view -> {
+            addressAddingBtmSheet();
+            btmSheet.dismiss();
+        });
+    }
+
+    private void addressAddingBtmSheet() {
         BottomSheetDialog btmDialog = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
         btmDialog.setContentView(R.layout.btmsheet_address_full);
 

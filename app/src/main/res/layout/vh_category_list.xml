@@ -43,7 +43,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="2dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="2dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="6dp"
             android:background="@color/search_bg_clr" />

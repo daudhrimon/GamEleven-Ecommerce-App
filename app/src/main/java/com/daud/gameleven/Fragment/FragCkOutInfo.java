@@ -32,8 +32,6 @@ public class FragCkOutInfo extends Fragment {
 
         initial(view);
 
-        //showAddressBtmSheet();
-
         backBtn.setOnClickListener(view1 -> {
             backPressedHandler();
         });
@@ -67,36 +65,6 @@ public class FragCkOutInfo extends Fragment {
         });
 
         return view;
-    }
-
-    private void showAddressBtmSheet() {
-        BottomSheetDialog btmSheet = new BottomSheetDialog(getContext(), R.style.AppBottomSheetDialogTheme);
-        btmSheet.setContentView(R.layout.btmsheet_no_address);
-        ImageButton backBtn = btmSheet.findViewById(R.id.addressBack);
-        ImageButton plusBtn = btmSheet.findViewById(R.id.addressPlus);
-        btmSheet.setCancelable(false);
-        btmSheet.show();
-
-        backBtn.setOnClickListener(view -> {
-            backPressedHandler();
-            btmSheet.dismiss();
-        });
-
-        plusBtn.setOnClickListener(view -> {
-            btmSheet.dismiss();
-        });
-
-        btmSheet.setOnKeyListener(new DialogInterface.OnKeyListener() {
-            @Override
-            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
-                if (i==keyEvent.KEYCODE_BACK){
-                    backPressedHandler();
-                    btmSheet.dismiss();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 
     private void fullAddressBtmSheet() {
