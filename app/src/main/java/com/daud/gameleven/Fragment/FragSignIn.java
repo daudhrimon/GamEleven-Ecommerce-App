@@ -48,7 +48,9 @@ public class FragSignIn extends Fragment {
     }
 
     private void signUpBtnClickHandler() {
-        getParentFragmentManager().beginTransaction().replace(R.id.mainFrame, new FragSignUp()).addToBackStack(null).commit();
+        getParentFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.mainFrame, new FragSignUp()).addToBackStack(null).commit();
     }
 
     private void signInBtnClickHandler() {
@@ -78,7 +80,7 @@ public class FragSignIn extends Fragment {
 
     private void backPressedHandler() {
         getParentFragmentManager().beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                 .replace(R.id.mainFrame, new FragHome()).commit();
     }
 
