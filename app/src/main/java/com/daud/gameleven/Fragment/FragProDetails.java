@@ -97,11 +97,7 @@ public class FragProDetails extends Fragment {
 
 
     private void imageSliderHandler() {
-        List<SlideModel> imageList = new ArrayList<>();
-        imageList.add(new SlideModel(R.drawable.four, ScaleTypes.CENTER_INSIDE));
-        imageList.add(new SlideModel(R.drawable.two, ScaleTypes.CENTER_INSIDE));
-        imageList.add(new SlideModel(R.drawable.one, ScaleTypes.CENTER_INSIDE));
-        imageSliderPd.setImageList(imageList);
+        imageSliderPd.setImageList(new Data().proDetSlider());
     }
 
     private void backPressedHandler() {

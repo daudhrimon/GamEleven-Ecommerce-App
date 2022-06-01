@@ -8,13 +8,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Adapter.ProductAdsAd;
@@ -23,16 +21,9 @@ import com.daud.gameleven.Adapter.BrandsAd;
 import com.daud.gameleven.Adapter.DailyFeaturesAd;
 import com.daud.gameleven.Adapter.FlashDealsAd;
 import com.daud.gameleven.Adapter.HotCateAd;
-import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
 import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragHome extends Fragment {
     private ImageButton menuBtn;
@@ -120,12 +111,7 @@ public class FragHome extends Fragment {
     }
 
     private void imageSliderHandler() {
-        List<SlideModel> imageList = new ArrayList<>();
-        imageList.add(new SlideModel(R.drawable.slider_xd, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.slider_one, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.slider_two, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.slider_three, ScaleTypes.FIT));
-        imageSlider.setImageList(imageList);
+        imageSlider.setImageList(new Data().homeSlider());
     }
 
     private void initial(View view) {

@@ -5,6 +5,9 @@ import android.graphics.Color;
 import com.daud.gameleven.Model.OrderModel;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,5 +80,22 @@ public class Data {
         return list;
     }
 
+    public List<SlideModel> homeSlider(){
+        List<SlideModel> imgList = new ArrayList<>();
+        imgList.add(new SlideModel(R.drawable.slider_xd, ScaleTypes.FIT));
+        imgList.add(new SlideModel(R.drawable.slider_one, ScaleTypes.FIT));
+        imgList.add(new SlideModel(R.drawable.slider_two, ScaleTypes.FIT));
+        imgList.add(new SlideModel(R.drawable.slider_three, ScaleTypes.FIT));
 
+        return imgList;
+    }
+
+    public List<SlideModel> proDetSlider(){
+        List<SlideModel> imgList = new ArrayList<>();
+        imgList.add(new SlideModel(R.drawable.four, ScaleTypes.CENTER_INSIDE));
+        imgList.add(new SlideModel(R.drawable.two, ScaleTypes.CENTER_INSIDE));
+        imgList.add(new SlideModel(R.drawable.one, ScaleTypes.CENTER_INSIDE));
+
+        return imgList;
+    }
 }
