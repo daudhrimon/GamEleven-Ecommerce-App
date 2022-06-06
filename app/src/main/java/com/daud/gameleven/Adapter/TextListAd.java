@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.Fragment.FragProduct;
-import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class TextListAd extends RecyclerView.Adapter<TextListAd.TextListVH> {

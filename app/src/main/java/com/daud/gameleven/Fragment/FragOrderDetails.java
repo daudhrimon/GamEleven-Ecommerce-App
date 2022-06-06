@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.daud.gameleven.MainActivity;
+import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 

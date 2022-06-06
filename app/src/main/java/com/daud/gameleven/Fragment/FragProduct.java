@@ -6,19 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
-import com.daud.gameleven.MainActivity;
-import com.daud.gameleven.Model.ProductModel;
+import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragProduct extends Fragment {
     private RecyclerView productRv;

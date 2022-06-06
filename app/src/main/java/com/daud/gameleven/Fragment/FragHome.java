@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.daud.gameleven.MainActivity;
+import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.Adapter.ProductAdsAd;
 import com.daud.gameleven.Adapter.TextListAd;
 import com.daud.gameleven.Adapter.BrandsAd;

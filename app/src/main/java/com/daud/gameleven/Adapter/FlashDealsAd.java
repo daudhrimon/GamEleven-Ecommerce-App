@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Model.ProductModel;
 import com.daud.gameleven.R;

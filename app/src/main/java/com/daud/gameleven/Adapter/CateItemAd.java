@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daud.gameleven.Fragment.FragProDetails;
 import com.daud.gameleven.Fragment.FragProduct;
-import com.daud.gameleven.MainActivity;
 import com.daud.gameleven.R;
 
 public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> {

@@ -15,16 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daud.gameleven.Adapter.ProductAdsAd;
-import com.daud.gameleven.MainActivity;
+import com.daud.gameleven.Activity.MainActivity;
 import com.daud.gameleven.R;
 import com.daud.gameleven.Util.Data;
 import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragProDetails extends Fragment {
     private ImageSlider imageSliderPd;
