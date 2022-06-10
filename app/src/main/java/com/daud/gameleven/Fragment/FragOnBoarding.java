@@ -21,7 +21,6 @@ public class FragOnBoarding extends Fragment {
     private ViewPager onbViewPager;
     private ImageView dot1, dot2, dot3;
     private Button skipBtn;
-    private ImageView[] dots;
     int Position;
 
     @Override

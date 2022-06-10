@@ -20,6 +20,7 @@ import com.daud.gameleven.R;
 public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> {
     private Context context;
     private String[] clList;
+    private int index = -1;
 
     public CateItemAd(Context context, String[] clList) {
         this.context = context;
@@ -35,12 +36,22 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
 
     @Override
     public void onBindViewHolder(@NonNull CategoryListVH holder, int position) {
+        int adapterPos = position;
+
+        if (index == adapterPos){
+            holder.superLay.setVisibility(View.VISIBLE);
+            holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+        } else {
+            holder.superLay.setVisibility(View.GONE);
+            holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+        }
+
 
         holder.itemTv.setText(clList[position]);
 
 
         holder.expandBtn.setOnClickListener(view -> {
-            catItemsExpandBtnClick(holder);
+            catItemsExpandBtnClick(holder,adapterPos);
         });
 
         holder.itemBtn.setOnClickListener(view -> {
@@ -72,10 +83,12 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
                 .replace(R.id.mainFrame, new FragProduct()).addToBackStack(null).commit();
     }
 
-    private void catItemsExpandBtnClick(CategoryListVH holder) {
+    private void catItemsExpandBtnClick(CategoryListVH holder, int adapterPos) {
         if (holder.superLay.getVisibility() == View.GONE) {
+            index = adapterPos;
             holder.superLay.setVisibility(View.VISIBLE);
             holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+            notifyDataSetChanged();
         } else {
             holder.superLay.setVisibility(View.GONE);
             holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
