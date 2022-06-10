@@ -87,11 +87,10 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     private void catItemsExpandBtnClick(CategoryListVH holder, int adapterPos) {
         if (holder.superLay.getVisibility() == View.GONE) {
             index = adapterPos;
-            notifyDataSetChanged();
         } else {
             index = -1;
-            notifyDataSetChanged();
         }
+        notifyDataSetChanged();
     }
 
     @Override
