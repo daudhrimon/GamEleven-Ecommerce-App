@@ -38,6 +38,7 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     public void onBindViewHolder(@NonNull CategoryListVH holder, int position) {
         int adapterPos = position;
 
+        //this one for expandable layout
         if (index == adapterPos){
             holder.superLay.setVisibility(View.VISIBLE);
             holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
@@ -86,12 +87,10 @@ public class CateItemAd extends RecyclerView.Adapter<CateItemAd.CategoryListVH> 
     private void catItemsExpandBtnClick(CategoryListVH holder, int adapterPos) {
         if (holder.superLay.getVisibility() == View.GONE) {
             index = adapterPos;
-            holder.superLay.setVisibility(View.VISIBLE);
-            holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
             notifyDataSetChanged();
         } else {
-            holder.superLay.setVisibility(View.GONE);
-            holder.expandBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+            index = -1;
+            notifyDataSetChanged();
         }
     }
 
